@@ -1,5 +1,6 @@
 import React from 'react'
 import { Navigate, Outlet } from 'react-router-dom';
+import AppLayout from '../layout/AppLayout';
 
 const ProtectedRoute = () => {
     const isAuthenticated = true;
