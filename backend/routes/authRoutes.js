@@ -13,3 +13,9 @@ import protect from "../middleware/auth.js";
 const router = express.Router();
 
 // Validation middleware
+const registerValidation = [
+    body('username')
+        .trim()
+        .isLength({ min: 3 })
+        .withMessage('Username must be at least 3 characters long'),
+]
