@@ -26,3 +26,13 @@ const registerValidation = [
         .isLength({ min: 6 })
         .withMessage('Password must be at least 6 characters long')
 ];
+
+const loginValidation = [
+    body('email')
+        .isEmail()
+        .normalizeEmail()
+        .withMessage('Please provide a valid email address'),
+    body('password')
+        .notEmpty()
+        .withMessage('Password is required')
+];
