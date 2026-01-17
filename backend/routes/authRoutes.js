@@ -36,3 +36,6 @@ const loginValidation = [
         .notEmpty()
         .withMessage('Password is required')
 ];
+
+// Public Routes
+router.post('/register', registerValidation, register);
