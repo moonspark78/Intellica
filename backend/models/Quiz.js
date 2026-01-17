@@ -58,6 +58,14 @@ const quizSchema = new mogoose.Schema({
             default: Date.now
         }
     }],
-    
+    score: {
+        type: Number,
+        default: 0
+    },
+    totalQuestions: {
+        type: Number,
+        required: true
+    },
+    completedAt:{}
 
 });
