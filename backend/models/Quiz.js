@@ -66,6 +66,11 @@ const quizSchema = new mogoose.Schema({
         type: Number,
         required: true
     },
-    completedAt:{}
-
+    completedAt:{
+        type: Date,
+        default: null
+    }
+    },{
+    timestamps: true,
 });
+
