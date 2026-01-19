@@ -74,3 +74,6 @@ const quizSchema = new mogoose.Schema({
     timestamps: true,
 });
 
+// Index for faster queries
+
+
