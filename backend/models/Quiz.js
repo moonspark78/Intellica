@@ -76,4 +76,8 @@ const quizSchema = new mogoose.Schema({
 
 // Index for faster queries
 
+quizSchema.index({ userId: 1, documentId: 1 });
 
+const Quiz = mogoose.model('Quiz', quizSchema);
+
+export default Quiz;
