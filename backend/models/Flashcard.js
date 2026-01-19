@@ -24,7 +24,13 @@ const flashcardSchema = new mongoose.Schema({
             lastReviewed: {
                 type: Date,
                 default: null
-            }
-        }
-    ]
+            },
+            isStarred: {
+                type: Boolean,
+                default: false
+            },
+        },
+    ],
+    }, {
+    timestamps: true
 });
