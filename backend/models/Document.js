@@ -49,5 +49,11 @@ const documentSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    status: {},
+    status: {
+        type: String,
+        enum: ['processing', 'ready', 'failed'],
+        default: 'processing'
+    }
+    }, {
+        timestamps: true
 });
