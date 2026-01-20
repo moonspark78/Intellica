@@ -6,7 +6,13 @@ const documentSchema = new mongoose.Schema({
         ref: 'User',
         required: true
     },
-    title: {},
-    fileName: {},
+    title: {
+        type: String,
+        required: [true, "Please provide a title for the document"],
+        trim: true,
+    },
+    fileName: {
+        
+    },
     filePath: {},
 });
