@@ -12,7 +12,15 @@ const documentSchema = new mongoose.Schema({
         trim: true,
     },
     fileName: {
-        
+        type: String,
+        required: true
     },
-    filePath: {},
+    filePath: {
+        type: String,
+        required: true
+    },
+    fileSize: {
+        type: Number,
+        required: true
+    },
 });
