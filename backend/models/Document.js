@@ -57,3 +57,10 @@ const documentSchema = new mongoose.Schema({
     }, {
         timestamps: true
 });
+
+// Index for faster queries
+documentSchema.index({ userId: 1, uploadData: -1 });
+
+const Document = mongoose.model('Document', documentSchema);
+
+export default Document;
