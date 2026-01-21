@@ -6,5 +6,9 @@ const chatHistorySchema = new mongoose.Schema({
         ref: 'User',
         required: true
     },
-    documentId:{},
+    documentId:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Document',
+        required: true
+    },
 });
