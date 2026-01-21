@@ -11,4 +11,7 @@ const chatHistorySchema = new mongoose.Schema({
         ref: 'Document',
         required: true
     },
+    messages: [{
+        role: {},
+    }]
 });
