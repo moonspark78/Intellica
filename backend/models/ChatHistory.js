@@ -17,6 +17,9 @@ const chatHistorySchema = new mongoose.Schema({
             enum: ['user', 'assistant'],
             required: true
         },
-        content: {},
+        content: {
+            type: String,
+            required: true
+        },
     }]
 });
