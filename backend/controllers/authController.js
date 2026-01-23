@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
+import { use } from 'react';
 
 // Generate JWT Token
 const generateToken = (id) => {
@@ -14,6 +15,20 @@ const generateToken = (id) => {
 export const register = async (req, res) => {
     try {
         const { name, email, password } = req.body;
+
+        // Check if user already exists
+        const userExists = await User.findOne({ $or: [{ email }] });
+
+        if (userExists) {
+            return res.status(400).json({
+                success: false,
+                error:
+                    userExists.email === email
+                        ? 'Email already in use'
+                        : 'Username already in use',
+                statusCode: 400,
+            });
+        }
     }
     catch (error) {
         next(error);
