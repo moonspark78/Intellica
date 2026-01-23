@@ -54,4 +54,9 @@ export const updateProfile = async (req, res, next) => {
 // @desc   Change user password
 // @route  POST /api/auth/change-password
 // @access Private
-export const changePassword = async (req, res, next) => {};
+export const changePassword = async (req, res, next) => {
+    try {}
+    catch (error) {
+        next(error);
+    }
+};
