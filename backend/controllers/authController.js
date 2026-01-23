@@ -12,7 +12,9 @@ const generateToken = (id) => {
 // @route  POST /api/auth/register
 // @access Public
 export const register = async (req, res) => {
-    try {}
+    try {
+        const { name, email, password } = req.body;
+    }
     catch (error) {
         next(error);
     }
