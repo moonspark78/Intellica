@@ -43,7 +43,12 @@ export const getProfile = async (req, res, next) => {
 // @desc   Update user profile
 // @route  PUT /api/auth/profile
 // @access Private
-export const updateProfile = async (req, res, next) => {};
+export const updateProfile = async (req, res, next) => {
+    try {}
+    catch (error) {
+        next(error);
+    }
+};
 
 
 // @desc   Change user password
