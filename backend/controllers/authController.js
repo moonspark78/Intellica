@@ -29,6 +29,12 @@ export const register = async (req, res) => {
                 statusCode: 400,
             });
         }
+        // Create new user
+        const user = await User.create({
+            username,
+            email,
+            password,
+        });
     }
     catch (error) {
         next(error);
