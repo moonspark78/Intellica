@@ -32,7 +32,12 @@ export const login = async (req, res, next) => {
 // @desc   Get user profile
 // @route  GET /api/auth/profile
 // @access Private
-export const getProfile = async (req, res, next) => {};
+export const getProfile = async (req, res, next) => {
+    try {}
+    catch (error) {
+        next(error);
+    }
+};
 
 
 // @desc   Update user profile
