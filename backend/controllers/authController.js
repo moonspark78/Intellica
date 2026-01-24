@@ -38,6 +38,16 @@ export const register = async (req, res) => {
 
         // Generate token
         const token = generateToken(user._id);
+        res.status(201).json({
+            success: true,
+            data: {
+                user:{
+                    id: user._id,
+                    username: user.username,
+                    email: user.email,
+                },
+            }
+        });
     }
     catch (error) {
         next(error);
