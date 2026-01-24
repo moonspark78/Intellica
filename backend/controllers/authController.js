@@ -188,6 +188,26 @@ export const changePassword = async (req, res, next) => {
         }
         
         const user = await User.findById(req.user._id).select('+password');
+
+        // Check current password
+        const isMatch = await user.matchPassword(currentPassword);
+
+        if (!isMatch) {
+            return res.status(401).json({
+                success: false,
+                error: 'Current password is incorrect',
+                statusCode: 401,
+            });
+        }
+
+        // Update to new password
+        user.password = newPassword;
+        await user.save();
+        
+        res.status(200).json({
+            success: true,
+            message: "Password changed successfully",
+        });
     }
     catch (error) {
         next(error);
