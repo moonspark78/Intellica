@@ -49,7 +49,8 @@ export const register = async (req, res) => {
                     create
                 },
                 token,
-            }
+            },
+            message: "User registered successfully",
         });
     }
     catch (error) {
