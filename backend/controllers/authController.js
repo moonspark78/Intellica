@@ -176,7 +176,19 @@ export const updateProfile = async (req, res, next) => {
 // @route  POST /api/auth/change-password
 // @access Private
 export const changePassword = async (req, res, next) => {
-    try {}
+    try {
+        const { currentPassword, newPassword } = req.body;
+
+        if (!currentPassword || !newPassword) {
+            return res.status(400).json({
+                success: false,
+                error: 'Please provide current and new password',
+                statusCode: 400,
+            });
+        }
+        
+        const user = await User.findById(req.user._id).select('+password');
+    }
     catch (error) {
         next(error);
     }
