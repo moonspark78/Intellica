@@ -62,7 +62,16 @@ export const register = async (req, res, next) => {
 // @access Public
 export const login = async (req, res, next) => {
     try {
-        // Ajouter logique de login
+        const { email, password } = req.body;
+
+        // Validate input
+        if (!email || !password) {
+            return res.status(400).json({
+                success: false,
+                error: 'Please provide email and password',
+                statusCode: 400,
+            });
+        }
     }
     catch (error) {
         next(error);
