@@ -72,6 +72,42 @@ export const login = async (req, res, next) => {
                 statusCode: 400,
             });
         }
+        // Check for user (including password for comparison)
+        const user = await User.findOne({ email }).select('+password');
+
+        if (!user || !(await user.matchPassword(password))) {
+            return res.status(401).json({
+                success: false,
+                error: 'Invalid email or password',
+                statusCode: 401,
+            });
+        }
+
+        // Check password match
+        const isMatch = await user.matchPassword(password);
+
+        if (!isMatch) {
+            return res.status(401).json({
+                success: false,
+                error: 'Invalid credentials',
+                statusCode: 401,
+            });
+        }
+        // Generate token
+        const token = generateToken(user._id);
+
+        res.status(200).json({
+            success: true,
+            user: {
+                id: user._id,
+                username: user.username,
+                email: user.email,
+                profileImage: user.profileImage,
+            },
+            token,
+            message: "User logged in successfully",
+        });
+        
     }
     catch (error) {
         next(error);
