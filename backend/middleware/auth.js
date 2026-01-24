@@ -42,4 +42,13 @@ const protect = async (req, res, next) => {
         }
     }
 
+    if(!token){
+        return res.status(401).json({
+            success: false,
+            error: 'Not authorized, no token',
+            statusCode: 401
+        });
+    }
 };
+
+export default protect;
