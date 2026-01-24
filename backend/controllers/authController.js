@@ -11,7 +11,7 @@ const generateToken = (id) => {
 // @desc   Register a new user
 // @route  POST /api/auth/register
 // @access Public
-export const register = async (req, res) => {
+export const register = async (req, res, next) => {
     try {
         const { username, email, password } = req.body;
 
@@ -61,7 +61,9 @@ export const register = async (req, res) => {
 // @route  POST /api/auth/login
 // @access Public
 export const login = async (req, res, next) => {
-    try {}
+    try {
+        // Ajouter logique de login
+    }
     catch (error) {
         next(error);
     }
