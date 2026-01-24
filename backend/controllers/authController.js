@@ -45,7 +45,7 @@ export const register = async (req, res) => {
                     username: user.username,
                     email: user.email,
                     profileImage: user.profileImage,
-                    create
+                    createdAt: user.createdAt,
                 },
                 token,
             },
