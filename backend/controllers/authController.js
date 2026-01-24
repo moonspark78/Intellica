@@ -107,7 +107,7 @@ export const login = async (req, res, next) => {
             token,
             message: "User logged in successfully",
         });
-        
+
     }
     catch (error) {
         next(error);
@@ -119,7 +119,21 @@ export const login = async (req, res, next) => {
 // @route  GET /api/auth/profile
 // @access Private
 export const getProfile = async (req, res, next) => {
-    try {}
+    try {
+        const user = await User.findById(req.user.id);
+
+        res.status(200).json({
+            success: true,
+            data: {
+                id: user._id,
+                username: user.username,
+                email: user.email,
+                profileImage: user.profileImage,
+                createdAt: user.createdAt,
+                updatedAt: user.updatedAt,
+            },
+        });
+    }
     catch (error) {
         next(error);
     }
