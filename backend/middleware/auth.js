@@ -1,6 +1,3 @@
-// middleware/auth.js
-const protect = (req, res, next) => {
-    next();
-};
+import jwt from 'jsonwebtoken';
+import User from '../models/User.js';
 
-export default protect;
