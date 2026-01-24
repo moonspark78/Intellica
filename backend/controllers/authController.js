@@ -120,7 +120,7 @@ export const login = async (req, res, next) => {
 // @access Private
 export const getProfile = async (req, res, next) => {
     try {
-        const user = await User.findById(req.user.id);
+        const user = await User.findById(req.user._id);
 
         res.status(200).json({
             success: true,
@@ -144,7 +144,28 @@ export const getProfile = async (req, res, next) => {
 // @route  PUT /api/auth/profile
 // @access Private
 export const updateProfile = async (req, res, next) => {
-    try {}
+    try {
+        const { username, email, profileImage } = req.body;
+
+        const user = await User.findById(req.user._id);
+
+        if (username) user.username = username;
+        if (email) user.email = email;
+        if (profileImage) user.profileImage = profileImage;
+
+        await user.save();
+
+        res.status(200).json({
+            success: true,
+            data: {
+                id: user._id,
+                username: user.username,
+                email: user.email,
+                profileImage: user.profileImage,
+            },
+            message: "Profile updated successfully",
+        });
+    }
     catch (error) {
         next(error);
     }
