@@ -19,4 +19,11 @@ export const chunkText = (text, chunkSize = 500, overlap = 50)=> {
         .replace(/ \n/g, '\n')
         .trim();
 
+    // Try to split by paragraphs ( single or double newlines)
+    const paragraphs = cleanedText.split(/\n+/).filter(p => p.trim().length > 0);
+
+    const chunks = [];
+    let currentChunk = [];
+    let currentWordCount = 0;
+    let chunkIndex = 0;
 };
