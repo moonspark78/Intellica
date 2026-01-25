@@ -79,4 +79,5 @@ export const chunkText = (text, chunkSize = 500, overlap = 50) => {
         currentWordCount += paragraphWordCount;
     }
   }
+    // Add the last chunk
 };
