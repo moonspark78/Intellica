@@ -21,3 +21,18 @@ export const uploadDocument = async (req, res, next) => {
         next(error);
     }
 };
+
+
+
+// @desc   Get all documents
+// @route  GET /api/documents
+// @access Private
+export const getDocuments = async (req, res, next) => {};
+
+
+
+
+// @desc   Get a single document by ID with chunks
+// @route  GET /api/documents/:id
+// @access Private
+export const getDocument = async (req, res, next) => {};
