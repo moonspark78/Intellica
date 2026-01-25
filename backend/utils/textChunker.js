@@ -65,6 +65,18 @@ export const chunkText = (text, chunkSize = 500, overlap = 50) => {
             chunkIndex: chunkIndex++,
             pageNumber: 0,
         });
+
+        // Create overlap from previous chunk
+        const prevChunkText = currentChunk.join(" ");
+        const prevWords = prevChunkText.split(/\s+/);
+        const overlapText = prevWords.slice(-Math.min(overlap, prevWords.length)).join(" ");
+
+        currentChunk = [overlapText, paragraph.trim()];
+        currentWordCount = overlapText.split(/\s+/).length + paragraphWordCount;
+    }else {
+        // Add paragraph to current chunk
+        currentChunk.push(paragraph.trim());
+        currentWordCount += paragraphWordCount;
     }
   }
 };
