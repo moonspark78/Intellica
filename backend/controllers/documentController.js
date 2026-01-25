@@ -11,5 +11,13 @@ import mongoose from "mongoose";
 // @route  POST /api/documents/upload
 // @access Private
 export const uploadDocument = async (req, res, next) => {
-    try {} catch (error) {}
+    try {
+
+    } catch (error) {
+        // Clean up file on error
+        if (req.file) {
+            await fs.unlink(req.file.path).catch(() => {});
+        }
+        next(error);
+    }
 };
