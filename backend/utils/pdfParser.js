@@ -1,4 +1,3 @@
-import { info } from 'console';
 import fs from 'fs/promises';
 import { PDFParse } from 'pdf-parse';
 
@@ -14,7 +13,7 @@ export const extractTextFromPDF = async (filePath) => {
             // pdf-parse expects a Unint8Array, not a Buffer
             const parser = new PDFParse(new Uint8Array(dataBuffer));
             const data = await parser.getText();
-
+            
             return {
                 text: data.text,
                 numPages: data.numpages,
