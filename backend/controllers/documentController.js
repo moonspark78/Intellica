@@ -43,3 +43,9 @@ export const getDocument = async (req, res, next) => {};
 // @route DELETE /api/documents/:id
 // @access Private
 export const deleteDocument = async (req, res, next) => {};
+
+
+// @desc   Update document title
+// @route  PUT /api/documents/:id
+// @access Private
+export const updateDocument = async (req, res, next) => {};
