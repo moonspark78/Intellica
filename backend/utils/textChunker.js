@@ -26,4 +26,17 @@ export const chunkText = (text, chunkSize = 500, overlap = 50)=> {
     let currentChunk = [];
     let currentWordCount = 0;
     let chunkIndex = 0;
+
+    // If single paragraph exceeds chunkSize, split by words
+    if (paragraphWordCount > chunkSize) {
+        if (currentChunk.length > 0) {
+            chunks.push({
+                content: currentChunk.join('\n\n'),
+                chunkIndex: chunkIndex++,
+                pageNumber: 0
+            });
+            currentChunk = [];
+            currentWordCount = 0;
+        }
+    }
 };
