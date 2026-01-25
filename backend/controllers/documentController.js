@@ -36,3 +36,10 @@ export const getDocuments = async (req, res, next) => {};
 // @route  GET /api/documents/:id
 // @access Private
 export const getDocument = async (req, res, next) => {};
+
+
+
+// @desc Delete a document by ID
+// @route DELETE /api/documents/:id
+// @access Private
+export const deleteDocument = async (req, res, next) => {};
