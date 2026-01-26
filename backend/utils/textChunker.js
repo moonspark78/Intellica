@@ -79,5 +79,13 @@ export const chunkText = (text, chunkSize = 500, overlap = 50) => {
         currentWordCount += paragraphWordCount;
     }
   }
-    // Add the last chunk
+  // Add the last chunk
+  if (currentChunk.length > 0) {
+    chunks.push({
+      content: currentChunk.join("\n\n"),
+      chunkIndex: chunkIndex,
+      pageNumber: 0,
+    });
+  }
+
 };
