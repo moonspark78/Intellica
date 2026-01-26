@@ -102,5 +102,15 @@ export const chunkText = (text, chunkSize = 500, overlap = 50) => {
       if (i + chunkSize >= allWords.length) break;
     }
   }
-
+  return chunks;
 };
+
+
+
+/** 
+ *  Find relevant chunks based on keywords matching
+ *  @param {Array<Object>} chunks - Array of chunks
+ *  @param {string} query - Search query
+ *  @param {number} maxChunks - Maximum chunks to return
+ *  @returns {Array<Object>}
+*/
