@@ -114,3 +114,5 @@ export const chunkText = (text, chunkSize = 500, overlap = 50) => {
  *  @param {number} maxChunks - Maximum chunks to return
  *  @returns {Array<Object>}
 */
+
+export const findRelevantChunks = (chunks, query, maxChunks = 3) => {};
