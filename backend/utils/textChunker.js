@@ -88,4 +88,9 @@ export const chunkText = (text, chunkSize = 500, overlap = 50) => {
     });
   }
 
+  // Fallback: if no chunks created, split by words
+  if (chunks.length === 0 && cleanedText.length > 0){
+
+  }
+
 };
