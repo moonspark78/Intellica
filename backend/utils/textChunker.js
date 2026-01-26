@@ -93,7 +93,13 @@ export const chunkText = (text, chunkSize = 500, overlap = 50) => {
     const allWords = cleanedText.split(/\s+/);
     for (let i = 0; i < allWords.length; i += (chunkSize - overlap)) {
       const chunkWords = allWords.slice(i, i + chunkSize);
-      chunks.push({});
+      chunks.push({
+        content: chunkWords.join(" "),
+        chunkIndex: chunkIndex++,
+        pageNumber: 0,
+      });
+      
+      if (i + chunkSize >= allWords.length) break;
     }
   }
 
