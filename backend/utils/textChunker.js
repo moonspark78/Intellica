@@ -119,4 +119,18 @@ export const findRelevantChunks = (chunks, query, maxChunks = 3) => {
   if (!chunks || chunks.length === 0 || !query) {
     return [];
   }
+
+  // Common stop words to exclude
+  const stopWords = new Set([
+    'the', 'is', 'at', 'which', 'on', 'a', 'an', 'and', 'or', 'but',
+  'in', 'with', 'to', 'for', 'of', 'as', 'by', 'this', 'that', 'it'
+  ]);
+
+  // Extract and clean query words
+  const queryWords = query
+    .toLowerCase()
+    .split(/\s+/)
+    .filter(w => w.length > 2 && !stopWords.has(w)); 
+
+
 };
