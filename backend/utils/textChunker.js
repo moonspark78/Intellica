@@ -132,5 +132,14 @@ export const findRelevantChunks = (chunks, query, maxChunks = 3) => {
     .split(/\s+/)
     .filter(w => w.length > 2 && !stopWords.has(w)); 
 
+    if (queryWords.length === 0) {
+      // Return clean chunk objects without Mongoose metadata
+      return chunks.slice(0, maxChunks).map(chunk => ({
+        content: chunk.content,
+        chunkIndex: chunk.chunkIndex,
+        pageNumber: chunk.pageNumber,
+        _id: chunk._id
+      }));
+    }
 
 };
