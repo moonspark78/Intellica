@@ -146,6 +146,13 @@ export const findRelevantChunks = (chunks, query, maxChunks = 3) => {
       const content = chunk.content.toLowerCase();
       const contentWords = content.split(/\s+/).length;
       let score = 0;
+
+      // Score each query word
+      for (const word of queryWords) {
+        // Exact word match (higher score)
+        const exactMatches = (content.match(new RegExp(`\\b${word}\\b`, 'g')) || []).length;
+        score += exactMatches * 3;
+      }
     });
 
 };
