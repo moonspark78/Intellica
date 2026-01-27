@@ -187,7 +187,9 @@ export const findRelevantChunks = (chunks, query, maxChunks = 3) => {
     return scoredChunks
       .filter(chunk => chunk.score > 0)
       .sort((a,b) => {
-        
+        if(b.score !== a.score) {
+          return b.score - a.score;
+        }
       }) 
 
 };
