@@ -184,4 +184,7 @@ export const findRelevantChunks = (chunks, query, maxChunks = 3) => {
       };
     });
 
+    return scoredChunks
+      .filter(chunk => chunk.score > 0) 
+
 };
