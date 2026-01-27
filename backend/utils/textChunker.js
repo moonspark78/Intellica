@@ -142,4 +142,10 @@ export const findRelevantChunks = (chunks, query, maxChunks = 3) => {
       }));
     }
 
+    const scoredChunks = chunks.map((chunk, index) => {
+      const content = chunk.content.toLowerCase();
+      const contentWords = content.split(/\s+/).length;
+      let score = 0;
+    });
+
 };
