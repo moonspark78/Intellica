@@ -157,6 +157,14 @@ export const findRelevantChunks = (chunks, query, maxChunks = 3) => {
         const partialMatches = (content.match(new RegExp(word, 'g')) || []).length;
         score += Math.max(0, partialMatches - exactMatches) * 1.5;
       }
+
+      // Bonus: Multiple query words found
+      const uniqueWordsFound = queryWords.filter(word =>
+        content.includes(word)
+      ).length;
+      if (uniqueWordsFound > 1) {
+        score += uniqueWordsFound * 2;
+      }
     });
 
 };
