@@ -180,7 +180,7 @@ export const findRelevantChunks = (chunks, query, maxChunks = 3) => {
         _id: chunk._id,
         score: normalizedScore * positionBonus,
         rawScore: score,
-        
+        matchedWords: uniqueWordsFound
       };
     });
 
