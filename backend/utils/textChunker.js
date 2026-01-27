@@ -168,6 +168,9 @@ export const findRelevantChunks = (chunks, query, maxChunks = 3) => {
 
       // Normalize by content length
       const normalizedScore = score / Math.sqrt(contentWords);
+
+      // Small bonus for earlier chunks
+      const positionBonus = 1 - (index / chunks.length) * 0.1;
     });
 
 };
