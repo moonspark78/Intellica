@@ -193,6 +193,7 @@ export const findRelevantChunks = (chunks, query, maxChunks = 3) => {
         if (b.matchedWords !== a.matchedWords) {
           return b.matchedWords - a.matchedWords;
         }
-      }) 
-
+        return a.chunkIndex - b.chunkIndex;
+      })
+      .slice(0, maxChunks)
 };
