@@ -152,6 +152,10 @@ export const findRelevantChunks = (chunks, query, maxChunks = 3) => {
         // Exact word match (higher score)
         const exactMatches = (content.match(new RegExp(`\\b${word}\\b`, 'g')) || []).length;
         score += exactMatches * 3;
+
+        // Partial match (lower score)
+        const partialMatches = (content.match(new RegExp(word, 'g')) || []).length;
+        score += Math.max(0, partialMatches - exactMatches) * 1.5;
       }
     });
 
