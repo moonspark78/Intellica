@@ -31,10 +31,6 @@ export const getDocuments = async (req, res, next) => {
     try {
 
     } catch (error) {
-        // Clean up file on error
-        if (req.file) {
-            await fs.unlink(req.file.path).catch(() => {});
-        }
         next(error);
     }
 };
