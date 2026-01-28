@@ -41,7 +41,13 @@ export const getDocuments = async (req, res, next) => {
 // @desc   Get a single document by ID with chunks
 // @route  GET /api/documents/:id
 // @access Private
-export const getDocument = async (req, res, next) => {};
+export const getDocument = async (req, res, next) => {
+    try {
+
+    } catch (error) {
+        next(error);
+    }
+};
 
 
 
