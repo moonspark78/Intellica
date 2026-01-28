@@ -12,7 +12,9 @@ import mongoose from "mongoose";
 // @access Private
 export const uploadDocument = async (req, res, next) => {
     try {
-
+        if (!req.file) {
+            return res.status(400).json({})
+        }
     } catch (error) {
         // Clean up file on error
         if (req.file) {
