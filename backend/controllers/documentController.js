@@ -21,7 +21,8 @@ export const uploadDocument = async (req, res, next) => {
             })
         }
 
-        
+        const {title} = req.body;
+
         
     } catch (error) {
         // Clean up file on error
