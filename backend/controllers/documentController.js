@@ -1,3 +1,4 @@
+import { error } from "console";
 import  Document  from "../models/Document.js";
 import  Flashcard from '../models/Flashcard';
 import Quiz from '../models/Quiz';
@@ -13,8 +14,15 @@ import mongoose from "mongoose";
 export const uploadDocument = async (req, res, next) => {
     try {
         if (!req.file) {
-            return res.status(400).json({})
+            return res.status(400).json({
+                success: false,
+                error: "Please upload a PDF file.",
+                statusCode: 400
+            })
         }
+
+        
+        
     } catch (error) {
         // Clean up file on error
         if (req.file) {
