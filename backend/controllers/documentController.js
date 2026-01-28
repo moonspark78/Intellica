@@ -66,4 +66,10 @@ export const deleteDocument = async (req, res, next) => {
 // @desc   Update document title
 // @route  PUT /api/documents/:id
 // @access Private
-export const updateDocument = async (req, res, next) => {};
+export const updateDocument = async (req, res, next) => {
+    try {
+
+    } catch (error) {
+        next(error);
+    }
+};
