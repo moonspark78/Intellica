@@ -27,7 +27,17 @@ export const uploadDocument = async (req, res, next) => {
 // @desc   Get all documents
 // @route  GET /api/documents
 // @access Private
-export const getDocuments = async (req, res, next) => {};
+export const getDocuments = async (req, res, next) => {
+    try {
+
+    } catch (error) {
+        // Clean up file on error
+        if (req.file) {
+            await fs.unlink(req.file.path).catch(() => {});
+        }
+        next(error);
+    }
+};
 
 
 
