@@ -54,7 +54,13 @@ export const getDocument = async (req, res, next) => {
 // @desc Delete a document by ID
 // @route DELETE /api/documents/:id
 // @access Private
-export const deleteDocument = async (req, res, next) => {};
+export const deleteDocument = async (req, res, next) => {
+    try {
+
+    } catch (error) {
+        next(error);
+    }
+};
 
 
 // @desc   Update document title
