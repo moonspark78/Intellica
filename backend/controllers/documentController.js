@@ -1,4 +1,3 @@
-import { error } from "console";
 import  Document  from "../models/Document.js";
 import  Flashcard from '../models/Flashcard';
 import Quiz from '../models/Quiz';
@@ -23,7 +22,7 @@ export const uploadDocument = async (req, res, next) => {
 
         const {title} = req.body;
 
-        
+
     } catch (error) {
         // Clean up file on error
         if (req.file) {
