@@ -25,7 +25,9 @@ export const uploadDocument = async (req, res, next) => {
         if (!title) {
             // Delete uploaded file if no title provided
             await fs.unlink(req.file.path);
-            return res.status(400).json({});
+            return res.status(400).json({
+                success: false,
+            });
         }
 
 
