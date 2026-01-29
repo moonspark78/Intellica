@@ -47,6 +47,11 @@ export const uploadDocument = async (req, res, next) => {
             status: "processing"
         });
 
+        // Process PDF in background (in Production, use a queue like Bull)
+        processPDF(document, req.file.path).catch(err => {
+            console.error("Error processing PDF:", err);
+        });
+
 
     } catch (error) {
         // Clean up file on error
