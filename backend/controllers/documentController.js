@@ -55,6 +55,7 @@ export const uploadDocument = async (req, res, next) => {
         res.status(201).json({
             success: true,
             data: document,
+            message: "Document uploaded successfully. Processing in progress ..."
         });
 
 
