@@ -1,3 +1,4 @@
+import { error } from "console";
 import  Document  from "../models/Document.js";
 import  Flashcard from '../models/Flashcard';
 import Quiz from '../models/Quiz';
@@ -27,6 +28,7 @@ export const uploadDocument = async (req, res, next) => {
             await fs.unlink(req.file.path);
             return res.status(400).json({
                 success: false,
+                error: "Please provide a document title.",
             });
         }
 
