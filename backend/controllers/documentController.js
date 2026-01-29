@@ -29,8 +29,11 @@ export const uploadDocument = async (req, res, next) => {
             return res.status(400).json({
                 success: false,
                 error: "Please provide a document title.",
+                statusCode: 400
             });
         }
+
+        // Construct the URL for the uploaded file
 
 
     } catch (error) {
