@@ -34,6 +34,7 @@ export const uploadDocument = async (req, res, next) => {
         }
 
         // Construct the URL for the uploaded file
+        const baaseUrl = `http://localhost:${process.env.PORT || 8000}`;
 
 
     } catch (error) {
