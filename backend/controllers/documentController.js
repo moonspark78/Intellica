@@ -58,7 +58,6 @@ export const uploadDocument = async (req, res, next) => {
             message: "Document uploaded successfully. Processing in progress ..."
         });
 
-
     } catch (error) {
         // Clean up file on error
         if (req.file) {
@@ -67,6 +66,19 @@ export const uploadDocument = async (req, res, next) => {
         next(error);
     }
 };
+
+
+// Helper function to process PDF
+const processPDF = async (documentId, filePath) => {
+    try {
+        const {text} = await extractTextFromPDF(filePath);
+
+        // Create chunks
+        const chunks = chunkText(text, 500, 50); 
+    } catch (error) {}
+};
+
+
 
 
 
