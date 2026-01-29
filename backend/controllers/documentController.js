@@ -1,4 +1,3 @@
-import { error } from "console";
 import  Document  from "../models/Document.js";
 import  Flashcard from '../models/Flashcard';
 import Quiz from '../models/Quiz';
@@ -82,7 +81,15 @@ const processPDF = async (documentId, filePath) => {
             chunks: chunks,
             status: "ready"
         });
-    } catch (error) {}
+        
+        console.log(`Document ${documentId} processed successfully.`);
+    } catch (error) {
+        console.log(`Error processing document ${documentId}:`, error);
+        
+        await Document.findByIdAndUpdate(documentId, {
+            status: "failed"
+        });
+    }
 };
 
 
