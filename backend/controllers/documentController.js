@@ -38,7 +38,11 @@ export const uploadDocument = async (req, res, next) => {
         const fileUrl = `${baseUrl}/uploads/documents/${req.file.filename}`;
 
         // Create document record
-        const document = await Document.create({});
+        const document = await Document.create({
+            userId: req.user.id,
+            title,
+            fileName: req.file.originalname,
+        });
 
 
     } catch (error) {
