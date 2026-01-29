@@ -74,7 +74,14 @@ const processPDF = async (documentId, filePath) => {
         const {text} = await extractTextFromPDF(filePath);
 
         // Create chunks
-        const chunks = chunkText(text, 500, 50); 
+        const chunks = chunkText(text, 500, 50);
+
+        // Upadate document
+        await Document.findByIdAndUpdate(documentId, {
+            extractedText: text,
+            chunks: chunks,
+            status: "ready"
+        });
     } catch (error) {}
 };
 
