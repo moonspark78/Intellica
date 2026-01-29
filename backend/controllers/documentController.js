@@ -17,10 +17,15 @@ export const uploadDocument = async (req, res, next) => {
                 success: false,
                 error: "Please upload a PDF file.",
                 statusCode: 400
-            })
+            });
         }
 
         const {title} = req.body;
+
+        if (!title) {
+            // Delete uploaded file if no title provided
+            await fs.unlink(req.file.path);
+        }
 
 
     } catch (error) {
