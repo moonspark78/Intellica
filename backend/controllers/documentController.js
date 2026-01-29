@@ -101,6 +101,9 @@ const processPDF = async (documentId, filePath) => {
 // @access Private
 export const getDocuments = async (req, res, next) => {
     try {
+        const documents = await Document.aggregate([
+            
+        ]);
 
     } catch (error) {
         next(error);
