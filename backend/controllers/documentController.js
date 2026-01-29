@@ -42,6 +42,7 @@ export const uploadDocument = async (req, res, next) => {
             userId: req.user.id,
             title,
             fileName: req.file.originalname,
+            filePath: fileUrl, // Store the URL instead of the local path
         });
 
 
