@@ -52,6 +52,11 @@ export const uploadDocument = async (req, res, next) => {
             console.error("Error processing PDF:", err);
         });
 
+        res.status(201).json({
+            success: true,
+            data: document,
+        });
+
 
     } catch (error) {
         // Clean up file on error
