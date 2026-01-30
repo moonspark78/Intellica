@@ -135,6 +135,9 @@ export const getDocuments = async (req, res, next) => {
                     quizzes: 0
                 }
             },
+            {
+                $sort: { uploadDate: -1 } 
+            }
         ]);
     } catch (error) {
         next(error);
