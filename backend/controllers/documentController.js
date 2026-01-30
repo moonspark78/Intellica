@@ -132,6 +132,7 @@ export const getDocuments = async (req, res, next) => {
                     extractedText: 0,
                     chunks: 0,
                     flashcardSets: 0,
+                    quizzes: 0
                 }
             },
         ]);
