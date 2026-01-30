@@ -121,6 +121,12 @@ export const getDocuments = async (req, res, next) => {
                     as: 'quizzes'
                 }
             },
+            {
+                $addFields: {
+                    flashcardCount: { $size: '$flashcardSets' },
+                    quizCount: { $size: '$quizzes' }
+                }
+            },
         ]);
     } catch (error) {
         next(error);
