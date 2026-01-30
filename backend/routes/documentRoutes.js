@@ -1,4 +1,4 @@
-import espress from 'express';
+import express from 'express';
 import {
     uploadDocument,
     getDocuments,
@@ -8,9 +8,8 @@ import {
 } from '../controllers/documentController.js';
 import protect from '../middleware/auth.js';
 import upload from "../config/multer.js"
-import router from './authRoutes';
 
-const router = espress.Router();
+const router = express.Router();
 
 // All routes are protected
 router.use(protect);

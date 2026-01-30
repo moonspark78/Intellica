@@ -1,7 +1,6 @@
-import { count } from "console";
 import  Document  from "../models/Document.js";
-import  Flashcard from '../models/Flashcard';
-import Quiz from '../models/Quiz';
+import  Flashcard from '../models/Flashcard.js';
+import Quiz from '../models/Quiz.js';
 import {extractTextFromPDF} from '../utils/pdfParser.js';
 import {chunkText} from '../utils/textChunker.js';
 import fs from 'fs/promises';
@@ -48,7 +47,7 @@ export const uploadDocument = async (req, res, next) => {
         });
 
         // Process PDF in background (in Production, use a queue like Bull)
-        processPDF(document, req.file.path).catch(err => {
+        processPDF(document._id, req.file.path).catch(err => {
             console.error("Error processing PDF:", err);
         });
 
