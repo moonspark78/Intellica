@@ -127,6 +127,13 @@ export const getDocuments = async (req, res, next) => {
                     quizCount: { $size: '$quizzes' }
                 }
             },
+            {
+                $project: {
+                    extractedText: 0,
+                    chunks: 0,
+                    flashcardSets: 0,
+                }
+            },
         ]);
     } catch (error) {
         next(error);
