@@ -1,3 +1,4 @@
+import { count } from "console";
 import  Document  from "../models/Document.js";
 import  Flashcard from '../models/Flashcard';
 import Quiz from '../models/Quiz';
@@ -139,6 +140,12 @@ export const getDocuments = async (req, res, next) => {
                 $sort: { uploadDate: -1 } 
             }
         ]);
+
+        res.status(200).json({
+            success: true,
+            count: documents.length,
+            data: documents
+        });
     } catch (error) {
         next(error);
     }
