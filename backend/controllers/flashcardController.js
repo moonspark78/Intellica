@@ -19,3 +19,10 @@ export const getFlashcards = async (req, res, next) => {
 export const getAllFlashcardsSets = async (req, res, next) => {
     
 };
+
+// @desc Mark flashcard as reviewed
+// @route POST /api/flashcards/:cardId/review
+// @access Private
+export const reviewFlashcard = async (req, res, next) => {
+
+}
