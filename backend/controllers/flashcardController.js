@@ -26,3 +26,15 @@ export const getAllFlashcardsSets = async (req, res, next) => {
 export const reviewFlashcard = async (req, res, next) => {
 
 }
+
+
+// @desc Toggle star/favorite on flashcard
+// @route PUT /api/flashcards/:cardId/star
+// @access Private
+export const toggleStarFlashcard = async (req, res, next) => {};
+
+
+// @desc Delete a flashcard set
+// @route DELETE /api/flashcards/:id
+// @access Private
+export const deleteFlashcardSet = async (req, res, next) => {};
