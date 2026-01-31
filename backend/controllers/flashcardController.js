@@ -29,7 +29,7 @@ export const getFlashcards = async (req, res, next) => {
 // @access Private
 export const getAllFlashcardsSets = async (req, res, next) => {
     try {
-
+        const flashcardSets = await Flashcard.find({ userId: req.user._id })
     } catch (error) {
         next(error);
     }
