@@ -227,15 +227,3 @@ export const deleteDocument = async (req, res, next) => {
         next(error);
     }
 };
-
-
-// @desc   Update document title
-// @route  PUT /api/documents/:id
-// @access Private
-export const updateDocument = async (req, res, next) => {
-    try {
-
-    } catch (error) {
-        next(error);
-    }
-};
