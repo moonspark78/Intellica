@@ -200,7 +200,10 @@ export const getDocument = async (req, res, next) => {
 // @access Private
 export const deleteDocument = async (req, res, next) => {
     try {
-
+        const document = await Document.findOne({
+            _id: req.params.id,
+            userId: req.user._id
+        })
     } catch (error) {
         next(error);
     }
