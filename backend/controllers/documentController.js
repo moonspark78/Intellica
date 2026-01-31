@@ -212,6 +212,9 @@ export const deleteDocument = async (req, res, next) => {
                 statusCode: 404
             });
         }
+
+        // Delete file from filesystem
+        await fs.unlink(document.filePath).catch(() => {});
     } catch (error) {
         next(error);
     }
