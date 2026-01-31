@@ -183,6 +183,11 @@ export const getDocument = async (req, res, next) => {
         const documentData = document.toObject();
         documentData.flashcardCount = flashcardCount;
         documentData.quizCount = quizCount;
+
+        res.status(200).json({
+            success: true,
+            data: documentData
+        });
     } catch (error) {
         next(error);
     }
