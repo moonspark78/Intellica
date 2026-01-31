@@ -11,3 +11,11 @@ export const getFlashcards = async (req, res, next) => {
         next(error);
     }
 };
+
+
+// @desc Get all flashcard sets for the user
+// @route GET /api/flashcards
+// @access Private
+export const getAllFlashcardsSets = async (req, res, next) => {
+    
+};
