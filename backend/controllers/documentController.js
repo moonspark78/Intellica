@@ -158,7 +158,7 @@ export const getDocuments = async (req, res, next) => {
 // @access Private
 export const getDocument = async (req, res, next) => {
     try {
-
+        const document = await Document.findOne({})
     } catch (error) {
         next(error);
     }
