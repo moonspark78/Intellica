@@ -178,6 +178,11 @@ export const getDocument = async (req, res, next) => {
         // Update last accessed
         document.lastAccessed = Date.now();
         await document.save(); 
+
+        // Combine document data with counts
+        const documentData = document.toObject();
+        documentData.flashcardCount = flashcardCount;
+        documentData.quizCount = quizCount;
     } catch (error) {
         next(error);
     }
