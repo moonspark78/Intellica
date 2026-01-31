@@ -203,7 +203,15 @@ export const deleteDocument = async (req, res, next) => {
         const document = await Document.findOne({
             _id: req.params.id,
             userId: req.user._id
-        })
+        });
+
+        if (!document) {
+            return res.status(404).json({
+                success: false,
+                error: "Document not found.",
+                statusCode: 404
+            });
+        }
     } catch (error) {
         next(error);
     }
