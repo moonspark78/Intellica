@@ -30,6 +30,14 @@ export const getFlashcards = async (req, res, next) => {
 export const getAllFlashcardsSets = async (req, res, next) => {
     try {
         const flashcardSets = await Flashcard.find({ userId: req.user._id })
+          .populate('documentId', 'title')
+          .sort({ createdAt: -1 });
+        
+        res.status(200).json({
+            success: true,
+            count: flashcardSets.length,
+            data: flashcardSets
+        });
     } catch (error) {
         next(error);
     }
