@@ -60,6 +60,10 @@ export const reviewFlashcard = async (req, res, next) => {
                 statusCode: 404
             });
         }
+
+        const cardIndex = flashcardSet.cards.findIndex(card => card._id.toString() === req.params.cardId);
+
+
     } catch (error) {
         next(error);
     }
