@@ -56,7 +56,7 @@ export const reviewFlashcard = async (req, res, next) => {
         if (!flashcardSet) {
             return res.status(404).json({
                 success: false, 
-                message: 'Flashcard set or card not found',
+                error: 'Flashcard set or card not found',
                 statusCode: 404
             });
         }
@@ -66,9 +66,14 @@ export const reviewFlashcard = async (req, res, next) => {
         if (cardIndex === -1) {
             return res.status(404).json({
                 success: false,
+                error: "Card not found in set",
+                statusCode: 404
             });
         }
 
+        // Update review info
+        flashcardSet.cards[cardIndex].lastReviewed = new Date();
+        flashcardSet.cards[cardIndex].reviewCount += 1;
     } catch (error) {
         next(error);
     }
