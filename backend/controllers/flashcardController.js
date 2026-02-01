@@ -119,7 +119,13 @@ export const toggleStarFlashcard = async (req, res, next) => {
         flashcardSet.cards[cardIndex].isStarred = !flashcardSet.cards[cardIndex].isStarred;
 
         await flashcardSet.save();
-        
+
+        res.status(200).json({
+            success: true,
+            data: flashcardSet,
+            message: `Flashcard ${flashcardSet.cards[cardIndex].isStarred ? 'starred' : 'unstarred'}`
+        });
+
     } catch (error) {
         next(error);
     }
