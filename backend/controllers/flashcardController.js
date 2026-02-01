@@ -48,7 +48,10 @@ export const getAllFlashcardsSets = async (req, res, next) => {
 // @access Private
 export const reviewFlashcard = async (req, res, next) => {
     try {
-
+        const flashcardSet = await Flashcard.findOne({
+            "cards._id": req.params.cardId,
+            userId: req.user._id
+        });
     } catch (error) {
         next(error);
     }
