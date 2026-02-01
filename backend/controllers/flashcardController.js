@@ -114,6 +114,12 @@ export const toggleStarFlashcard = async (req, res, next) => {
                 statusCode: 404
             });
         }
+
+        // Toggle star 
+        flashcardSet.cards[cardIndex].isStarred = !flashcardSet.cards[cardIndex].isStarred;
+
+        await flashcardSet.save();
+        
     } catch (error) {
         next(error);
     }
