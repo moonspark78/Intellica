@@ -150,6 +150,13 @@ export const deleteFlashcardSet = async (req, res, next) => {
             });
         }
 
+        await flashcardSet.deleteOne();
+
+        res.status(200).json({
+            success: true,
+            message: 'Flashcard set deleted successfully'
+        });
+
 
     } catch (error) {
         next(error);
