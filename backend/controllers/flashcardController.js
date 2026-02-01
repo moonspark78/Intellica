@@ -97,6 +97,14 @@ export const toggleStarFlashcard = async (req, res, next) => {
             "cards._id": req.params.cardId,
             userId: req.user._id
         });
+
+        if (!flashcardSet) {
+            return res.status(404).json({
+                success: false,
+                error: 'Flashcard set or card not found',
+                statusCode: 404
+            });
+        }
     } catch (error) {
         next(error);
     }
