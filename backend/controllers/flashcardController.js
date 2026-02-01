@@ -77,7 +77,11 @@ export const reviewFlashcard = async (req, res, next) => {
 
         await flashcardSet.save();
 
-        
+        res.status(200).json({
+            success: true,
+            data: flashcardSet,
+            message: 'Flashcard reviewed successfully'
+        });
     } catch (error) {
         next(error);
     }
