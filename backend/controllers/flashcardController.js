@@ -141,6 +141,16 @@ export const deleteFlashcardSet = async (req, res, next) => {
             _id: req.params.id,
             userId: req.user._id
         });
+
+        if (!flashcardSet) {
+            return res.status(404).json({
+                success: false,
+                error: 'Flashcard set not found',
+                statusCode: 404
+            });
+        }
+
+
     } catch (error) {
         next(error);
     }
