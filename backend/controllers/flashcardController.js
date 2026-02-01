@@ -63,6 +63,11 @@ export const reviewFlashcard = async (req, res, next) => {
 
         const cardIndex = flashcardSet.cards.findIndex(card => card._id.toString() === req.params.cardId);
 
+        if (cardIndex === -1) {
+            return res.status(404).json({
+                success: false,
+            });
+        }
 
     } catch (error) {
         next(error);
