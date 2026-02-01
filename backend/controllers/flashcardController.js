@@ -57,6 +57,7 @@ export const reviewFlashcard = async (req, res, next) => {
             return res.status(404).json({
                 success: false, 
                 message: 'Flashcard set or card not found',
+                statusCode: 404
             });
         }
     } catch (error) {
