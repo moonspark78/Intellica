@@ -52,6 +52,13 @@ export const reviewFlashcard = async (req, res, next) => {
             "cards._id": req.params.cardId,
             userId: req.user._id
         });
+
+        if (!flashcardSet) {
+            return res.status(404).json({
+                success: false, 
+                message: 'Flashcard set or card not found',
+            });
+        }
     } catch (error) {
         next(error);
     }
