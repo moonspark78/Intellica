@@ -38,3 +38,9 @@ export const chat = async (req, res, next) => {};
 // @route     POST /api/ai/explain-concept
 // @access    Private
 export const explainConcept = async (req, res, next) => {};
+
+
+// @desc      Get chat history for a document
+// @route     GET /api/ai/chat-history/:documentId
+// @access    Private
+export const getChatHistory = async (req, res, next) => {};
