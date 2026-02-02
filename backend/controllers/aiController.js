@@ -27,3 +27,8 @@ export const generateQuiz = async (req, res, next) => {};
 // @route     POST /api/ai/generate-summary
 // @access    Private
 export const generateSummary = async (req, res, next) => {};
+
+// @desc      Chat with document
+// @route     POST /api/ai/chat
+// @access    Private
+export const chat = async (req, res, next) => {};
