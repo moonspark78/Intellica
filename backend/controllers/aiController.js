@@ -11,8 +11,13 @@ import { findRelevantChunks } from '../utils/textChunker.js'
 // @access    Private
 export const generateFlashcards = async (req, res, next) => {
     try {
-        
+
     } catch (error) {
         next(error);
     }
 };
+
+// @desc      Generate a quiz from a document
+// @route     POST /api/ai/generate-quiz
+// @access    Private
+export const generateQuiz = async (req, res, next) => {};
