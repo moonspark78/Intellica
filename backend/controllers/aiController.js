@@ -9,3 +9,4 @@ import { findRelevantChunks } from '../utils/textChunker.js'
 // @desc      Generate flashcards from a document
 // @route     POST /api/ai/generate-flashcards
 // @access    Private
+export const generateFlashcards = async (req, res, next) => {};
