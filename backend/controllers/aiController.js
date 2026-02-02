@@ -32,3 +32,9 @@ export const generateSummary = async (req, res, next) => {};
 // @route     POST /api/ai/chat
 // @access    Private
 export const chat = async (req, res, next) => {};
+
+
+// @desc     Explain a concept from  document
+// @route     POST /api/ai/explain-concept
+// @access    Private
+export const explainConcept = async (req, res, next) => {};
