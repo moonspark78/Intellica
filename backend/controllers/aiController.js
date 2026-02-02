@@ -21,3 +21,9 @@ export const generateFlashcards = async (req, res, next) => {
 // @route     POST /api/ai/generate-quiz
 // @access    Private
 export const generateQuiz = async (req, res, next) => {};
+
+
+// @desc      Generate document summary
+// @route     POST /api/ai/generate-summary
+// @access    Private
+export const generateSummary = async (req, res, next) => {};
