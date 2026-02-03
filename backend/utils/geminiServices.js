@@ -19,5 +19,7 @@ if (!process.env.GEMINI_API_KEY) {
  *  @returns {Promise<Array<{question: string, answer: string, difficulty: string}>>} -
  * */
 export const generateFlashcards = async (text, count = 10) => {
-    
+    const prompt = `Generate exactly ${count} educational flashcards from the following text.
+    Format each flashcard as:
+    Q:  [Clear, specific question]` 
 };
