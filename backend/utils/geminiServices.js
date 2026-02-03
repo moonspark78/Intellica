@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import { GoogleGenAI } from "@google/genai";
 import { generateFlashcards } from '../controllers/aiController';
+import Flashcard from '../models/Flashcard';
 
 dotenv.config();
 
@@ -37,5 +38,9 @@ export const generateFlashcards = async (text, count = 10) => {
         });
 
         const generatedText = response.text;
+
+        // Parse the response
+        const flashcards = [];
+        const cards = generatedText.split('---').filter(c => c.trim()); 
     }
 };
