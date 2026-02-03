@@ -21,5 +21,9 @@ if (!process.env.GEMINI_API_KEY) {
 export const generateFlashcards = async (text, count = 10) => {
     const prompt = `Generate exactly ${count} educational flashcards from the following text.
     Format each flashcard as:
-    Q:  [Clear, specific question]` 
+    Q:  [Clear, specific question]
+    A:  [Concise, accurate answer]
+    D:  [Difficulty level: easy, medium or hard]
+    
+    Separate each flashcard with "---"` 
 };
