@@ -28,5 +28,9 @@ export const generateFlashcards = async (text, count = 10) => {
     Separate each flashcard with "---"
     
     Text:
-    ${text.substring(0, 15000)}`; 
+    ${text.substring(0, 15000)}`;
+    
+    try {
+        const response = await ai.models.generateContent({}):
+    }
 };
