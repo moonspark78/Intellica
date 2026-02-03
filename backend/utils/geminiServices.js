@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
 import { GoogleGenAI } from "@google/genai";
+import { generateFlashcards } from '../controllers/aiController';
 
 dotenv.config();
 
@@ -17,3 +18,6 @@ if (!process.env.GEMINI_API_KEY) {
  *  @param {number} count - Number of flashcards to generate
  *  @returns {Promise<Array<{question: string, answer: string, difficulty: string}>>} -
  * */
+export const generateFlashcards = async (text, count = 10) => {
+    
+};
