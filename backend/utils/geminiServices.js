@@ -25,5 +25,8 @@ export const generateFlashcards = async (text, count = 10) => {
     A:  [Concise, accurate answer]
     D:  [Difficulty level: easy, medium or hard]
     
-    Separate each flashcard with "---"` 
+    Separate each flashcard with "---"
+    
+    Text:
+    ${text.substring(0, 15000)}`; 
 };
