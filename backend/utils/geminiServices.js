@@ -35,5 +35,7 @@ export const generateFlashcards = async (text, count = 10) => {
             model: "gemini-2.5-flash-lite",
             contents: prompt,
         });
+
+        const generatedText = response.text;
     }
 };
