@@ -88,5 +88,8 @@ export const generateQuiz = async (text, numQuestions = 5) => {
     O4: [Option 4]
     C: [Correct option - exactly as written above]
     E: [Brief explanation]
+    D: [Difficulty level: easy, medium or hard]
+
+    Separate questions with "---"
     `
 };
