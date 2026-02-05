@@ -59,6 +59,10 @@ export const generateFlashcards = async (text, count = 10) => {
                     }
                 } 
             }
+
+            if (question && answer) {
+                flashcards.push({ question, answer, difficulty });
+            }
         }
     }
 };
