@@ -66,5 +66,7 @@ export const generateFlashcards = async (text, count = 10) => {
         }
 
         return flashcards.slice(0, count); // Return only the requested number of flashcards
-    } catch (error) {}
+    } catch (error) {
+        console.error("Gemini API error:", error);
+    }
 };
