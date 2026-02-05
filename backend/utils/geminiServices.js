@@ -71,3 +71,10 @@ export const generateFlashcards = async (text, count = 10) => {
         throw new Error("Failed to generate flashcards.");
     }
 };
+
+/**
+ *  Generate quiz questions
+ * 
+ * 
+ * 
+ * */
