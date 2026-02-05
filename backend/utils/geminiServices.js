@@ -81,5 +81,12 @@ export const generateFlashcards = async (text, count = 10) => {
 export const generateQuiz = async (text, numQuestions = 5) => {
     const prompt = `Generate exactly ${numQuestions} multiple choice questions from the following text.
     Format each question as:
+    Q: [Question]
+    O1: [Option 1]
+    O2: [Option 2]
+    O3: [Option 3]
+    O4: [Option 4]
+    C: [Correct option - exactly as written above]
+    E: [Brief explanation]
     `
 };
