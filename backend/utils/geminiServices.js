@@ -54,7 +54,10 @@ export const generateFlashcards = async (text, count = 10) => {
                     answer = line.substring(2).trim();
                 } else if (line.startsWith('D:')) {
                     const diff = line.substring(2).trim().toLowerCase();
-                }
+                    if (['easy', 'medium', 'hard'].includes(diff)) {
+                        difficulty = diff;
+                    }
+                } 
             }
         }
     }
