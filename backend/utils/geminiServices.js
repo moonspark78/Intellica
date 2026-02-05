@@ -45,6 +45,7 @@ export const generateFlashcards = async (text, count = 10) => {
 
         for (const card of cards) {
             const lines = card.trim().split('\n');
+            let question = '', answer = '', difficulty = 'medium';
         }
     }
 };
