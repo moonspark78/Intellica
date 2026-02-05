@@ -46,6 +46,16 @@ export const generateFlashcards = async (text, count = 10) => {
         for (const card of cards) {
             const lines = card.trim().split('\n');
             let question = '', answer = '', difficulty = 'medium';
+
+            for (const line of lines) {
+                if (line.startsWith('Q:')) {
+                    question = line.substring(2).trim();
+                } else if (line.startsWith('A:')) {
+                    answer = line.substring(2).trim();
+                } else if (line.startsWith('D:')) {
+                    const diff = line.substring(2).trim().toLowerCase();
+                }
+            }
         }
     }
 };
