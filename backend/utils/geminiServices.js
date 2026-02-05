@@ -79,5 +79,7 @@ export const generateFlashcards = async (text, count = 10) => {
  *  @returns {Promise<Array<{question: string, options: Array, correctAnswer: string, explanation: string, difficulty: string}>>} -
  * */
 export const generateQuiz = async (text, numQuestions = 5) => {
-    
+    const prompt = `Generate exactly ${numQuestions} multiple choice questions from the following text.
+    Format each question as:
+    `
 };
