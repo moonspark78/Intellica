@@ -42,5 +42,9 @@ export const generateFlashcards = async (text, count = 10) => {
         // Parse the response
         const flashcards = [];
         const cards = generatedText.split('---').filter(c => c.trim()); 
+
+        for (const card of cards) {
+            const lines = card.trim().split('\n');
+        }
     }
 };
