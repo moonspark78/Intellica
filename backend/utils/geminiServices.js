@@ -64,5 +64,7 @@ export const generateFlashcards = async (text, count = 10) => {
                 flashcards.push({ question, answer, difficulty });
             }
         }
-    }
+
+        return flashcards.slice(0, count); // Return only the requested number of flashcards
+    } catch (error) {}
 };
