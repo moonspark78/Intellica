@@ -74,7 +74,7 @@ export const generateFlashcards = async (text, count = 10) => {
 
 /**
  *  Generate quiz questions
- * 
- * 
- * 
+ *  @param {string} text - Document text
+ *  @param {number} numQuestions - Number of questions
+ *  @returns {Promise<Array<{question: string, options: Array, correctAnswer: string, explanation: string, difficulty: string}>>} -
  * */
