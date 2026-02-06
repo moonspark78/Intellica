@@ -104,5 +104,9 @@ export const generateQuiz = async (text, numQuestions = 5) => {
 
         const questions = [];
         const questionBlocks = generatedText.split('---').filter(q => q.trim());
+
+        for (const block of questionBlocks) {
+            const lines = block.trim().split('\n');
+        }
     }
 };
