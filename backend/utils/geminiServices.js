@@ -93,4 +93,11 @@ export const generateQuiz = async (text, numQuestions = 5) => {
     Separate questions with "---"
     Text:
     ${text.substring(0, 15000)}`;
+
+    try {
+        const response = await ai.models.generateContent({
+            model: "gemini-2.5-flash-lite", 
+            contents: prompt,
+        });
+    }
 };
