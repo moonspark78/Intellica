@@ -108,6 +108,10 @@ export const generateQuiz = async (text, numQuestions = 5) => {
         for (const block of questionBlocks) {
             const lines = block.trim().split('\n');
             let question = '', options = [], correctAnswer = '', explanation = '', difficulty = 'medium';
+
+            for (const line of lines) {
+                const trimmed = line.trim();
+            }
         }
     }
 };
