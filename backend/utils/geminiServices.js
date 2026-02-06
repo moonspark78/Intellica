@@ -111,7 +111,25 @@ export const generateQuiz = async (text, numQuestions = 5) => {
 
             for (const line of lines) {
                 const trimmed = line.trim();
+                if (trimmed.startsWith('Q:')) {
+                    question = trimmed.substring(2).trim();
+                } else if (trimmed.match(/^O\d:/)) { 
+                    options.push(trimmed.substring(3).trim());
+                } else if (trimmed.startsWith('C:')) {
+                    correctAnswer = trimmed.substring(2).trim();
+                } else if (trimmed.startsWith('E:')) {
+                    explanation = trimmed.substring(2).trim();
+                } else if (trimmed.startsWith('D:')) {
+                    const diff = trimmed.substring(2).trim().toLowerCase();
+                    if (['easy', 'medium', 'hard'].includes(diff)) {
+                        difficulty = diff;
+                    }
+                }
             }
-        }
-    }
+            if (question && options.length === 4 && correctAnswer) {
+                questions.push({ question, options, correctAnswer, explanation, difficulty });
+            }
+    } 
+    return questions.slice(0, numQuestions);
+    } catch (error) {}
 };
