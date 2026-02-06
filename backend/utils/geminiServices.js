@@ -131,5 +131,7 @@ export const generateQuiz = async (text, numQuestions = 5) => {
             }
     } 
     return questions.slice(0, numQuestions);
-    } catch (error) {}
+    } catch (error) {
+        console.error("Gemini API error:", error);
+    }
 };
