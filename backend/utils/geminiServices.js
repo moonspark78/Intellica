@@ -99,5 +99,7 @@ export const generateQuiz = async (text, numQuestions = 5) => {
             model: "gemini-2.5-flash-lite", 
             contents: prompt,
         });
+
+        const generatedText = response.text;
     }
 };
