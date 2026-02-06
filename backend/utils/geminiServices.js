@@ -91,5 +91,6 @@ export const generateQuiz = async (text, numQuestions = 5) => {
     D: [Difficulty level: easy, medium or hard]
 
     Separate questions with "---"
-    `
+    Text:
+    ${text.substring(0, 15000)}`;
 };
