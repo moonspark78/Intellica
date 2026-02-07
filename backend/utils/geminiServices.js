@@ -145,3 +145,4 @@ export const generateQuiz = async (text, numQuestions = 5) => {
  * @param {string} text - Document text
  * @returns {Promise<string>}
  * */
+export const generateSummary = async (text) => {};
