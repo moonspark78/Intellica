@@ -145,4 +145,10 @@ export const generateQuiz = async (text, numQuestions = 5) => {
  * @param {string} text - Document text
  * @returns {Promise<string>}
  * */
-export const generateSummary = async (text) => {};
+export const generateSummary = async (text) => {
+  const prompt = `Provide a concise summary of the following text, highlighting the key concepts, main ideas, and important points.
+  Keep the summary clear and structured.
+  
+  Text:
+  ${text.substring(0, 20000)}`;
+};
