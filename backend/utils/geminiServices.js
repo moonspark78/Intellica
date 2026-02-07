@@ -151,4 +151,12 @@ export const generateSummary = async (text) => {
   
   Text:
   ${text.substring(0, 20000)}`;
+
+  try {
+    const response = await ai.models.generateContent({
+      model: "gemini-2.5-flash-lite",
+      contents: prompt,
+    });
+  } catch (error) {}
+
 };
