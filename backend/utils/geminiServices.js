@@ -168,6 +168,6 @@ export const generateSummary = async (text) => {
 /**
  * Chat with document context
  * @param {string} question - User's question
- * 
- * 
+ * @param {Array<Object>} chunks - Relevant text chunks
+ * @param {Promise<string>}
 */
