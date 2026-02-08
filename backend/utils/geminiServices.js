@@ -176,5 +176,11 @@ export const chatWithContext = async (question, chunks) => {
 
   const prompt = `Based on the following context from a document, Analyse the context and answer the user's question.
   If the answer is not in the context, say so.
-  `
+
+  Context:
+  ${context}
+
+  Question: ${question}
+
+  Answer:`;
 };
