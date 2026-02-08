@@ -173,4 +173,7 @@ export const generateSummary = async (text) => {
 */
 export const chatWithContext = async (question, chunks) => {
   const context = chunks.map((c, i) => `[Chunk ${i +1}]\n${c.content}`).join("\n\n");
+
+  console.log("context____", context);
+  
 };
