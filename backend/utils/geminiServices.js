@@ -189,5 +189,7 @@ export const chatWithContext = async (question, chunks) => {
       model: "gemini-2.5-flash-lite",
       contents: prompt,
     });
+    const generatedText = response.text;
+    return generatedText
   } catch (error) {}
 };
