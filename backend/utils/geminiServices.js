@@ -163,5 +163,11 @@ export const generateSummary = async (text) => {
     console.error("Gemini API error:", error);
     throw new Error("Failed to generate summary.");
   }
-
 };
+
+/**
+ * Chat with document context
+ * @param {string} question - User's question
+ * 
+ * 
+*/
