@@ -191,5 +191,7 @@ export const chatWithContext = async (question, chunks) => {
     });
     const generatedText = response.text;
     return generatedText
-  } catch (error) {}
+  } catch (error) {
+    console.error("Gemini API error:", error);
+  }
 };
