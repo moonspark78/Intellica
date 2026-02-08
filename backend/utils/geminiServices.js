@@ -171,3 +171,6 @@ export const generateSummary = async (text) => {
  * @param {Array<Object>} chunks - Relevant text chunks
  * @param {Promise<string>}
 */
+export const chatWithContext = async (question, chunks) => {
+  const context = chunks.map((c, i) => `[Chunk ${i +1}]\n${c.content}`).join("\n\n");
+};
