@@ -210,4 +210,6 @@ export const explainConcept = async (concept, context) => {
   
   Context:
   ${context.substring(0, 10000)}`;
+
+  try {} catch (error) {}
 };
