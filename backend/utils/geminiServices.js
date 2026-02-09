@@ -203,3 +203,4 @@ export const chatWithContext = async (question, chunks) => {
  * @param {string} context - Relevant context
  * @returns {Promise<string>}
  */
+export const explainConcept = async (concept, context) => {};
