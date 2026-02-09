@@ -199,7 +199,7 @@ export const chatWithContext = async (question, chunks) => {
 
 /**
  * Explain a specific concept
- * 
- * 
- *  
+ * @param {string} concept - Concept to explain
+ * @param {string} context - Relevant context
+ * @returns {Promise<string>}
  */
