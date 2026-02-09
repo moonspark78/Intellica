@@ -218,5 +218,8 @@ export const explainConcept = async (concept, context) => {
     });
     const generatedText = response.text;
     return generatedText
-  } catch (error) {}
+  } catch (error) {
+    console.error("Gemini API error:", error);
+    throw new Error("Failed to explain concept");
+  }
 };
