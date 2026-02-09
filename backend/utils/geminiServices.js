@@ -196,3 +196,10 @@ export const chatWithContext = async (question, chunks) => {
     throw new Error("Failed to process chat request");
   }
 };
+
+/**
+ * Explain a specific concept
+ * 
+ * 
+ *  
+ */
