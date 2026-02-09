@@ -15,8 +15,13 @@ export const generateFlashcards = async (req, res, next) => {
         const { documentId, count = 10 } = req.body;
 
         if (!documentId) {
-            return res.status(400).json({})
+            return res.status(400).json({
+                success: false,
+                error: "Please provide documentId",
+                statusCode: 400
+            })
         }
+        
     } catch (error) {
         next(error);
     }
