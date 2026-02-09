@@ -4,6 +4,7 @@ import Quiz from '../models/Quiz.js';
 import ChatMessage from '../models/ChatMessage.js';
 import * as geminiService from '../utils/geminiServices.js';
 import { findRelevantChunks } from '../utils/textChunker.js'
+import { body } from 'express-validator';
 
 
 // @desc      Generate flashcards from a document
@@ -11,7 +12,11 @@ import { findRelevantChunks } from '../utils/textChunker.js'
 // @access    Private
 export const generateFlashcards = async (req, res, next) => {
     try {
+        const { documentId, count = 10 } = req.body;
 
+        if (!documentId) {
+            return res.status(400).json({})
+        }
     } catch (error) {
         next(error);
     }
