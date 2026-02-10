@@ -37,8 +37,11 @@ export const generateFlashcards = async (req, res, next) => {
 
         // Generate flashcards using Gemini
         const cards = await geminiService.generateFlashcards(
-            document.extractedText
+            document.extractedText,
+            parseInt(count)
         );
+
+        // Save to database
 
     } catch (error) {
         next(error);
