@@ -23,8 +23,8 @@ export const generateFlashcards = async (req, res, next) => {
         }
         const document = await Document.findOne({
             _id: documentId,
-            userId: req.user._id
-            
+            userId: req.user._id,
+            status: 'ready'
         });
     } catch (error) {
         next(error);
