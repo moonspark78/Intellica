@@ -1,7 +1,5 @@
 import dotenv from "dotenv";
 import { GoogleGenAI } from "@google/genai";
-import { generateFlashcards } from "../controllers/aiController";
-import Flashcard from "../models/Flashcard";
 
 dotenv.config();
 
