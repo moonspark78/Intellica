@@ -28,7 +28,10 @@ export const generateFlashcards = async (req, res, next) => {
         });
 
         if (!document) {
-            return res.status(404).json({});
+            return res.status(404).json({
+                success: false,
+                error: 'Document not found or not ready'
+            });
         }
 
     } catch (error) {
