@@ -68,7 +68,13 @@ export const generateFlashcards = async (req, res, next) => {
 // @desc      Generate a quiz from a document
 // @route     POST /api/ai/generate-quiz
 // @access    Private
-export const generateQuiz = async (req, res, next) => {};
+export const generateQuiz = async (req, res, next) => {
+    try {
+        
+    } catch (error) {
+        
+    }
+};
 
 
 // @desc      Generate document summary
