@@ -54,6 +54,10 @@ export const generateFlashcards = async (req, res, next) => {
             }))
         });
 
+        res.status(201).json({
+            success: true,
+        })
+
     } catch (error) {
         next(error);
     }
