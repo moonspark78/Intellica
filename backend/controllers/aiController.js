@@ -42,6 +42,10 @@ export const generateFlashcards = async (req, res, next) => {
         );
 
         // Save to database
+        const flashcardSet = await Flashcard.create({
+            userId: req.user._id,
+            documentId: document._id,
+        });
 
     } catch (error) {
         next(error);
