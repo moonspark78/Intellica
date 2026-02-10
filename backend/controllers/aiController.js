@@ -26,6 +26,11 @@ export const generateFlashcards = async (req, res, next) => {
             userId: req.user._id,
             status: 'ready'
         });
+
+        if (!document) {
+            return res.status(404).json({});
+        }
+
     } catch (error) {
         next(error);
     }
