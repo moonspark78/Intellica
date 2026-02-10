@@ -56,6 +56,8 @@ export const generateFlashcards = async (req, res, next) => {
 
         res.status(201).json({
             success: true,
+            data: flashcardSet,
+            message: 'Flashcards generated sucessfully'
         })
 
     } catch (error) {
