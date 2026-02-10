@@ -86,6 +86,12 @@ export const generateQuiz = async (req, res, next) => {
             status: 'ready'
         });
 
+        if (!document) {
+            return res.status(404).json({
+                success: false,
+            });
+        }
+
     } catch (error) {
         next(error)
     }
