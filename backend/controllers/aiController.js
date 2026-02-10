@@ -94,6 +94,9 @@ export const generateQuiz = async (req, res, next) => {
             });
         }
 
+        // Generate quiz using Gemini
+        const questions = await geminiService.generateQuiz();
+
     } catch (error) {
         next(error)
     }
