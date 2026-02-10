@@ -45,6 +45,7 @@ export const generateFlashcards = async (req, res, next) => {
         const flashcardSet = await Flashcard.create({
             userId: req.user._id,
             documentId: document._id,
+            cards: cards.map(card => ({}))
         });
 
     } catch (error) {
