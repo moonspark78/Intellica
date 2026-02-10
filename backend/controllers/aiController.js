@@ -73,7 +73,11 @@ export const generateQuiz = async (req, res, next) => {
         const { documentId, numQuestions = 5, title } = req.body;
 
         if (!documentId) {
-            return res.status(400).json({});
+            return res.status(400).json({
+                success: false,
+                error: "Please provide documentId",
+                statusCode: 400
+            });
         }
 
     } catch (error) {
