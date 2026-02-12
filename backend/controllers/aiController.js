@@ -137,7 +137,13 @@ export const generateSummary = async (req, res, next) => {
 // @desc      Chat with document
 // @route     POST /api/ai/chat
 // @access    Private
-export const chat = async (req, res, next) => {};
+export const chat = async (req, res, next) => {
+    try {
+        
+    } catch (error) {
+        next(error)
+    }
+};
 
 
 // @desc     Explain a concept from  document
