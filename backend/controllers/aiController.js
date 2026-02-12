@@ -149,7 +149,13 @@ export const chat = async (req, res, next) => {
 // @desc     Explain a concept from  document
 // @route     POST /api/ai/explain-concept
 // @access    Private
-export const explainConcept = async (req, res, next) => {};
+export const explainConcept = async (req, res, next) => {
+    try {
+        
+    } catch (error) {
+        next(error)
+    }
+};
 
 
 // @desc      Get chat history for a document
