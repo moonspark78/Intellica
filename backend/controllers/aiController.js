@@ -101,7 +101,10 @@ export const generateQuiz = async (req, res, next) => {
         );
 
         // Save to database
-        const quiz = await Quiz.create({});
+        const quiz = await Quiz.create({
+            userId: req.user._id,
+            documentId: document._id,
+        });
 
     } catch (error) {
         next(error)
