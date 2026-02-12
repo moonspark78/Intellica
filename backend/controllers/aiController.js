@@ -100,6 +100,9 @@ export const generateQuiz = async (req, res, next) => {
             parseInt(numQuestions)
         );
 
+        // Save to database
+        const quiz = await Quiz.create({});
+
     } catch (error) {
         next(error)
     }
