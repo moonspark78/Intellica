@@ -126,7 +126,13 @@ export const generateQuiz = async (req, res, next) => {
 // @desc      Generate document summary
 // @route     POST /api/ai/generate-summary
 // @access    Private
-export const generateSummary = async (req, res, next) => {};
+export const generateSummary = async (req, res, next) => {
+    try {
+        
+    } catch (error) {
+        next(error)
+    }
+};
 
 // @desc      Chat with document
 // @route     POST /api/ai/chat
