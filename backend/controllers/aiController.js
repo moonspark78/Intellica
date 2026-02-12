@@ -106,6 +106,8 @@ export const generateQuiz = async (req, res, next) => {
             documentId: document._id,
             title: title || `${document.title} - Quiz`,
             questions: questions,
+            totalQuestions: questions.length,
+            userAnswers: [],
         });
 
     } catch (error) {
