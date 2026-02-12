@@ -108,6 +108,13 @@ export const generateQuiz = async (req, res, next) => {
             questions: questions,
             totalQuestions: questions.length,
             userAnswers: [],
+            score: 0
+        });
+
+        res.status(201).json({
+            success: true,
+            data: quiz,
+            message: 'Quiz generated successfully'
         });
 
     } catch (error) {
