@@ -145,7 +145,11 @@ export const generateSummary = async (req, res, next) => {
         });
 
         if (!document) {
-            return res.status(404).json({});
+            return res.status(404).json({
+                success: false,
+                error: 'Document not found or not ready',
+                statusCode: 404
+            });
         }
     } catch (error) {
         next(error)
