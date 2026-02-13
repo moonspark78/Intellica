@@ -159,6 +159,12 @@ export const generateSummary = async (req, res, next) => {
 
         res.status(200).json({
             success: true,
+            data: {
+                documentId: document._id,
+                title: document.title,
+                summary
+            },
+            message: 'Summary generated successfully'
         });
     } catch (error) {
         next(error)
