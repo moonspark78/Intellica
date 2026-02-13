@@ -151,6 +151,11 @@ export const generateSummary = async (req, res, next) => {
                 statusCode: 404
             });
         }
+
+        // Generate summary using Gemini
+        const summary = await geminiService.generateSummary(
+            document.extractedText
+        );
     } catch (error) {
         next(error)
     }
