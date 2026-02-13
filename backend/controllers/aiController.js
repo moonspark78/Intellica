@@ -129,6 +129,12 @@ export const generateQuiz = async (req, res, next) => {
 export const generateSummary = async (req, res, next) => {
     try {
         const { documentId } = req.body;
+
+        if (!documentId) {
+            return res.status(400).json({
+                success: false,
+            });
+        }
     } catch (error) {
         next(error)
     }
