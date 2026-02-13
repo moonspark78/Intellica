@@ -133,6 +133,8 @@ export const generateSummary = async (req, res, next) => {
         if (!documentId) {
             return res.status(400).json({
                 success: false,
+                error: 'Please provide documentId',
+                statusCode: 400
             });
         }
     } catch (error) {
