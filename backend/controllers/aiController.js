@@ -156,6 +156,10 @@ export const generateSummary = async (req, res, next) => {
         const summary = await geminiService.generateSummary(
             document.extractedText
         );
+
+        res.status(200).json({
+            success: true,
+        });
     } catch (error) {
         next(error)
     }
