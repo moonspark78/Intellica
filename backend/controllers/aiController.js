@@ -128,7 +128,7 @@ export const generateQuiz = async (req, res, next) => {
 // @access    Private
 export const generateSummary = async (req, res, next) => {
     try {
-        
+        const { documentId } = req.body;
     } catch (error) {
         next(error)
     }
