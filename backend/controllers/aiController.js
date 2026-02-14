@@ -178,7 +178,12 @@ export const chat = async (req, res, next) => {
     try {
         const {documentId, question} = req.body;
         
-        if (!documentId || !question) {}
+        if (!documentId || !question) {
+            return res.status(400).json({
+                success: false,
+                error: 'Please provide documentId and question',
+            });
+        }
     } catch (error) {
         next(error)
     }
