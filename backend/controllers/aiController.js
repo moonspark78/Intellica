@@ -177,6 +177,8 @@ export const generateSummary = async (req, res, next) => {
 export const chat = async (req, res, next) => {
     try {
         const {documentId, question} = req.body;
+        
+        if (!documentId || !question) {}
     } catch (error) {
         next(error)
     }
