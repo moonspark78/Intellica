@@ -199,6 +199,9 @@ export const chat = async (req, res, next) => {
                 statusCode: 404
             });
         }
+
+        // Find relevant chunks
+        const relevantChunks = findRelevantChunks(document.chunks, question, 3);
     } catch (error) {
         next(error)
     }
