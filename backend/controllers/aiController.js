@@ -4,7 +4,6 @@ import Quiz from '../models/Quiz.js';
 import ChatHistory from '../models/ChatHistory.js';
 import * as geminiService from '../utils/geminiServices.js';
 import { findRelevantChunks } from '../utils/textChunker.js'
-import ChatHistory from '../models/ChatHistory.js';
 
 
 
@@ -206,10 +205,13 @@ export const chat = async (req, res, next) => {
         const chunkIndices = relevantChunks.map(c => c.chunkIndex);
 
         // Get or create chat history
-        let ChatHistory = await ChatHistory.findOne({
+        let chatHistory = await ChatHistory.findOne({
             userId: req.user._id,
             documentId: document._id
         });
+
+        if(!chatHistory) {}
+
     } catch (error) {
         next(error)
     }
