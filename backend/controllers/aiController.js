@@ -185,6 +185,8 @@ export const chat = async (req, res, next) => {
                 statusCode: 400
             });
         }
+
+        const document = await Document.findOne({});
     } catch (error) {
         next(error)
     }
