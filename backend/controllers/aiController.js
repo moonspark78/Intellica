@@ -213,6 +213,8 @@ export const chat = async (req, res, next) => {
         if(!chatHistory) {
             chatHistory = await ChatHistory.create({
                 userId: req.user._id,
+                documentId: document._id,
+                messages: []
             });
         }
 
