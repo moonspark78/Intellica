@@ -206,7 +206,9 @@ export const chat = async (req, res, next) => {
         const chunkIndices = relevantChunks.map(c => c.chunkIndex);
 
         // Get or create chat history
-        let ChatHistory = await ChatHistory.findOne({});
+        let ChatHistory = await ChatHistory.findOne({
+            userId: req.user._id,
+        });
     } catch (error) {
         next(error)
     }
