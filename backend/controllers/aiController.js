@@ -186,7 +186,10 @@ export const chat = async (req, res, next) => {
             });
         }
 
-        const document = await Document.findOne({});
+        const document = await Document.findOne({
+            _id: documentId,
+            userId: req.user._id,
+        });
     } catch (error) {
         next(error)
     }
