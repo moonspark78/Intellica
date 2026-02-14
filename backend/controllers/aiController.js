@@ -208,6 +208,7 @@ export const chat = async (req, res, next) => {
         // Get or create chat history
         let ChatHistory = await ChatHistory.findOne({
             userId: req.user._id,
+            documentId: document._id
         });
     } catch (error) {
         next(error)
