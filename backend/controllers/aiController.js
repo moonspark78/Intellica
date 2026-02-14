@@ -202,6 +202,7 @@ export const chat = async (req, res, next) => {
 
         // Find relevant chunks
         const relevantChunks = findRelevantChunks(document.chunks, question, 3);
+        const chunkIndices = relevantChunks.map(c => c.chunkIndex);
     } catch (error) {
         next(error)
     }
