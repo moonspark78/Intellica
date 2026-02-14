@@ -182,6 +182,7 @@ export const chat = async (req, res, next) => {
             return res.status(400).json({
                 success: false,
                 error: 'Please provide documentId and question',
+                statusCode: 400
             });
         }
     } catch (error) {
