@@ -210,7 +210,11 @@ export const chat = async (req, res, next) => {
             documentId: document._id
         });
 
-        if(!chatHistory) {}
+        if(!chatHistory) {
+            chatHistory = await ChatHistory.create({
+                userId: req.user._id,
+            });
+        }
 
     } catch (error) {
         next(error)
