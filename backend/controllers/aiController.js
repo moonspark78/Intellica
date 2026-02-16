@@ -237,6 +237,8 @@ export const chat = async (req, res, next) => {
             }
         );
 
+        await chatHistory.save();
+
     } catch (error) {
         next(error)
     }
