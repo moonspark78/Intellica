@@ -220,6 +220,10 @@ export const chat = async (req, res, next) => {
 
         // Generate response using Gemini
         const answer = await geminiService.chatWithContext(question, relevantChunks);
+
+        // Save conversation
+        chatHistory.messages.push();
+
     } catch (error) {
         next(error)
     }
