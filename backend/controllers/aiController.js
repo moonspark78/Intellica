@@ -219,7 +219,7 @@ export const chat = async (req, res, next) => {
         }
 
         // Generate response using Gemini
-
+        const answer = await geminiService.chatWithContext(question, relevantChunks);
     } catch (error) {
         next(error)
     }
