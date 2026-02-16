@@ -227,6 +227,7 @@ export const chat = async (req, res, next) => {
                 role: 'user',
                 content: question,
                 timestamp: new Date(),
+                relevantChunks: []
             },
             {}
         );
