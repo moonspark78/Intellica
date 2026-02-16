@@ -231,6 +231,8 @@ export const chat = async (req, res, next) => {
             },
             {
                 role: 'assistant',
+                content: answer,
+                timestamp: new Date(),
             }
         );
 
