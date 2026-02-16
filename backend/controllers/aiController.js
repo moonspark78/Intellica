@@ -229,7 +229,9 @@ export const chat = async (req, res, next) => {
                 timestamp: new Date(),
                 relevantChunks: []
             },
-            {}
+            {
+                role: 'assistant',
+            }
         );
 
     } catch (error) {
