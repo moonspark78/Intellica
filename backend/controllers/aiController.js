@@ -218,6 +218,8 @@ export const chat = async (req, res, next) => {
             });
         }
 
+        // Generate response using Gemini
+
     } catch (error) {
         next(error)
     }
