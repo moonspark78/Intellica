@@ -222,7 +222,14 @@ export const chat = async (req, res, next) => {
         const answer = await geminiService.chatWithContext(question, relevantChunks);
 
         // Save conversation
-        chatHistory.messages.push();
+        chatHistory.messages.push(
+            {
+                role: 'user',
+                content: question,
+                timestamp: new Date(),
+            },
+            {}
+        );
 
     } catch (error) {
         next(error)
