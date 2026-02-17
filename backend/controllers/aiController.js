@@ -245,6 +245,7 @@ export const chat = async (req, res, next) => {
                 question,
                 answer,
                 relevantChunks: chunkIndices,
+                chatHistoryId: chatHistory._id
             },
         });
 
