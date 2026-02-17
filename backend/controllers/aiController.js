@@ -266,6 +266,8 @@ export const explainConcept = async (req, res, next) => {
         if (!documentId || !concept) {
             return res.status(400).json({
                 success: false,
+                error: 'Please provide documentId and concept',
+                statusCode: 400
             });
         }
     } catch (error) {
