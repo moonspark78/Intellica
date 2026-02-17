@@ -243,6 +243,8 @@ export const chat = async (req, res, next) => {
             success: true,
             data: {
                 question,
+                answer,
+                relevantChunks: chunkIndices,
             },
         });
 
