@@ -262,6 +262,12 @@ export const chat = async (req, res, next) => {
 export const explainConcept = async (req, res, next) => {
     try {
         const { documentId, concept } = req.body;
+
+        if (!documentId || !concept) {
+            return res.status(400).json({
+                success: false,
+            });
+        }
     } catch (error) {
         next(error)
     }
