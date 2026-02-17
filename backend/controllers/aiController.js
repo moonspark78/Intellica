@@ -247,6 +247,7 @@ export const chat = async (req, res, next) => {
                 relevantChunks: chunkIndices,
                 chatHistoryId: chatHistory._id
             },
+            message: 'Response generated successfully'
         });
 
     } catch (error) {
