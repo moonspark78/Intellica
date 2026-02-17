@@ -261,7 +261,7 @@ export const chat = async (req, res, next) => {
 // @access    Private
 export const explainConcept = async (req, res, next) => {
     try {
-        
+        const { documentId, concept } = req.body;
     } catch (error) {
         next(error)
     }
