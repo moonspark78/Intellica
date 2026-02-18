@@ -277,7 +277,9 @@ export const explainConcept = async (req, res, next) => {
             status: 'ready'
         });
 
-        if (!document) {}
+        if (!document) {
+            return res.status(404).json({});
+        }
 
     } catch (error) {
         next(error)
