@@ -274,6 +274,7 @@ export const explainConcept = async (req, res, next) => {
         const document = await Document.findOne({
             _id: documentId,
             userId: req.user._id,
+            status: 'ready'
         });
 
     } catch (error) {
