@@ -294,6 +294,9 @@ export const explainConcept = async (req, res, next) => {
 
         res.status(200).json({
             success: true,
+            data: {
+                concept,
+            },
         });
 
     } catch (error) {
