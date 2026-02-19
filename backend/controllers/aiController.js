@@ -299,8 +299,8 @@ export const explainConcept = async (req, res, next) => {
                 explanation,
                 relevantChunks: relevantChunks.map(c => c.chunkIndex)
             },
+            message: 'Explanation generated successfully'
         });
-
     } catch (error) {
         next(error)
     }
