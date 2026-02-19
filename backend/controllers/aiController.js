@@ -285,6 +285,9 @@ export const explainConcept = async (req, res, next) => {
             });
         }
 
+        // Find relevant chunks for the concept
+        const relevantChunks = findRelevantChunks(document.chunks, concept, 3);
+
     } catch (error) {
         next(error)
     }
