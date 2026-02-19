@@ -296,6 +296,7 @@ export const explainConcept = async (req, res, next) => {
             success: true,
             data: {
                 concept,
+                explanation,
             },
         });
 
