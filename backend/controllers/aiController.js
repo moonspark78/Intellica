@@ -290,7 +290,7 @@ export const explainConcept = async (req, res, next) => {
         const context = relevantChunks.map(c => c.content).join('\n\n');
 
         // Generate explanation using Gemini
-        
+        const explanation = await geminiService.explainConcept(concept, context);
 
     } catch (error) {
         next(error)
