@@ -287,6 +287,7 @@ export const explainConcept = async (req, res, next) => {
 
         // Find relevant chunks for the concept
         const relevantChunks = findRelevantChunks(document.chunks, concept, 3);
+        const context = relevantChunks.map(c => c.content).join('\n\n');
 
     } catch (error) {
         next(error)
