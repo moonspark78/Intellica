@@ -297,6 +297,7 @@ export const explainConcept = async (req, res, next) => {
             data: {
                 concept,
                 explanation,
+                relevantChunks: relevantChunks.map(c => c.chunkIndex)
             },
         });
 
