@@ -289,6 +289,9 @@ export const explainConcept = async (req, res, next) => {
         const relevantChunks = findRelevantChunks(document.chunks, concept, 3);
         const context = relevantChunks.map(c => c.content).join('\n\n');
 
+        // Generate explanation using Gemini
+        
+
     } catch (error) {
         next(error)
     }
