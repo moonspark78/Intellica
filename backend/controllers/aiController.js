@@ -321,6 +321,8 @@ export const getChatHistory = async (req, res, next) => {
                 statusCode: 400
             });
         }
+
+        const ChatHistory = await chatHistory.findOne({});
     } catch (error) {
         next(error)
     }
