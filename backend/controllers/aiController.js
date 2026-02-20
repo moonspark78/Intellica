@@ -318,6 +318,7 @@ export const getChatHistory = async (req, res, next) => {
             return res.status(400).json({
                 success: false,
                 error: 'Please provide documentId',
+                statusCode: 400
             });
         }
     } catch (error) {
