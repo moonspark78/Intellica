@@ -312,7 +312,7 @@ export const explainConcept = async (req, res, next) => {
 // @access    Private
 export const getChatHistory = async (req, res, next) => {
     try {
-        
+        const { documentId } = req.params;
     } catch (error) {
         next(error)
     }
