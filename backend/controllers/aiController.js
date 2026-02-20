@@ -313,6 +313,10 @@ export const explainConcept = async (req, res, next) => {
 export const getChatHistory = async (req, res, next) => {
     try {
         const { documentId } = req.params;
+
+        if (!documentId) {
+            return res.status(400).json({});
+        }
     } catch (error) {
         next(error)
     }
