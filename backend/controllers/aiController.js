@@ -322,7 +322,10 @@ export const getChatHistory = async (req, res, next) => {
             });
         }
 
-        const ChatHistory = await chatHistory.findOne({});
+        const ChatHistory = await chatHistory.findOne({
+            userId: req.user._id,
+            documentId: documentId
+        });
     } catch (error) {
         next(error)
     }
