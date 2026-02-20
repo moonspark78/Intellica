@@ -315,7 +315,9 @@ export const getChatHistory = async (req, res, next) => {
         const { documentId } = req.params;
 
         if (!documentId) {
-            return res.status(400).json({});
+            return res.status(400).json({
+                success: false,
+            });
         }
     } catch (error) {
         next(error)
