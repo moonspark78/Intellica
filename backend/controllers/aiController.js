@@ -335,6 +335,10 @@ export const getChatHistory = async (req, res, next) => {
             });
         }
 
+        res.status(200).json({
+            success: true,
+        });
+
     } catch (error) {
         next(error)
     }
