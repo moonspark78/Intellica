@@ -328,7 +328,9 @@ export const getChatHistory = async (req, res, next) => {
         }).select('messages'); // Only retrieve the messages array
 
         if (!chatHistory) {
-            return res.status(200).json({});
+            return res.status(200).json({
+                success: true,
+            });
         }
 
     } catch (error) {
