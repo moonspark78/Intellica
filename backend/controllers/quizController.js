@@ -3,7 +3,13 @@ import Quiz from '../models/Quiz.js';
 // @desc Get all quizzes for a document
 // @route GET /api/quizzes/:documentId
 // @access Private
-export const getQuizzes = async (req, res, next) => {}; 
+export const getQuizzes = async (req, res, next) => {
+    try {
+        
+    } catch (error) {
+        next(error);
+    }
+}; 
 
 // @desc Get a single quiz by ID
 // @route GET /api/quizzes/quiz/:id
