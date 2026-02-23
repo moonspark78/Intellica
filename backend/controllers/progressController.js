@@ -20,6 +20,12 @@ export const getDashboard = async (req, res, next) => {
         let totalFlashcards = 0;
         let reviewedFlashcards = 0;
         let starredFlashcards = 0;
+
+        flashcardSets.forEach(set => {
+            totalFlashcards += set.cards.length;
+            reviewedFlashcards += set.cards.filter(c => c.reviewCount > 0).length;
+            starredFlashcards += set.cards.filter(c => c.isStarred).length;
+        })
     } catch (error) {
         next(error);
     }
