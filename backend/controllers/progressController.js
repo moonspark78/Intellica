@@ -14,6 +14,12 @@ export const getDashboard = async (req, res, next) => {
         const totalFlashcardSets = await Flashcard.countDocuments({userId});
         const totalQuizzes = await Quiz.countDocuments({userId});
         const completedQuizzes = await Quiz.countDocuments({userId, completedAt: {$ne: null}});
+
+        // Get flashcard statistics
+        const flashcardSets = await Flashcard.find({userId});
+        let totalFlashcards = 0;
+        let reviewedFlashcards = 0;
+        let starredFlashcards = 0;
     } catch (error) {
         next(error);
     }
