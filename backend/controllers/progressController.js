@@ -47,6 +47,27 @@ export const getDashboard = async (req, res, next) => {
 
         // Study streak (simplified - in production, track daily activity)
         const studyStreak = Math.floor(Math.random() * 7) +1; // Mock data
+        
+        res.status(200).json({
+            success: true,
+            data: {
+                overview: {
+                    totalDocuments,
+                    totalFlashcardSets,
+                    totalFlashcards,
+                    reviewedFlashcards,
+                    starredFlashcards,
+                    totalQuizzes,
+                    completedQuizzes,
+                    averageScore,
+                    studyStreak
+                },
+                recentActivity: {
+                    documents: recentDocuments,
+                    quizzes: recentQuizzes
+                }
+            }
+        });
     } catch (error) {
         next(error);
     }
