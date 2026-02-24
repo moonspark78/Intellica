@@ -17,5 +17,6 @@ export const API_PATHS = {
     },
     AI: {
         GENERATE_FLASHCARDS: "/api/ai/generate-flashcards",
+        GENERATE_QUIZ: "/api/ai/generate-quiz",
     },
 };
