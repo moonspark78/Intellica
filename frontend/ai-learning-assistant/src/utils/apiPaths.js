@@ -8,4 +8,8 @@ export const API_PATHS = {
         UPDATE_PROFILE: "/api/auth/profile",
         CHANGE_PASSWORD: "/api/auth/change-password",
     },
+    DOCUMENTS: {
+        UPLOAD: "/api/documents/upload",
+        GET_DOCUMENTS: "/api/documents",
+    },
 };
