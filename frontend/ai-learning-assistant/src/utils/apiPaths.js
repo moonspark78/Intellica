@@ -15,4 +15,7 @@ export const API_PATHS = {
         UPDATE_DOCUMENT: (id) => `/api/documents/${id}`,
         DELETE_DOCUMENT: (id) => `/api/documents/${id}`,
     },
+    AI: {
+        GENERATE_FLASHCARDS: "/api/ai/generate-flashcards",
+    },
 };
