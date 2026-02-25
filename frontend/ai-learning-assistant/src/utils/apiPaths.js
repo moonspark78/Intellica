@@ -37,4 +37,7 @@ export const API_PATHS = {
         GET_QUIZ_RESULTS: (id) => `/api/quizzes/${id}/results`,
         DELETE_QUIZ: (id) => `/api/quizzes/${id}`,
     },
+    PROGRESS: {
+        GET_DASHBOARD: "/api/progress/dashboard",
+    },
 };
