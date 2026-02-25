@@ -30,4 +30,8 @@ export const API_PATHS = {
         TOGGLE_STAR: (cardId) => `/api/flashcards/${cardId}/star`,
         DELETE_FLASHCARD_SET: (id) => `/api/flashcards/${id}`,
     },
+    QUIZZES: {
+        GET_QUIZZES_FOR_DOC: (documentId) => `/api/quizzes/${documentId}`,
+        GET_QUIZ_BY_ID: (id) => `/api/quizzes/quiz/${id}`,
+    },
 };
