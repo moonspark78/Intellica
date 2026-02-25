@@ -23,4 +23,7 @@ export const API_PATHS = {
         EXPLAIN_CONCEPT: "/api/ai/explain-concept",
         GET_CHAT_HISTORY: (documentId) => `/api/ai/chat-history/${documentId}`,
     },
+    FLASHCARDS: {
+        GET_ALL_FLASHCARDS_SETS: "/api/flashcards",
+    },
 };
