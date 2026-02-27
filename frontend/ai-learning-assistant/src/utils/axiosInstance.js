@@ -9,3 +9,10 @@ const axiosInstance = axios.create({
         Accept: 'application/json',
     }, 
 });
+
+// Request Interceptor
+axiosInstance.interceptors.request.use(
+    (config) => {
+        const accessToken = localStorage.getItem("token");
+    }
+);
