@@ -23,3 +23,11 @@ axiosInstance.interceptors.request.use(
         return Promise.reject(error);
     }
 );
+
+// Response Interceptor
+axiosInstance.interceptors.response.use(
+    (response) => {
+        return response;
+    },
+
+);
