@@ -29,5 +29,14 @@ axiosInstance.interceptors.response.use(
     (response) => {
         return response;
     },
-
-);
+    (error) => {
+        if (error.response) {
+            if (error.response.status === 500) {
+                console.error("Server error. Please try again later.");
+            }
+        } else if (error.code === 'ECONNABORTED') {
+            console.error("Request timed out. Please try again.");
+        }
+        return Promise.reject(error);
+    }
+); 
