@@ -53,3 +53,13 @@ const changePassword = async (passwords) => {
         throw error.response?.data || { message: 'An unknown error occurred.' };
     }
 };
+
+const authService = {
+    login,
+    register,
+    getProfile,
+    updateProfile,
+    changePassword
+};
+
+export default authService;
