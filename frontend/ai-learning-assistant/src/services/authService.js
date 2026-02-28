@@ -38,7 +38,8 @@ const getProfile = async () => {
 
 const updateProfile = async (userData) => {
     try {
-        
+        const response = await axiosInstance.put(API_PATHS.AUTH.UPDATE_PROFILE, userData);
+        return response.data;
     } catch (error) {
         throw error.response?.data || { message: 'An unknown error occurred.' };
     }
