@@ -35,3 +35,11 @@ const getProfile = async () => {
         throw error.response?.data || { message: 'An unknown error occurred.' };
     }
 };
+
+const updateProfile = async (userData) => {
+    try {
+        
+    } catch (error) {
+        throw error.response?.data || { message: 'An unknown error occurred.' };
+    }
+};
