@@ -29,7 +29,8 @@ const register = async (username, email, password) => {
 
 const getProfile = async () => {
     try { 
-        
+        const response = await axiosInstance.get(API_PATHS.AUTH.GET_PROFILE);
+        return response.data;
     } catch (error) {
         throw error.response?.data || { message: 'An unknown error occurred.' };
     }
