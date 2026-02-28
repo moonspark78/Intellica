@@ -1,6 +1,6 @@
 import axiosInstance from '../utils/axiosInstance';
 import { API_PATHS } from '../utils/apiPaths';
-import { getProfile } from '../../../../backend/controllers/authController';
+import { getProfile, changePassword } from '../../../../backend/controllers/authController';
 
 const login = async (email, password) => {
     try {
@@ -40,6 +40,14 @@ const updateProfile = async (userData) => {
     try {
         const response = await axiosInstance.put(API_PATHS.AUTH.UPDATE_PROFILE, userData);
         return response.data;
+    } catch (error) {
+        throw error.response?.data || { message: 'An unknown error occurred.' };
+    }
+};
+
+const changePassword = async (passwords) => {
+    try {
+        
     } catch (error) {
         throw error.response?.data || { message: 'An unknown error occurred.' };
     }
