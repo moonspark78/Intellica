@@ -22,9 +22,20 @@ const registerValidation = [
         .isEmail()
         .normalizeEmail()
         .withMessage('Please provide a valid email address'),
-    body('password')
+    /* body('password')
         .isLength({ min: 6 })
-        .withMessage('Password must be at least 6 characters long')
+        .withMessage('Password must be at least 6 characters long') */
+    body('password')
+    .isLength({ min: 12 })
+    .withMessage('Password must be at least 12 characters long')
+    .matches(/[A-Z]/)
+    .withMessage('Password must contain at least one uppercase letter')
+    .matches(/[a-z]/)
+    .withMessage('Password must contain at least one lowercase letter')
+    .matches(/\d/)
+    .withMessage('Password must contain at least one number')
+    .matches(/[@$!%*?&#.,_-]/)
+    .withMessage('Password must contain at least one special character (@$!%*?&#.,_-)')
 ];
 
 const loginValidation = [

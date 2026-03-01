@@ -199,6 +199,15 @@ export const changePassword = async (req, res, next) => {
                 statusCode: 401,
             });
         }
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#.,_-])[A-Za-z\d@$!%*?&#.,_-]{12,}$/;
+
+        if (!passwordRegex.test(newPassword)) {
+            return res.status(400).json({
+                success: false,
+                error: 'New password must be at least 12 characters and include uppercase, lowercase, number and special character',
+                statusCode: 400,
+            });
+        }
 
         // Update to new password
         user.password = newPassword;
