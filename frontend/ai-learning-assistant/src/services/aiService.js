@@ -18,3 +18,5 @@ const generateQuiz = async (documentId, options) => {
         throw error.response?.data || { message: 'Failed to generate quiz.' };
     }
 };
+
+const generateSummary = async (documentId) => {};
