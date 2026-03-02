@@ -10,4 +10,10 @@ const generateFlashcards = async (documentId, options) => {
     }
 };
 
-const generateQuiz = async (documentId, options) => {};
+const generateQuiz = async (documentId, options) => {
+    try {
+        
+    } catch (error) {
+        throw error.response?.data || { message: 'Failed to generate quiz.' };
+    }
+};
