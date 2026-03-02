@@ -19,4 +19,10 @@ const generateQuiz = async (documentId, options) => {
     }
 };
 
-const generateSummary = async (documentId) => {};
+const generateSummary = async (documentId) => {
+    try {
+        
+    } catch (error) {
+        throw error.response?.data || { message: 'Failed to generate summary.' };
+    }
+};
