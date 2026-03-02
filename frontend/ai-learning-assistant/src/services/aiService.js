@@ -9,3 +9,5 @@ const generateFlashcards = async (documentId, options) => {
         throw error.response?.data || { message: 'An error occurred while generating flashcards.' };
     }
 };
+
+const generateQuiz = async (documentId, options) => {};
