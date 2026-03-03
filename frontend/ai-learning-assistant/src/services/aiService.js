@@ -37,4 +37,10 @@ const chat = async (documentId, message) => {
     }
 };
 
-const explainConcept = async (documentId, concept) => {};
+const explainConcept = async (documentId, concept) => {
+    try {
+        
+    } catch (error) {
+        throw error.response?.data || { message: 'Failed to explain concept.' };
+    }
+};
