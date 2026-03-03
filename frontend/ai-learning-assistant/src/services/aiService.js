@@ -45,3 +45,5 @@ const explainConcept = async (documentId, concept) => {
         throw error.response?.data || { message: 'Failed to explain concept.' };
     }
 };
+
+const getChatHistory = async (documentId) => {};
