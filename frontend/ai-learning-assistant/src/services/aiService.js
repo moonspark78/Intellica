@@ -54,3 +54,14 @@ const getChatHistory = async (documentId) => {
         throw error.response?.data || { message: 'Failed to fetch chat history.' };
     }
 };
+
+const aiService = {
+    generateFlashcards,
+    generateQuiz,
+    generateSummary,
+    chat,
+    explainConcept,
+    getChatHistory
+};
+
+export default aiService;
