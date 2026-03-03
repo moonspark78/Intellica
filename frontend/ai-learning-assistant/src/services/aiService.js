@@ -46,4 +46,10 @@ const explainConcept = async (documentId, concept) => {
     }
 };
 
-const getChatHistory = async (documentId) => {};
+const getChatHistory = async (documentId) => {
+    try {
+        
+    } catch (error) {
+        throw error.response?.data || { message: 'Failed to fetch chat history.' };
+    }
+};
