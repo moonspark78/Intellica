@@ -36,3 +36,5 @@ const chat = async (documentId, message) => {
         throw error.response?.data || { message: 'Chat request failed.' };
     }
 };
+
+const explainConcept = async (documentId, concept) => {};
