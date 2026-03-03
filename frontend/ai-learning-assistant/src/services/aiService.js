@@ -27,3 +27,11 @@ const generateSummary = async (documentId) => {
         throw error.response?.data || { message: 'Failed to generate summary.' };
     }
 };
+
+const chat = async (documentId, message) => {
+    try {
+        
+    } catch (error) {
+        throw error.response?.data || { message: 'Chat request failed.' };
+    }
+};
