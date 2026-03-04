@@ -23,3 +23,14 @@ const uploadDocument = async (formData) => {
         throw error.response?.data || { message: 'Failed to upload document.' };
     }
 };
+
+
+
+const documentService = {
+    getDocuments,
+    uploadDocument,
+    deleteDocument,
+    getDocumentById,
+};
+
+export default documentService;
