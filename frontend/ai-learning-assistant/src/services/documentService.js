@@ -18,6 +18,7 @@ const uploadDocument = async (formData) => {
                 'Content-Type': 'multipart/form-data',
             },
         });
+        return response.data;
     } catch (error) {
         throw error.response?.data || { message: 'Failed to upload document.' };
     }
