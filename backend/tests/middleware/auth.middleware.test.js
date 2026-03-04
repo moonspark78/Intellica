@@ -20,3 +20,12 @@ describe('Middleware protect', () => {
     });
 
 });
+
+it('❌ doit refuser l’accès si le token est invalide', async () => {
+  const response = await request(app)
+    .get('/api/auth/profile')
+    .set('Authorization', 'Bearer invalidtoken123');
+
+  expect(response.status).toBe(401);
+  expect(response.body.success).toBe(false);
+});
