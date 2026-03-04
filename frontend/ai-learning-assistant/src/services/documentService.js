@@ -10,3 +10,11 @@ const getDocuments = async () => {
         throw error.response?.data || { message: 'Failed to fetch documents.' };
     }
 };
+
+const uploadDocument = async (formData) => {
+    try {
+        
+    } catch (error) {
+        throw error.response?.data || { message: 'Failed to upload document.' };
+    }
+};
