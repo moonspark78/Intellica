@@ -5,8 +5,9 @@
 
 
 const flashcardService = {
-    getAllFlashcards,
+    getAllFlashcardSets,
     getFlashcardsForDocument,
     reviewFlashcard,
     toggleStar,
+    deleteFlashcardSet,
 };
