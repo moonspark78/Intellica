@@ -24,7 +24,7 @@ export const API_PATHS = {
         GET_CHAT_HISTORY: (documentId) => `/api/ai/chat-history/${documentId}`,
     },
     FLASHCARDS: {
-        GET_ALL_FLASHCARDS_SETS: "/api/flashcards",
+        GET_ALL_FLASHCARD_SETS: "/api/flashcards",
         GET_FLASHCARDS_FOR_DOC: (documentId) => `/api/flashcards/${documentId}`,
         REVIEW_FLASHCARD: (cardId) => `/api/flashcards/${cardId}/review`,
         TOGGLE_STAR: (cardId) => `/api/flashcards/${cardId}/star`,
