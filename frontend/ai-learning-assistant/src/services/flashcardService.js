@@ -28,8 +28,24 @@ const reviewFlashcard = async (cardId, cardIndex) =>{
     }
 };
 
+const toggleStar = async (cardId) => {
+    try {
+        const response = await axiosInstance.put(API_PATHS.FLASHCARDS.TOGGLE_STAR(cardId));
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || { message: 'Failed to star flashcard.' };
+    }
+};
 
 
+const deleteFlashcardSet = async (id) => {
+    try {
+        const response = await axiosInstance.delete(API_PATHS.FLASHCARDS.DELETE_FLASHCARD_SET(id));
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || { message: 'Failed to delete flashcard.' };
+    }
+};
 
 
 const flashcardService = {
