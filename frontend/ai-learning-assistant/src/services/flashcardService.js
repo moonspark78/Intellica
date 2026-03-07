@@ -19,6 +19,14 @@ const getFlashcardsForDocument = async (documentId) => {
     }
 };
 
+const reviewFlashcard = async (cardId, cardIndex) =>{
+    try {
+        
+    } catch (error) {
+        throw error.response?.data || { message: 'Failed to review flashcard.' };
+    }
+};
+
 
 
 
