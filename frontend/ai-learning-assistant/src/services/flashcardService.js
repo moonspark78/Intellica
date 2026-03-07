@@ -10,6 +10,14 @@ const getAllFlashcardSets = async () => {
     }
 };
 
+const getFlashcardsForDocument = async (documentId) => {
+    try {
+        
+    } catch (error) {
+        throw error.response?.data || { message: 'Failed to fetch flashcards.' };
+    }
+};
+
 
 
 
