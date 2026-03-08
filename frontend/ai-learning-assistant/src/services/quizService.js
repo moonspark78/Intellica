@@ -11,3 +11,4 @@ const quizService ={
     deleteQuiz,
 };
 
+export default quizService;
