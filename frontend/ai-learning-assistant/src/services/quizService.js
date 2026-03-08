@@ -19,6 +19,14 @@ const getQuizById = async (quizId) => {
     }
 };
 
+const submitQuiz = async (quizId, answers) => {
+    try {
+        
+    } catch (error) {
+        
+    }
+}; 
+
 
 
 const quizService ={
