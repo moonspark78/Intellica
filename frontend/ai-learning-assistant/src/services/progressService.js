@@ -9,3 +9,5 @@ const getDashboardData = async () => {
         throw error.response?.data || { message: 'Failed to fetch dashboard data.' };
     }
 };
+
+const progressService = {};
