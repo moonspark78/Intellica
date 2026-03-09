@@ -41,7 +41,7 @@ const deleteQuiz = async (quizId) => {
     try {
         
     } catch (error) {
-        
+        throw error.response?.data || { message: 'Failed to delete quiz.' };
     }
 };
 
