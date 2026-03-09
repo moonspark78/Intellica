@@ -37,7 +37,13 @@ const getQuizResults = async (quizId) => {
     }
 }; 
 
-const deleteQuiz = async (quizId) => {};
+const deleteQuiz = async (quizId) => {
+    try {
+        
+    } catch (error) {
+        
+    }
+};
 
 
 const quizService ={
