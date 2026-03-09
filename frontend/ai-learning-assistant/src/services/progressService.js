@@ -10,4 +10,8 @@ const getDashboardData = async () => {
     }
 };
 
-const progressService = {};
+const progressService = {
+    getDashboardData,
+};
+
+export default progressService;
