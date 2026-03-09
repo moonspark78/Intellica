@@ -37,6 +37,8 @@ const getQuizResults = async (quizId) => {
     }
 }; 
 
+const deleteQuiz = async (quizId) => {};
+
 
 const quizService ={
     getQuizzesForDocument,
