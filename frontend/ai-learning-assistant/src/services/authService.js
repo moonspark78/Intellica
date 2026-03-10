@@ -1,6 +1,5 @@
 import axiosInstance from '../utils/axiosInstance';
 import { API_PATHS } from '../utils/apiPaths';
-import { getProfile, changePassword } from '../../../../backend/controllers/authController';
 
 const login = async (email, password) => {
     try {
