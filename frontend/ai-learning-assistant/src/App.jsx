@@ -1,3 +1,4 @@
+import React from 'react';
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import LoginPage from './pages/Auth/LoginPage';
@@ -11,10 +12,10 @@ import DocumentDetailPage from './pages/Documents/DocumentDetailPage';
 import DocumentListPage from './pages/Documents/DocumentListPage';
 import ProfilePage from './pages/Profile/ProfilePage';
 import QuizResultPage from './pages/Quizzes/QuizResultPage';
+import { useAuth } from './context/AuthContext';
 
 const App = () => {
-  const isAuthenticated = false;
-  const loading = false;
+  const { isAuthenticated, loading } = useAuth();
 
   if (loading) {
     return (
