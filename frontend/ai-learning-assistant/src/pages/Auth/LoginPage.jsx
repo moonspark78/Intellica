@@ -4,7 +4,7 @@ import { useAuth } from '../../context/AuthContext';
 import authService from '../../services/authService';
 import { BrainCircuit, Mail, Lock, ArrowRight } from 'lucide-react';
 import toast from 'react-hot-toast';
-import { set } from 'mongoose';
+
 
 const LoginPage = () => {
 
@@ -35,31 +35,32 @@ const LoginPage = () => {
   };
 
   return (
-    <div className=''>
-      <div className=""/>
-      <div className="">
-        <div className="">
+    <div className='flex items-center justify-center min-h-screen bg-linear-to-br from-slate-50 via-white to-slate-50'>
+      <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-size-[16px_16px] opacity-30"/>
+      <div className="relative w-full max-w-md px-6">
+        <div className="bg-white/80 backdrop-blur-xl border border-slate-200/60 rounded-3xl shadow-xl shadow-slate-200/50 p-10">
           {/* Hearder */}
-          <div className="">
-            <div className="">
-              <BrainCircuit className="" strokeWidth={2}/>
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-linear-to-br
+             from-emerald-400 to-teal-500 shadow-lg shadow-emerald-500/25 mb-6">
+              <BrainCircuit className="w-7 h-7 text-white" strokeWidth={2}/>
             </div>
-            <h1 className=''>
+            <h1 className='text-2xl font-medium text-slate-900 tracking-tight mb-2'>
               Welcome Back
             </h1>
-            <p className=''>
+            <p className='text-slate-500 text-sm'>
               Sign in to your account to continue
             </p>
           </div>
 
           {/* Form */}
-          <div className="">
+          <div className="space-y-5">
             {/* Email Field */}
-            <div className="">
-              <label className="">
+            <div className="space-y-2">
+              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wide">
                 Email
               </label>
-              <div className="">
+              <div className="relative group">
                 <div className={`absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none transition-colors duration-200
                    ${focusedField === 'email' ? 'text-emerald-500' : 'text-slate-400'}`}>
                     <Mail className="" strokeWidth={2}/>
@@ -86,10 +87,63 @@ const LoginPage = () => {
                    ${focusedField === 'password' ? 'text-emerald-500' : 'text-slate-400'}`}>
                     <Lock className="" strokeWidth={2}/>
                 </div>
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  onFocus={() => setFocusedField('password')}
+                  onBlur={() => setFocusedField(null)}
+                  className=""
+                  placeholder='••••••••'
+                />
               </div>
             </div>
+
+            {/* Error Message */}
+            {error && (
+              <div className="">
+                <p className=''>{error}</p>
+              </div>
+            )}
+
+            {/* Submit Button */}
+            <button
+              onClick={handleSubmit}
+              disabled={loading}
+              className=""
+            >
+              <span className=''>
+                {loading ? (
+                  <>
+                    <div className=""/>
+                    Signing in...
+                  </>
+                ) : (
+                  <>
+                    Sign In
+                    <ArrowRight className="" strokeWidth={2.5}/>
+                  </>
+                )}
+              </span>
+              <div className=""/>
+            </button>
+          </div>
+
+          {/* Footer */}
+          <div className="">
+            <p className=''>
+              Don't have an account?{' '}
+              <Link to="/register" className="">
+                Sign Up
+              </Link>
+            </p>
           </div>
         </div>
+
+        {/* Subtle footer text */}
+        <p className=''>
+          By signing in, you agree to our Terms of Service and Privacy Policy.
+        </p>
       </div>
     </div>
   )
