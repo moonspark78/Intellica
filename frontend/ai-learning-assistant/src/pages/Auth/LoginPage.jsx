@@ -114,18 +114,21 @@ const LoginPage = () => {
             <button
               onClick={handleSubmit}
               disabled={loading}
-              className=""
+              className="group relative w-full h-12 bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600
+               hover:to-teal-600 active:scale-[0.98] text-white text-sm font-semibold rounded-xl transition-all duration-200
+               focus:outline-none focus:ring-4 focus:ring-emerald-500/20 disabled:cursor-not-allowed disabled:active:scale-100
+               shadow-lg shadow-emerald-500/20 overflow-hidden"
             >
-              <span className=''>
+              <span className='relative z-10 flex items-center justify-center gap-2'>
                 {loading ? (
                   <>
-                    <div className=""/>
+                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"/>
                     Signing in...
                   </>
                 ) : (
                   <>
                     Sign In
-                    <ArrowRight className="" strokeWidth={2.5}/>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" strokeWidth={2.5}/>
                   </>
                 )}
               </span>
