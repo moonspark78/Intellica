@@ -132,15 +132,16 @@ const LoginPage = () => {
                   </>
                 )}
               </span>
-              <div className=""/>
+              <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0 -translate-x-full
+              group-hover:translate-x-full transition-transform duration-700"/>
             </button>
           </div>
 
           {/* Footer */}
-          <div className="">
-            <p className=''>
+          <div className="mt-8 pt-6 border-t border-slate-200/60">
+            <p className='text-center text-sm text-slate-600'>
               Don't have an account?{' '}
-              <Link to="/register" className="">
+              <Link to="/register" className="font-semibold text-emerald-600 hover:text-emerald-700 transition-colors duration-200">
                 Sign Up
               </Link>
             </p>
@@ -148,7 +149,7 @@ const LoginPage = () => {
         </div>
 
         {/* Subtle footer text */}
-        <p className=''>
+        <p className='text-center text-xs text-slate-400 mt-6'>
           By signing in, you agree to our Terms of Service and Privacy Policy.
         </p>
       </div>
