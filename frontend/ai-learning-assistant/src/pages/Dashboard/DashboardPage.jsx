@@ -12,6 +12,8 @@ const DashboardPage = () => {
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
+        const data = await progressService.getDashboardData();
+        console.log("Data___getDashbordData", data);
         
       } catch (error) {
         toast.error('Failed to fetch dashboard data.')
