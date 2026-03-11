@@ -26,7 +26,22 @@ const DashboardPage = () => {
     fetchDashboardData();
   },[])
 
+  if (loading) {
+    return <Spinner/>
+  }
 
+  if (!dashboardData || !dashboardData.overview) {
+    return (
+      <div className="">
+        <div className="">
+          <div className="">
+            <TrendingUp className="" />
+          </div>
+          <p className="">No dashboard data available</p>
+        </div>
+      </div>
+    )
+  }
 
 
   return (
