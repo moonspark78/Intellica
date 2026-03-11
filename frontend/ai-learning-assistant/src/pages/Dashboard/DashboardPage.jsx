@@ -43,6 +43,37 @@ const DashboardPage = () => {
     )
   }
 
+  const stats = [
+    {
+      label: "Total Documents",
+      value:dashboardData.overview.totalDocuments,
+      icon:FileText,
+      gradient:"from-blue-400 to-cyan-500",
+      shadowColor:"shadow-blue-500/25",
+    },
+    {
+      label: "Total Documents",
+      value:,
+      icon:,
+      gradient:,
+      shadowColor:,
+    },
+    {
+      label: "Total Documents",
+      value:,
+      icon:,
+      gradient:,
+      shadowColor:,
+    },
+    {
+      label: "Total Documents",
+      value:,
+      icon:,
+      gradient:,
+      shadowColor:,
+    },
+  ];
+
 
   return (
     <div>DashboardPage</div>
