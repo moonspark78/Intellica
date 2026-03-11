@@ -14,7 +14,8 @@ const DashboardPage = () => {
       try {
         const data = await progressService.getDashboardData();
         console.log("Data___getDashbordData", data);
-        
+
+        setDashboardData(data.data);
       } catch (error) {
         toast.error('Failed to fetch dashboard data.')
         console.error(error);
