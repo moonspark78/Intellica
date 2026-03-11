@@ -14,9 +14,13 @@ const DashboardPage = () => {
       try {
         
       } catch (error) {
-        
+        toast.error('Failed to fetch dashboard data.')
+        console.error(error);
+      } finally {
+        setLoading(false);
       }
     };
+    fetchDashboardData();
   },[])
 
 
