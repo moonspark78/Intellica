@@ -28,6 +28,12 @@ const DocumentListPage = () => {
     }
   };
 
+  useEffect(() => {
+    fetchDocuments();
+  }, []);
+
+  const handleFileChange = (e) => {};
+
 
   return (
     <div>DocumentListPage</div>
