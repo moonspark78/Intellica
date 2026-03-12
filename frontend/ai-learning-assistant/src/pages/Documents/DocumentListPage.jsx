@@ -21,7 +21,10 @@ const DocumentListPage = () => {
     try {
       
     } catch (error) {
-      
+      toast.error("Failed to fetch documents.")
+      console.error(error);
+    } finally {
+      setLoading(false)
     }
   };
 
