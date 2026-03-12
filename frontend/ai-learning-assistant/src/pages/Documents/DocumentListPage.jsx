@@ -17,6 +17,11 @@ const DocumentListPage = () => {
   const [uploadTitle,setUploadTitle] = useState("");
   const [uploading,setUploading] = useState(false);
 
+  // State for delete confirmation modal
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [deleting, setDeleting] = useState(false);
+  const [selectedDoc, setSelectedDoc] = useState(null);
+
   const fetchDocuments = async () => {
     try {
       const data = await documentService.getDocuments();
@@ -53,13 +58,22 @@ const DocumentListPage = () => {
 
     try {
       await documentService.uploadDocument(formData);
-      toast.success("Document uploaded successfully!")
-      setIsUploadModalOpen(false)
+      toast.success("Document uploaded successfully!");
+      setIsUploadModalOpen(false);
+      setUploadFile(null);
+      setUploadTitle("");
+      setLoading(true);
+      fetchDocuments();
     } catch (error) {
       toast.error(error.message || "Upload failed.")
     } finally {
       setUploading(false);
     }
+  };
+
+  const handleDeleteRequest = (doc) => {
+    setSelectedDoc(doc);
+    setIsUploadModalOpen(true);
   };
 
 
