@@ -76,6 +76,18 @@ const DocumentListPage = () => {
     setIsUploadModalOpen(true);
   };
 
+  const handleConfirDelete = async () => {
+    if (!selectedDoc) return;
+    setDeleting(true);
+    try {
+      
+    } catch (error) {
+      
+    } finally {
+      
+    }
+  };
+
 
   return (
     <div>DocumentListPage</div>
