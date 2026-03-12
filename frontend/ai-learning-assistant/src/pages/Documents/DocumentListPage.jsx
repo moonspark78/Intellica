@@ -46,6 +46,16 @@ const DocumentListPage = () => {
       toast.error("Please provide a title and select a file.");
       return;
     }
+    setUploading(true);
+    const formData = new FormData();
+    formData.append("file", uploadFile);
+    formData.append("title", uploadTitle);
+
+    try {
+      
+    } catch (error) {
+      
+    }
   };
 
 
