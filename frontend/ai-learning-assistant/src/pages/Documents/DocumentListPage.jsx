@@ -32,7 +32,21 @@ const DocumentListPage = () => {
     fetchDocuments();
   }, []);
 
-  const handleFileChange = (e) => {};
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setUploadFile(file);
+      setUploadTitle(file.name.remplace(/\.[^/.]+$/, ""));
+    }
+  };
+
+  const handleUpload = async (e) => {
+    e.preventDefault();
+    if (!uploadFile || !uploadTitle) {
+      toast.error("Please provide a title and select a file.");
+      return;
+    }
+  };
 
 
   return (
