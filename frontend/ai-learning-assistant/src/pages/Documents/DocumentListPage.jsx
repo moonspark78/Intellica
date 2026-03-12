@@ -19,7 +19,7 @@ const DocumentListPage = () => {
 
   const fetchDocuments = async () => {
     try {
-      
+      const data = await documentService.getDocuments();
     } catch (error) {
       toast.error("Failed to fetch documents.")
       console.error(error);
