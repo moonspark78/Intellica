@@ -52,9 +52,13 @@ const DocumentListPage = () => {
     formData.append("title", uploadTitle);
 
     try {
-      
+      await documentService.uploadDocument(formData);
+      toast.success("Document uploaded successfully!")
+      setIsUploadModalOpen(false)
     } catch (error) {
-      
+      toast.error(error.message || "Upload failed.")
+    } finally {
+      setUploading(false);
     }
   };
 
