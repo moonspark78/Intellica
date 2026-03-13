@@ -59,7 +59,7 @@ const DocumentDetailPage = () => {
             href={pdfUrl}
             target='_blank'
             rel='noopener noreferrer'
-            className='inline-flex items-center gap-1.5 text-sm text-blue-600'
+            className='inline-flex items-center gap-1.5 text-sm text-blue-600 hover:text-blue-700 font-medium transition-colors'
           >
             <ExternalLink size={16}/>
             Open in new tab
@@ -109,7 +109,7 @@ const DocumentDetailPage = () => {
   }
 
   if (!document) {
-    return <div className="">Document not found.</div>
+    return <div className="text-center p-8">Document not found.</div>
   }
 
 
