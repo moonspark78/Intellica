@@ -77,7 +77,9 @@ const DocumentDetailPage = () => {
     );
   };
 
-  
+  const renderChat = () => {
+    return "renderChat"
+  };
 
   return (
     <div>DocumentDetailPage</div>
