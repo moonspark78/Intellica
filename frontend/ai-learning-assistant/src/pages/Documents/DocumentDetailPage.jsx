@@ -81,6 +81,10 @@ const DocumentDetailPage = () => {
     return "renderChat"
   };
 
+  const renderAIActions = () => {
+    return "renderAIActions"
+  };
+
   return (
     <div>DocumentDetailPage</div>
   )
