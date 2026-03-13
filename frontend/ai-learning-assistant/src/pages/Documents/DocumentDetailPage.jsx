@@ -93,6 +93,23 @@ const DocumentDetailPage = () => {
     return "renderQuizzesTab"
   };
 
+  const tabs = [
+    {name: "Content", label: "Content", content: renderContent() },
+    {name: "Chat", label: "Chat", content: renderChat() },
+    {name: "AI Actions", label: "AI Actions", content: renderAIActions() },
+    {name: "Flashcards", label: "Flashcards", content: renderFlashcardsTab() },
+    {name: "Quizzes", label: "Quizzes", content: renderQuizzesTab() },
+  ];
+
+  if (loading){
+    return <Spinner/>
+  }
+
+  if (!document) {
+    return <div className="">Document not found.</div>
+  }
+
+
   return (
     <div>DocumentDetailPage</div>
   )
