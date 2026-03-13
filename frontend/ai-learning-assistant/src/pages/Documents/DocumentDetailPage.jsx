@@ -46,27 +46,30 @@ const DocumentDetailPage = () => {
       return <Spinner/>
     }
     if (!document || !document.data || !document.data.filePath) {
-      return <div className="">PDF not available.</div>
+      return <div className="text-center p-8">PDF not available.</div>
     }
 
     const pdfUrl = getPdfUrl();
 
     return (
-      <div className="">
-        <div className="">
-          <span className=''>Document Viewer</span>
+      <div className="bg-white border border-gray-300 rounded-lg overflow-hidden shadow-sm">
+        <div className="flex items-center justify-between p-4 bg-gray-50 border-b border-gray-300">
+          <span className='text-sm font-medium text-gray-700'>Document Viewer</span>
           <a 
-            href=""
+            href={pdfUrl}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='inline-flex items-center gap-1.5 text-sm text-blue-600'
           >
             <ExternalLink size={16}/>
             Open in new tab
           </a>
         </div>
-        <div className="">
+        <div className="bg-gray-100 p-1">
           <iframe 
             src={pdfUrl} 
             frameborder="0"
-            className=''
+            className='w-full h-[70vh] bg-white rounded border border-gray-300'
             title='PDF Viewer'
             style={{
               colorScheme: "light"
