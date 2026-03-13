@@ -85,6 +85,14 @@ const DocumentDetailPage = () => {
     return "renderAIActions"
   };
 
+  const renderFlashcardsTab = () => {
+    return "renderFlashcardsTab"
+  };
+
+  const renderQuizzesTab = () => {
+    return "renderQuizzesTab"
+  };
+
   return (
     <div>DocumentDetailPage</div>
   )
