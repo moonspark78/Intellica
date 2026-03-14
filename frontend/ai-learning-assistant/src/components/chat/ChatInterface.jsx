@@ -37,6 +37,10 @@ const ChatInterface = () => {
     fetchChatHistory();
   }, [documentId])
 
+  useEffect(() => {
+    scrollToBottom();
+  }, [history])
+
 
   return (
     <div>ChatInterface</div>
