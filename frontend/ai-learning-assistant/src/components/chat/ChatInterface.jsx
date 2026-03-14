@@ -16,6 +16,8 @@ const ChatInterface = () => {
   const [loading, setLoading] = useState(false);
   const [initialLoading, setInitialLoading] = useState();
 
+  const messagesEndRef = useRef(null);
+
 
   return (
     <div>ChatInterface</div>
