@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MarkdownRenderer = () => {
+const MarkdownRenderer = ({content}) => {
   return (
     <div>MarkdownRenderer</div>
   )

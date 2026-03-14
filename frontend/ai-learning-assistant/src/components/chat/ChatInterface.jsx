@@ -7,6 +7,10 @@ import Spinner from '../common/Spinner';
 import MarkdownRenderer from "../common/MarkdownRenderer";
 
 const ChatInterface = () => {
+
+  const {id: documentId} = useParams();
+
+
   return (
     <div>ChatInterface</div>
   )
