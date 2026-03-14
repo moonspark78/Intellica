@@ -41,6 +41,18 @@ const ChatInterface = () => {
     scrollToBottom();
   }, [history])
 
+  const handleSendMessage = async (e) => {
+    e.preventDefault();
+    if (!message.trim()) return;
+
+    const userMessage = { role: "user", content: message, timestamp: new Date() };
+    setHistory(prev => [...prev, userMessage]);
+    setMessage('');
+    setLoading(true);
+
+    
+  };
+
 
   return (
     <div>ChatInterface</div>
