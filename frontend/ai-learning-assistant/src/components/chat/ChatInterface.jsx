@@ -18,6 +18,10 @@ const ChatInterface = () => {
 
   const messagesEndRef = useRef(null);
 
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollToBottom({behavior: "smooth"});
+  };
+
 
   return (
     <div>ChatInterface</div>
