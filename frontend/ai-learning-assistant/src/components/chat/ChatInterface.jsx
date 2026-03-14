@@ -50,7 +50,26 @@ const ChatInterface = () => {
     setMessage('');
     setLoading(true);
 
-    
+    try {
+      const response = await aiService.chat(documentId, userMessage.content);
+      const assistantMessage = {
+        role: 'assistant',
+        content: response.data.answer,
+        timestamp: new Date(),
+        relevantChunks: response.data.relevantChunks
+      };
+      setHistory(prev => [...prev, assistantMessage]);
+    } catch (error) {
+      console.error("Chat error:", error);
+      const errorMessage = {
+        role: "assistant",
+        content: "Sorry, I encountered an error. Please try again.",
+        timestamp: new Date()
+      };
+      setHistory(prev => [...prev, errorMessage]);
+    } finally {
+      setLoading(false);
+    }
   };
 
 
