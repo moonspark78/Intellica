@@ -25,14 +25,17 @@ const ChatInterface = () => {
   useEffect(() => {
     const fetchChatHistory = async () => {
       try {
-        
+        setInitialLoading(true);
+        const response = await aiService.getChatHistory(documentId);
+        setHistory(response.data);
       } catch (error) {
         console.error("Failed to fetch chat history", error);
       } finally {
         setInitialLoading(false)
       }
-    }
-  }, [])
+    };
+    fetchChatHistory();
+  }, [documentId])
 
 
   return (
