@@ -9,6 +9,12 @@ import MarkdownRenderer from "../common/MarkdownRenderer";
 const ChatInterface = () => {
 
   const {id: documentId} = useParams();
+  const {user} = useAuth();
+
+  const [history, setHistory] = useState([]);
+  const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [initialLoading, setInitialLoading] = useState();
 
 
   return (
