@@ -322,7 +322,7 @@ export const getChatHistory = async (req, res, next) => {
             });
         }
 
-        const chatHistory = await chatHistory.findOne({
+        const chatHistory = await ChatHistory.findOne({
             userId: req.user._id,
             documentId: documentId
         }).select('messages'); // Only retrieve the messages array

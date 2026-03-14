@@ -72,7 +72,7 @@ const DocumentDetailPage = () => {
         <div className="bg-gray-100 p-1">
           <iframe 
             src={pdfUrl} 
-            frameborder="0"
+            frameBorder="0"
             className='w-full h-[70vh] bg-white rounded border border-gray-300'
             title='PDF Viewer'
             style={{
