@@ -22,6 +22,18 @@ const ChatInterface = () => {
     messagesEndRef.current?.scrollToBottom({behavior: "smooth"});
   };
 
+  useEffect(() => {
+    const fetchChatHistory = async () => {
+      try {
+        
+      } catch (error) {
+        console.error("Failed to fetch chat history", error);
+      } finally {
+        setInitialLoading(false)
+      }
+    }
+  }, [])
+
 
   return (
     <div>ChatInterface</div>
