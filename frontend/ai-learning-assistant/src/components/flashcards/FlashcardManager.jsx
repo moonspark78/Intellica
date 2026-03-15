@@ -105,6 +105,21 @@ const FlashcardManager = ({documentId}) => {
     setIsDeleteModalOpen(true);
   };
 
+  const handleConfirmDelete = async () => {};
+  
+  const handleSelectSet = (set) => {
+    setSelectedSet(set);
+    setCurrentCardIndex(0);
+  };
+
+  const renderFlashcardViewer = () => {
+    return "renderFlashcardViewer"
+  };
+
+  const renderSetList = () => {
+    return "renderSetList"
+  };
+
 
   return (
     <div>FlashcardManager</div>
