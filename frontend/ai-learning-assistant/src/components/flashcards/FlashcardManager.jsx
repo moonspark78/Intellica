@@ -117,12 +117,51 @@ const FlashcardManager = ({documentId}) => {
   };
 
   const renderSetList = () => {
-    return "renderSetList"
+    if (loading) {
+      return (
+        <div className="flex items-center justify-center py-20">
+          <Spinner/>
+        </div>
+      )
+    }
+
+      return (
+        <div className="flex flex-col items-center justify-center py-16 px-6">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl">
+            <Brain className='' strokeWidth={2}/>
+          </div>
+          <h3 className=''>
+            No Flashcards Yet
+          </h3>
+          <p className=''>
+            Generate flashcards from your document to start learning and reinforce your knowledge.
+          </p>
+          <button
+            onClick={handleGenerateFlashcards}
+            disabled={generating}
+            className=''
+          >
+            {generating ? (
+              <>
+                <div className=''/>
+                Generating...
+              </>
+            ) : (
+              <>
+                <Sparkles className='' strokeWidth={2}/>
+                Generate Flashcards
+              </>
+            )}
+          </button>
+        </div>
+      )
   };
 
 
   return (
-    <div>FlashcardManager</div>
+    <div className='bg-white/80 backdrop-blur-xl border border-slate-200/60 rounded-3xl shadow-xl shadow-slate-200/50 p-8'>
+      {selectedSet ? renderFlashcardViewer() : renderSetList()}
+    </div>
   )
 }
 
