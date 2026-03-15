@@ -97,6 +97,14 @@ const FlashcardManager = ({documentId}) => {
     }
   };
 
+  const handleToggleStar = async (cardId) => {};
+
+  const handleDeleteRequest = (e, set) => {
+    e.stopPropagation();
+    setSetToDelete(set);
+    setIsDeleteModalOpen(true);
+  };
+
 
   return (
     <div>FlashcardManager</div>
