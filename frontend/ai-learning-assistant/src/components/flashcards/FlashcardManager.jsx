@@ -127,13 +127,13 @@ const FlashcardManager = ({documentId}) => {
 
       return (
         <div className="flex flex-col items-center justify-center py-16 px-6">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl">
-            <Brain className='' strokeWidth={2}/>
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-linear-to-br from-emerald-100 to-teal-100 mb-6">
+            <Brain className='w-8 h-8 text-emerald-600' strokeWidth={2}/>
           </div>
-          <h3 className=''>
+          <h3 className='text-xl font-semibold text-slate-900 mb-2'>
             No Flashcards Yet
           </h3>
-          <p className=''>
+          <p className='text-sm text-slate-500 mb-8 text-center max-w-sm'>
             Generate flashcards from your document to start learning and reinforce your knowledge.
           </p>
           <button
