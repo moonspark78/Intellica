@@ -51,7 +51,51 @@ const FlashcardManager = ({documentId}) => {
     if (documentId) {
       fetchFlashcardSets();
     }
-  }, [documentId])
+  }, [documentId]);
+
+
+  const handleGenerateFlashcards = async () => {
+    setGenerating(true);
+    try {
+      await aiService.generateFlashcards(documentId);
+      toast.success("Flashcards generated successfully!")
+    } catch (error) {
+      toast.error(error.message || "Failed to generate flashcards.")
+    } finally {
+      setGenerating(false)
+    }
+  };
+
+  const handleNextCard = () => {
+    if (selectedSet) {
+      handleReview(currentCardIndex);
+      setCurrentCardIndex(
+        (prevIndex) => (prevIndex + 1) % selectedSet.cards.length
+      );
+    }
+  };
+
+  const handlePrevCard = () => {
+    if (selectedSet) {
+      handleReview(currentCardIndex);
+      setCurrentCardIndex(
+        (prevIndex) =>
+        (prevIndex - 1 + selectedSet.cards.length) % selectedSet.cards.length
+      );
+    }
+  };
+
+  const handleReview = async (index) => {
+    const currentCard = selectedSet?.cards[currentCardIndex];
+    if (!currentCard) return;
+
+    try {
+      await flashcardService.reviewFlashcard(currentCard._id, index);
+      toast.success("Flashcard reviewed!")
+    } catch (error) {
+      toast.error("Failed to review flashcard.")
+    }
+  };
 
 
   return (
