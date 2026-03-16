@@ -105,8 +105,8 @@ const Flashcard = ({ flashcard, onToggleStar }) => {
         </div>
 
         {/* Flip Indicator */}
-        <div className="flex items-center">
-          <RotateCcw className='' strokeWidth={2}/>
+        <div className="flex items-center justify-center gap-2 text-xs text-white/70 font-medium">
+          <RotateCcw className='w-3.5 h-3.5' strokeWidth={2}/>
           <span>Click to see question</span>
         </div>
       </div>
