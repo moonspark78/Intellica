@@ -69,7 +69,7 @@ const Flashcard = ({ flashcard, onToggleStar }) => {
 
       {/* Back of the card (Answer) */}
       <div 
-        className="absolute inset-0 w-full h-full bg-linear-to-br from-emerald-500 to-teal-500 border-2 border-emerald-400/60 rounded-2xl shadow-xl shadow-emerald-500/30 p-8 flex"
+        className="absolute inset-0 w-full h-full bg-linear-to-br from-emerald-500 to-teal-500 border-2 border-emerald-400/60 rounded-2xl shadow-xl shadow-emerald-500/30 p-8 flex flex-col justify-between"
         style={{
           backfaceVisibility: "hidden",
           WebkitBackfaceVisibility: "hidden",
@@ -77,7 +77,7 @@ const Flashcard = ({ flashcard, onToggleStar }) => {
         }}
       >
         {/* Star Button */}
-        <div className="">
+        <div className="flex justify-end">
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -90,7 +90,7 @@ const Flashcard = ({ flashcard, onToggleStar }) => {
               }`}
           >
             <Star
-              className=''
+              className='w-4 h-4'
               strokeWidth={2}
               fill={flashcard.isStarred ? "currentColor" : "none"}
             />
@@ -98,14 +98,14 @@ const Flashcard = ({ flashcard, onToggleStar }) => {
         </div>
 
         {/* Answer Content */}
-        <div className="">
-          <p className=''>
+        <div className="flex-1 flex items-center justify-center px-4 py-6">
+          <p className='text-base text-white text-center leading-relaxed font-medium'>
             {flashcard.answer}
           </p>
         </div>
 
         {/* Flip Indicator */}
-        <div className="">
+        <div className="flex items-center">
           <RotateCcw className='' strokeWidth={2}/>
           <span>Click to see question</span>
         </div>
