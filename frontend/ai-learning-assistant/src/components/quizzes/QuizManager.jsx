@@ -10,6 +10,19 @@ import Modal from '../common/Modal';
 import QuizCard from './QuizCard';
 
 const QuizManager = ({documentId}) => {
+
+    const [quizzes, setQuizzes] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [generating, setGenerating] = useState(false);
+    const [isGenerateModalOpen, setIsGenerateModalOpen] = useState(false);
+    const [numQuestions, setNumQuestions] = useState(5);
+    
+    const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+    const [deleting, setDeleting] = useState(false);
+    const [selectedQuiz, setSelectedQuiz] = useState(null);
+
+
+
   return (
     <div>QuizManager</div>
   )
