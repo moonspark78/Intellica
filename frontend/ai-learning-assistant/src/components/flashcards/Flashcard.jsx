@@ -65,6 +65,42 @@ const Flashcard = ({ flashcard, onToggleStar }) => {
         </div>
 
       </div>
+
+
+      {/* Back of the card (Answer) */}
+      <div 
+        className=""
+        style={{
+          backfaceVisibility: "hidden",
+          WebkitBackfaceVisibility: "hidden",
+          transform: "rotateY(180deg)"
+        }}
+      >
+        {/* Star Button */}
+        <div className="">
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onToggleStar(flashcard._id)
+            }}
+            className={`w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-200 ${
+              flashcard.isStarred
+                ? "bg-white/30 backdrop-blur-sm text-white border border-white/40"
+                : "bg-white/20 backdrop-blur-sm text-white/70 hover:bg-white/30 hover:text-white border border-white/20"
+              }`}
+          >
+            <Star
+              className=''
+              strokeWidth={2}
+              fill={flashcard.isStarred ? "currentColor" : "none"}
+            />
+          </button>
+        </div>
+
+      </div>
+
+
+
     </div>
   </div>;
 }
