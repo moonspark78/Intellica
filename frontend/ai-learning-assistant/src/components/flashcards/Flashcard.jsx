@@ -69,7 +69,7 @@ const Flashcard = ({ flashcard, onToggleStar }) => {
 
       {/* Back of the card (Answer) */}
       <div 
-        className=""
+        className="absolute inset-0 w-full h-full bg-linear-to-br from-emerald-500 to-teal-500 border-2 border-emerald-400/60 rounded-2xl shadow-xl shadow-emerald-500/30 p-8 flex"
         style={{
           backfaceVisibility: "hidden",
           WebkitBackfaceVisibility: "hidden",
