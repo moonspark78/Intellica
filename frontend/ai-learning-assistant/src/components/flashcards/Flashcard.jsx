@@ -97,10 +97,19 @@ const Flashcard = ({ flashcard, onToggleStar }) => {
           </button>
         </div>
 
+        {/* Answer Content */}
+        <div className="">
+          <p className=''>
+            {flashcard.answer}
+          </p>
+        </div>
+
+        {/* Flip Indicator */}
+        <div className="">
+          <RotateCcw className='' strokeWidth={2}/>
+          <span>Click to see question</span>
+        </div>
       </div>
-
-
-
     </div>
   </div>;
 }
