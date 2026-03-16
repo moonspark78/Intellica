@@ -1,10 +1,4 @@
-import React, {useState, useEffect} from 'react';
-import { Plus, Trash2 } from 'lucide-react';
-import toast from 'react-hot-toast';
-import quizService from '../../services/quizService';
-import aiService from '../../services/aiService';
-import Spinner from '../common/Spinner';
-
+import React from "react"
 
 
 const QuizCard = ({quiz, onDelete}) => {
