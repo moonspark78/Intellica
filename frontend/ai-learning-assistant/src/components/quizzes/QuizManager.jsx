@@ -73,7 +73,11 @@ const QuizManager = ({documentId}) => {
 
 
   return (
-    <div>QuizManager</div>
+    <div className=''>
+      <div className="">
+        
+      </div>
+    </div>
   )
 }
 
