@@ -24,6 +24,15 @@ const QuizManager = ({documentId}) => {
 
     const fetchQuizzes = async () => {
       setLoading(true);
+      try {
+        const data = await quizService.getQuizzesForDocument(documentId);
+        setQuizzes(data.data);
+      } catch (error) {
+        toast.error("Failed to fetch quizzes.")
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
     };
 
 
