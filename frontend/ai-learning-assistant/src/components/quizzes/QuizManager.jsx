@@ -46,9 +46,12 @@ const QuizManager = ({documentId}) => {
       e.preventDefault();
       setGenerating(true);
       try {
-        
+        await aiService.generateQuiz(documentId, { numQuestions });
+        toast.success("Quiz generated successfully");
+        setIsGenerateModalOpen(false);
+        fetchQuizzes();
       } catch (error) {
-        
+        toast.error(error.message || "Failed to generate quiz.");
       } finally {
         setGenerating(false);
       }
