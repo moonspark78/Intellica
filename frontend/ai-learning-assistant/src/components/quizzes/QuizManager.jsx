@@ -73,9 +73,9 @@ const QuizManager = ({documentId}) => {
 
 
   return (
-    <div className=''>
+    <div className='bg-white border border-neutral-200 rounded-lg p-6'>
       <div className="">
-        
+
       </div>
     </div>
   )
