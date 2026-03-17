@@ -35,6 +35,12 @@ const QuizManager = ({documentId}) => {
       }
     };
 
+    useEffect(() => {
+      if (documentId) {
+        fetchQuizzes();
+      }
+    }, [documentId])
+
 
 
   return (
