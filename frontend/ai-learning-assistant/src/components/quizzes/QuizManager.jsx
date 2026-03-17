@@ -62,6 +62,10 @@ const QuizManager = ({documentId}) => {
       setIsDeleteModalOpen(true);
     };
 
+    const handleConfirmDelete = async () => {
+      
+    };
+
 
 
   return (
