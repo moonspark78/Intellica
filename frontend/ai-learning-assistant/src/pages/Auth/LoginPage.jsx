@@ -17,6 +17,14 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
 
+
+  /**
+ * Handles the login form submission.
+ * - Prevents default form behavior
+ * - Calls the auth service to authenticate the user
+ * - On success: stores the token/user, shows a toast, and redirects to dashboard
+ * - On failure: displays an error message
+ */
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
