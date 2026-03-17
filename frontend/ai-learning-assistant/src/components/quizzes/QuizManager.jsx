@@ -57,6 +57,8 @@ const QuizManager = ({documentId}) => {
       }
     };
 
+    const handleDeleteRequest = () => {};
+
 
 
   return (
