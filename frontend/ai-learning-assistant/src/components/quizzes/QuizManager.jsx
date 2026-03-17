@@ -57,7 +57,10 @@ const QuizManager = ({documentId}) => {
       }
     };
 
-    const handleDeleteRequest = () => {};
+    const handleDeleteRequest = (quiz) => {
+      setSelectedQuiz(quiz);
+      setIsDeleteModalOpen(true);
+    };
 
 
 
