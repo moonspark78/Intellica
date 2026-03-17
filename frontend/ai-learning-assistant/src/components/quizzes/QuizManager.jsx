@@ -39,7 +39,20 @@ const QuizManager = ({documentId}) => {
       if (documentId) {
         fetchQuizzes();
       }
-    }, [documentId])
+    }, [documentId]);
+
+
+    const handleGenerateQuiz = async (e) => {
+      e.preventDefault();
+      setGenerating(true);
+      try {
+        
+      } catch (error) {
+        
+      } finally {
+        setGenerating(false);
+      }
+    };
 
 
 
