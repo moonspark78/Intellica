@@ -22,6 +22,11 @@ const QuizManager = ({documentId}) => {
     const [selectedQuiz, setSelectedQuiz] = useState(null);
 
 
+    const fetchQuizzes = async () => {
+      setLoading(true);
+    };
+
+
 
   return (
     <div>QuizManager</div>
