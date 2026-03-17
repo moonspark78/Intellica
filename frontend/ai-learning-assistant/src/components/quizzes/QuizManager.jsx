@@ -63,7 +63,11 @@ const QuizManager = ({documentId}) => {
     };
 
     const handleConfirmDelete = async () => {
-      
+
+    };
+
+    const renderQuizContent = () => {
+      return "renderQuizContent"
     };
 
 
