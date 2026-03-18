@@ -67,7 +67,9 @@ const QuizManager = ({documentId}) => {
     };
 
     const renderQuizContent = () => {
-      return "renderQuizContent"
+      if (loading) {
+        return <Spinner/>
+      }
     };
 
 
