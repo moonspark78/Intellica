@@ -70,6 +70,10 @@ const QuizManager = ({documentId}) => {
       if (loading) {
         return <Spinner/>
       }
+
+      if (quizzes.length === 0) {
+
+      }
     };
 
 
