@@ -1,6 +1,8 @@
-import React from 'react'
+import React from 'react';
+import { Plus, FileText } from 'lucide-react';
 
-const EmptyState = () => {
+
+const EmptyState = ({title, description,buttonText, onActionClick}) => {
   return (
     <div>EmptyState</div>
   )
