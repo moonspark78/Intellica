@@ -8,6 +8,15 @@ const EmptyState = ({title, description,buttonText, onActionClick}) => {
         <div className="">
             <FileText className='' strokeWidth={2}/>
         </div>
+        <h3 className=''>{title}</h3>
+        <p className=''>{description}</p>
+        {buttonText && onActionClick && (
+            <button
+                onClick={onActionClick}
+            >
+
+            </button>
+        )}
     </div>
   )
 }
