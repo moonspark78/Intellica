@@ -72,7 +72,12 @@ const QuizManager = ({documentId}) => {
       }
 
       if (quizzes.length === 0) {
-
+        return (
+          <EmptyState
+            title="No Quizzes Yet"
+            description="Generate"
+          />
+        )
       }
     };
 
