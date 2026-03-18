@@ -13,8 +13,13 @@ const EmptyState = ({title, description,buttonText, onActionClick}) => {
         {buttonText && onActionClick && (
             <button
                 onClick={onActionClick}
+                className=''
             >
-
+                <span className=''>
+                    <Plus className='' strokeWidth={2.5}/>
+                    {buttonText}
+                </span>
+                <div className=''/>
             </button>
         )}
     </div>
