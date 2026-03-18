@@ -75,7 +75,7 @@ const QuizManager = ({documentId}) => {
         return (
           <EmptyState
             title="No Quizzes Yet"
-            description="Generate"
+            description="Generate a quiz from your document to test your knowledge."
           />
         )
       }
