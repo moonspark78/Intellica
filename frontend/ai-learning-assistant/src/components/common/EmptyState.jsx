@@ -15,7 +15,7 @@ const EmptyState = ({title, description,buttonText, onActionClick}) => {
                 onClick={onActionClick}
                 className='group relative inline-flex items-center gap-2 px-6 h-11 bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-semibold text-sm rounded-xl transition-all duration-200 shadow-lg shadow-emerald-500/25 active:scale-95 focus:outline-none focus:ring-4 focus:ring-emerald-500/20 overflow-hidden'
             >
-                <span className=''>
+                <span className='relative z-10 flex items-center gap-2'>
                     <Plus className='' strokeWidth={2.5}/>
                     {buttonText}
                 </span>
