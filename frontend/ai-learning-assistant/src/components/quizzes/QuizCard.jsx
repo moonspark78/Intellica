@@ -15,8 +15,18 @@ const QuizCard = ({quiz, onDelete}) => {
         }}
         className=""
       >
-
+        <Trash2 className="" strokeWidth={2}/>
       </button>
+
+      <div className="">
+        {/* Status Badge */}
+        <div className="">
+          <div className="">
+            <Award className="" strokeWidth={2.5}/>
+            <span className="">Score: {quiz?.score}</span>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
