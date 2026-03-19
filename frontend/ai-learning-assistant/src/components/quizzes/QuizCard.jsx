@@ -54,9 +54,24 @@ const QuizCard = ({quiz, onDelete}) => {
 
       {/* Action Button */}
       <div className="">
-        {}
+        {quiz?.userAnswers?.length > 0 ? (
+          <Link to={`/quizzes/${quiz._id}/results`}>
+            <button className="">
+              <BarChart2 className="" strokeWidth={2.5}/>
+              View Results
+            </button>
+          </Link>
+        ) : (
+          <Link to={`/quizzes/${quiz._id}`}>
+            <button className="">
+              <span className="">
+                <Play className="" strokeWidth={2.5}/>
+                Start Quiz
+              </span>
+            </button>
+          </Link>
+        )}
       </div>
-
     </div>
   )
 }
