@@ -82,7 +82,7 @@ const QuizManager = ({documentId}) => {
       }
 
       return (
-        <div className="">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {quizzes.map((quiz) => (
             <QuizCard key={quiz._id} quiz={quiz} onDelete={handleDeleteRequest}/>
           ))}
