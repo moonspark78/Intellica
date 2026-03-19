@@ -26,6 +26,22 @@ const QuizCard = ({quiz, onDelete}) => {
             <span className="">Score: {quiz?.score}</span>
           </div>
         </div>
+
+
+        <div>
+          <h3
+            className=""
+            title={quiz.title}
+          >
+            {quiz.title ||
+              `Quiz - ${moment(quiz.createdAt).format("MMM D, YYYY")}`}
+          </h3>
+          <p className="">
+            Created {moment(quiz.createdAt).format("MMM D, YYYY")}
+          </p>
+        </div>
+
+
       </div>
     </div>
   )
