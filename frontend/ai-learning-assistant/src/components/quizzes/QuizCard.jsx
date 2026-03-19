@@ -41,8 +41,22 @@ const QuizCard = ({quiz, onDelete}) => {
           </p>
         </div>
 
-
+        {/* Quiz Info */}
+        <div className="">
+          <div className="">
+            <span>
+              {quiz.questions.length}{" "}
+              {quiz.questions.length === 1 ? "Question" : "Questions"}
+            </span>
+          </div>
+        </div>
       </div>
+
+      {/* Action Button */}
+      <div className="">
+        {}
+      </div>
+
     </div>
   )
 }
