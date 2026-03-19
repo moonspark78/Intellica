@@ -19,7 +19,7 @@ const EmptyState = ({title, description,buttonText, onActionClick}) => {
                     <Plus className='' strokeWidth={2.5}/>
                     {buttonText}
                 </span>
-                <div className=''/>
+                <div className='absolute inset-0 bg-linear-to-r from-white/0 via-white/0 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700'/>
             </button>
         )}
     </div>
