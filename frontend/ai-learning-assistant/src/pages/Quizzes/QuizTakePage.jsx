@@ -78,6 +78,10 @@ const QuizTakePage = () => {
     )
   }
 
+  const currentQuestion = quiz.questions[currentQuestionIndex];
+  const isAnswered = selectedAnswers.hasOwnProperty(currentQuestion._id);
+  const answeredCount = Object.keys(selectedAnswers).length;
+
 
   return (
     <div>QuizTakePage</div>
