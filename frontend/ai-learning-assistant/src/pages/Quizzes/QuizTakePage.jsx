@@ -44,6 +44,13 @@ const QuizTakePage = () => {
   };
 
 
+  const handleNextQuestion = () => {
+    if (currentQuestionIndex < quiz.questions.length -1) {
+      setCurrentQuestionIndex((prev) => prev + 1);
+    }
+  };
+
+
   return (
     <div>QuizTakePage</div>
   )
