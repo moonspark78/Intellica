@@ -20,6 +20,21 @@ const QuizTakePage = () => {
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [submitting, setSubmitting] = useState(false);
 
+
+  useEffect(() => {
+    const fetchQuiz = async () => {
+      try {
+        
+      } catch (error) {
+        
+      } finally {
+        setLoading(false);
+      }
+    };
+  }, [quizId])
+
+
+
   return (
     <div>QuizTakePage</div>
   )
