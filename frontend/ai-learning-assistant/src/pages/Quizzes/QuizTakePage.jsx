@@ -50,6 +50,12 @@ const QuizTakePage = () => {
     }
   };
 
+  const handlePreviousQuestion = () => {
+    if (currentQuestionIndex > 0) {
+      setCurrentQuestionIndex((prev) => prev -1);
+    }
+  };
+
 
   return (
     <div>QuizTakePage</div>
