@@ -24,7 +24,7 @@ const QuizTakePage = () => {
   useEffect(() => {
     const fetchQuiz = async () => {
       try {
-        
+        const response = await quizService.getQuizById(quizId);
       } catch (error) {
         
       } finally {
