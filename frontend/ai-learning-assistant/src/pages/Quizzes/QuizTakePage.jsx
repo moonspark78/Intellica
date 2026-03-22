@@ -56,6 +56,28 @@ const QuizTakePage = () => {
     }
   };
 
+  const handleSubmitQuiz = async () => {
+
+  };
+
+  if (loading) {
+    return (
+      <div className="">
+        <Spinner />
+      </div>
+    )
+  }
+
+  if (!quiz || quiz.questions.length === 0) {
+    return (
+      <div className="">
+        <div className="">
+          <p className=''>Quiz not found or has no questions.</p>
+        </div>
+      </div>
+    )
+  }
+
 
   return (
     <div>QuizTakePage</div>
