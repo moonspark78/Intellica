@@ -25,6 +25,7 @@ const QuizTakePage = () => {
     const fetchQuiz = async () => {
       try {
         const response = await quizService.getQuizById(quizId);
+        setQuiz(response.data);
       } catch (error) {
         
       } finally {
