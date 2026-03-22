@@ -36,6 +36,13 @@ const QuizTakePage = () => {
   }, [quizId])
 
 
+  const handleOptionChange = (questionId, optionIndex) => {
+    setSelectedAnswers((prev) => ({
+      ...prev,
+      [questionId]: optionIndex
+    }))
+  };
+
 
   return (
     <div>QuizTakePage</div>
