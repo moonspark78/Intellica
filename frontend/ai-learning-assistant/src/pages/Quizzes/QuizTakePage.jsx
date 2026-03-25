@@ -62,7 +62,7 @@ const QuizTakePage = () => {
 
   if (loading) {
     return (
-      <div className="">
+      <div className="flex items-center justify-center min-h-[60vh]">
         <Spinner />
       </div>
     )
@@ -70,7 +70,7 @@ const QuizTakePage = () => {
 
   if (!quiz || quiz.questions.length === 0) {
     return (
-      <div className="">
+      <div className="flex items-center justify-center min-h-[60vh]">
         <div className="">
           <p className=''>Quiz not found or has no questions.</p>
         </div>
