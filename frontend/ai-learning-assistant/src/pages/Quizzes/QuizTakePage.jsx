@@ -170,13 +170,13 @@ const QuizTakePage = () => {
       </div>
 
       {/* Navigation Buttons */}
-      <div className="">
+      <div className="flex items-center justify-between gap-4">
         <Button
           onClick={handlePreviousQuestion}
           disabled={currentQuestionIndex === 0 || submitting}
           variant="secondary"
         >
-          <ChevronLeft className="" strokeWidth={2.5}/>
+          <ChevronLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform duration-200" strokeWidth={2.5}/>
           Previous
         </Button>
 
@@ -184,22 +184,22 @@ const QuizTakePage = () => {
           <button
             onClick={handleSubmitQuiz}
             disabled={submitting}
-            className=""
+            className="group relative px-8 h-12 bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-semibold text-sm rounded-xl transition-all duration-200 shadow-lg shadow-emerald-500/25 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100 overflow-hidden"
           >
-            <span className="">
+            <span className="relative z-10 flex items-center justify-center gap-2">
               {submitting ? (
                 <>
-                  <div className="" />
+                  <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                   Submitting...
                 </>
               ) : ( 
                 <>
-                  <CheckCircle2 className="" strokeWidth={2.5}/>
+                  <CheckCircle2 className="w-4 h-4" strokeWidth={2.5}/>
                   Submit Quiz
                 </>
               )}
             </span>
-            <div className=""/>
+            <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700"/>
           </button>
         ) : (
           <Button
@@ -207,7 +207,7 @@ const QuizTakePage = () => {
             disabled={submitting}
           >
             Next
-            <ChevronRight className="" strokeWidth={2.5}/>
+            <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" strokeWidth={2.5}/>
           </Button>
         )}
       </div>
@@ -215,7 +215,7 @@ const QuizTakePage = () => {
 
 
       {/* Question Navigation Dots */}
-      <div className="">
+      <div className="mt-0 flex items-center justify-center gap-2 flex-wrap">
         {quiz.questions.map((_, index) => {
           const isAnsweredQuestion = selectedAnswers.hasOwnProperty(quiz.questions[index]._id);
           const isCurrent = index === currentQuestionIndex;
@@ -238,8 +238,6 @@ const QuizTakePage = () => {
           )
         })}
       </div>
-
-
     </div>
   );
 };
