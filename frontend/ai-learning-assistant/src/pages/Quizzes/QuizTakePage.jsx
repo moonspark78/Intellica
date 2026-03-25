@@ -84,7 +84,22 @@ const QuizTakePage = () => {
 
 
   return (
-    <div>QuizTakePage</div>
+    <div className="">
+      <div className="">
+        <span className=''>
+          Question
+        </span>
+        <span className=''>
+          {} answered
+        </span>
+      </div>
+      <div className="">
+        <div
+          className=''
+          style={{}}
+        />
+      </div>
+    </div>
   )
 }
 
