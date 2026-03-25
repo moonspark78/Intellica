@@ -28,6 +28,7 @@ const QuizTakePage = () => {
         setLoading(false);
       }
     };
+    fetchQuiz();
   }, [quizId]);
 
   const handleOptionChange = (questionId, optionIndex) => {
@@ -82,14 +83,14 @@ const QuizTakePage = () => {
       {/* Progress Bar */}
       <div className="mb-6">
         <div className="flex items-center justify-between mb-2">
-          <span className="">
+          <span className="text-sm font-semibold text-slate-700">
             Question {currentQuestionIndex + 1} of {quiz.questions.length}
           </span>
-          <span className="">{answeredCount} answered</span>
+          <span className="text-sm font-medium text-slate-500">{answeredCount} answered</span>
         </div>
-        <div className="">
+        <div className="relative h-2 bg-slate-100 rounded-full overflow-hidden">
           <div
-            className=""
+            className="absolute inset-y-0 left-0 bg-linear-to-r from-emerald-500 to-teal-500 rounded-full transition-all duration-500 ease-out"
             style={{
               width: `${((currentQuestionIndex + 1) / quiz.questions.length) * 100}%`,
             }}
@@ -98,14 +99,147 @@ const QuizTakePage = () => {
       </div>
 
       {/* Question Card */}
-      <div className="">
-        <div className="">
-          <div className="" />
-          <span className="">Question {currentQuestionIndex + 1}</span>
+      <div className="bg-white/80 backdrop-blur-xl border-2 border-slate-200 rounded-2xl shadow-xl shadow-slate-200/50 p-6 mb-8">
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-linear-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl mb-6">
+          <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+          <span className="text-sm font-semibold text-emerald-700">
+            Question {currentQuestionIndex + 1}
+          </span>
         </div>
 
-        <h3 className="">{currentQuestion.question}</h3>
+        <h3 className="text-lg font-semibold text-slate-900 mb-6 leading-relaxed">
+          {currentQuestion.question}
+        </h3>
+
+        {/* Options */}
+        <div className="space-y-3">
+          {currentQuestion.options.map((option, index) => {
+            const isSelected = selectedAnswers[currentQuestion._id] === index;
+            return (
+              <label 
+                key={index}
+                className={`group relative flex items-center p-3 border-2 rounded-xl cursor-pointer transition-all duration-200 ${
+                   isSelected
+                    ? "border-emerald-500 bg-emerald-50 shadow-lg shadow-emerald-500/10"
+                    : "border-slate-200 bg-slate-50/50 hover:border-slate-300 hover:bg-white hover:shadow-md"
+                   }`}
+              >
+                <input 
+                  type="radio"
+                  name={`question-${currentQuestion._id}`}
+                  value={index}
+                  checked={isSelected}
+                  onChange={() => handleOptionChange(currentQuestion._id, index)}
+                  className="sr-only" 
+                />
+
+                {/* Custom Radio Button */}
+                <div className={`shrink-0 w-5 h-5 rounded-full border-2 transition-all duration-200 ${
+                  isSelected
+                    ? "border-emerald-500 bg-emerald-500"
+                    : "border-slate-300 bg-white group-hover:border-emerald-400"
+                  }`}>
+                    {isSelected && (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <div className="w-2 h-2 bg-white rounded-full"/>
+                      </div>
+                    )}
+                </div>
+
+
+                {/* Option Text */}
+                <span className={`ml-4 text-sm font-medium transition-colors duration-200 ${
+                  isSelected
+                    ? "text-emerald-900"
+                    : "text-slate-700 group-hover:text-slate-900"
+                  }`}>
+                    {option}
+                </span>
+
+                {/* select Checkmark */}
+                {isSelected && (
+                  <CheckCircle2
+                    className="ml-auto w-5 h-5 text-emerald-500"
+                    strokeWidth={2.5}
+                  />
+                )}
+                </label>
+            );
+          })}
+        </div>
       </div>
+
+      {/* Navigation Buttons */}
+      <div className="">
+        <Button
+          onClick={handlePreviousQuestion}
+          disabled={currentQuestionIndex === 0 || submitting}
+          variant="secondary"
+        >
+          <ChevronLeft className="" strokeWidth={2.5}/>
+          Previous
+        </Button>
+
+        {currentQuestionIndex === quiz.questions.length -1 ? (
+          <button
+            onClick={handleSubmitQuiz}
+            disabled={submitting}
+            className=""
+          >
+            <span className="">
+              {submitting ? (
+                <>
+                  <div className="" />
+                  Submitting...
+                </>
+              ) : ( 
+                <>
+                  <CheckCircle2 className="" strokeWidth={2.5}/>
+                  Submit Quiz
+                </>
+              )}
+            </span>
+            <div className=""/>
+          </button>
+        ) : (
+          <Button
+            onClick={handleNextQuestion}
+            disabled={submitting}
+          >
+            Next
+            <ChevronRight className="" strokeWidth={2.5}/>
+          </Button>
+        )}
+      </div>
+
+
+
+      {/* Question Navigation Dots */}
+      <div className="">
+        {quiz.questions.map((_, index) => {
+          const isAnsweredQuestion = selectedAnswers.hasOwnProperty(quiz.questions[index]._id);
+          const isCurrent = index === currentQuestionIndex;
+
+          return (
+            <button
+              key={index}
+              onClick={() => setCurrentQuestionIndex(index)}
+              disabled={submitting}
+              className={`w-8 h-8 rounded-lg font-semibold text-xs transition-all duration-200 ${
+                isCurrent
+                  ? "bg-linear-to-l from-emerald-500 to-teal-500 text-white shadow-lg shadow-emerald-500/25 scale-110"
+                  : isAnsweredQuestion
+                  ? "bg-emerald-100 text-emerald-700 hover:bg-emerald-200"
+                  : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                } disabled:opacity-50 disabled:cursor-not-allowed `}
+            >
+              {index + 1}
+            </button>
+          )
+        })}
+      </div>
+
+
     </div>
   );
 };
