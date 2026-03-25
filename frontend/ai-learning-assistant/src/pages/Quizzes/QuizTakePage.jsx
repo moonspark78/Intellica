@@ -89,6 +89,7 @@ const QuizTakePage = () => {
 
       {/* Progress Bar */}
       <div className="">
+      <div className="">
         <span className=''>
           Question {currentQuestionIndex + 1} of {quiz.questions.length}
         </span>
@@ -99,10 +100,17 @@ const QuizTakePage = () => {
       <div className="">
         <div
           className=''
-          style={{}}
+          style={{ width: `${((currentQuestionIndex + 1) / quiz.questions.length) * 100}%` }}
         />
       </div>
     </div>
+
+
+    
+
+    </div>
+
+
   )
 }
 
