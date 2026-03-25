@@ -85,12 +85,15 @@ const QuizTakePage = () => {
 
   return (
     <div className="">
+      <PageHeader title={quiz.title || "Take Quiz"} />
+
+      {/* Progress Bar */}
       <div className="">
         <span className=''>
-          Question
+          Question {currentQuestionIndex + 1} of {quiz.questions.length}
         </span>
         <span className=''>
-          {} answered
+          {answeredCount} answered
         </span>
       </div>
       <div className="">
