@@ -71,8 +71,8 @@ const QuizTakePage = () => {
   if (!quiz || quiz.questions.length === 0) {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
-        <div className="">
-          <p className=''>Quiz not found or has no questions.</p>
+        <div className="text-center">
+          <p className='text-slate-600 text-lg'>Quiz not found or has no questions.</p>
         </div>
       </div>
     )
