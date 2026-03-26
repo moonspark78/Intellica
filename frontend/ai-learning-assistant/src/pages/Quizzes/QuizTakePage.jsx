@@ -62,7 +62,9 @@ const QuizTakePage = () => {
         return { questionIndex, selectedAnswer };
       });
 
-      
+      await quizService.submitQuiz(quizId, formattedAnswers);
+      toast.success("Quiz submitted successfully!");
+      navigate(`/quizzes/${quizId}/results`);
     } catch (error) {
       
     } finally {
