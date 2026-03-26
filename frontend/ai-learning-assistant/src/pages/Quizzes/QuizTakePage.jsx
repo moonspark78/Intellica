@@ -54,7 +54,9 @@ const QuizTakePage = () => {
   const handleSubmitQuiz = async () => {
     setSubmitting(true);
     try {
-      
+      const formattedAnswers = Object.keys(selectedAnswers).map(questionId => {
+        const question = quiz.questions.find(q => q._id === questionId);
+      })
     } catch (error) {
       
     } finally {
