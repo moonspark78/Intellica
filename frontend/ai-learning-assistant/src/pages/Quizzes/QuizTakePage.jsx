@@ -58,6 +58,7 @@ const QuizTakePage = () => {
         const question = quiz.questions.find(q => q._id === questionId);
         const questionIndex = quiz.questions.findIndex(q => q._id === questionId);
         const optionIndex = selectedAnswers[questionId];
+        const selectedAnswer = question.options[optionIndex];
       })
     } catch (error) {
       
