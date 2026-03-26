@@ -50,9 +50,20 @@ const QuizTakePage = () => {
     }
   };
 
+
   const handleSubmitQuiz = async () => {
     setSubmitting(true);
+    try {
+      
+    } catch (error) {
+      
+    } finally {
+      setSubmitting(false);
+    }
   };
+
+
+
 
   if (loading) {
     return (
