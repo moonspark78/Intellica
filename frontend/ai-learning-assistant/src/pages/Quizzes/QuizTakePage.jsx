@@ -56,6 +56,7 @@ const QuizTakePage = () => {
     try {
       const formattedAnswers = Object.keys(selectedAnswers).map(questionId => {
         const question = quiz.questions.find(q => q._id === questionId);
+        const questionIndex = quiz.questions.findIndex(q => q._id === questionId);
       })
     } catch (error) {
       
