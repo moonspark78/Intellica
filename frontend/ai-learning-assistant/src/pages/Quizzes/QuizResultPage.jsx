@@ -9,6 +9,13 @@ import { ArrowLeft, CheckCircle2, XCircle, Trophy, Target, BookOpen } from 'luci
 
 
 const QuizResultPage = () => {
+
+  const { quizId } = useParams();
+  const [results, setResults] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+
+
   return (
     <div>QuizResultPage</div>
   )
