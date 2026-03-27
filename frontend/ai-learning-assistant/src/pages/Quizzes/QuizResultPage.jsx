@@ -15,6 +15,9 @@ const QuizResultPage = () => {
   const [loading, setLoading] = useState(true);
 
 
+  useEffect(() => {
+    const fetchResults = async () => {};
+  }, [quizId])
 
   return (
     <div>QuizResultPage</div>
