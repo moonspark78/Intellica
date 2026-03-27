@@ -61,6 +61,14 @@ const QuizResultPage = () => {
     return "from-rose-500 to-red-500";
   };
 
+  const getScoreMessage = (score) => {
+    if (score >= 90) return "Outstanding! ";
+    if (score >= 80) return "Great job! ";
+    if (score >= 70) return "Good work! ";
+    if (score >= 60) return "not bad! ";
+    return "Keep practicing! "
+  };
+
   return (
     <div>QuizResultPage</div>
   )
