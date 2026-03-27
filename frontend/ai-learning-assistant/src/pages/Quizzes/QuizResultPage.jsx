@@ -28,7 +28,33 @@ const QuizResultPage = () => {
       }
     };
     fetchResults();
-  }, [quizId])
+  }, [quizId]);
+
+  if (loading) {
+    return (
+      <div className="">
+        <Spinner/>
+      </div>
+    );
+  }
+
+  if (!results || !results.data) {
+    return (
+      <div className="">
+        <div className="">
+          <p className=''>Quiz results not found.</p>
+        </div>
+      </div>
+    )
+  }
+
+  const { data: {quiz, results: detailedResults } } = results;
+  const score = quiz.score;
+  const totalQuestions = detailedResults.length;
+  const correctAnswers = detailedResults.filter(r => r.isCorrect).length;
+  const incorrectAnswers = totalQuestions - correctAnswers;
+
+
 
   return (
     <div>QuizResultPage</div>
