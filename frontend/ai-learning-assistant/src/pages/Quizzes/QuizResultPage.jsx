@@ -55,6 +55,11 @@ const QuizResultPage = () => {
   const incorrectAnswers = totalQuestions - correctAnswers;
 
 
+  const getScoreColor = (score) => {
+    if (score >= 80) return "from-emerald-500 to-teal-500";
+    if (score >= 60) return "from-amber-500 to-orange-500";
+    return "from-rose-500 to-red-500";
+  };
 
   return (
     <div>QuizResultPage</div>
