@@ -16,7 +16,16 @@ const QuizResultPage = () => {
 
 
   useEffect(() => {
-    const fetchResults = async () => {};
+    const fetchResults = async () => {
+      try {
+        
+      } catch (error) {
+        toast.error("Failed to fetch quiz results.");
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    };
   }, [quizId])
 
   return (
