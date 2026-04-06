@@ -99,6 +99,9 @@ const QuizResultPage = () => {
             <div className={`inline-block text-5xl font-bold bg-linear-to-r ${getScoreColor(color)} bg-clip-text text-transparent mb-2`}>
               {score}%
             </div>
+            <p className=''>
+              {getScoreMessage(score)}
+            </p>
           </div>
 
 
