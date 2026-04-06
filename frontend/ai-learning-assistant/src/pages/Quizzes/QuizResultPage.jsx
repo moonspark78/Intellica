@@ -141,7 +141,6 @@ const QuizResultPage = () => {
           const correctAnswerIndex = result.correctAnswer.startsWith('O')
             ? parseInt(result.correctAnswer.substring(1)) - 1
             : result.options.findIndex(opt => opt === result.correctAnswer);
-
           const isCorrect = result.isCorrect;
 
           return(
@@ -149,7 +148,29 @@ const QuizResultPage = () => {
               className=""
               key={index}
             >
-            
+              <div className="">
+                <div className="">
+                  <div className="">
+                    <span className=''>
+                      Question {index + 1}
+                    </span>
+                  </div>
+                  <h4 className=''>
+                    {result.question}
+                  </h4>
+                </div>
+                <div className={`shrink-0 w-10 h-10 rounded-xl flex items-center justify-center ${
+                  isCorrect
+                    ? "bg-emerald-50 border-2 border-emerald-200"
+                    : "bg-rose-50 border-2 border-rose-200"
+                  }`}>
+                    {isCorrect ? (
+                      <CheckCircle2 className='' strokeWidth={2.5} />
+                    ) : (
+                      <XCircle className='' strokeWidth={2.5} />
+                    )}
+                </div>
+              </div>
             </div>
           )
         })}
