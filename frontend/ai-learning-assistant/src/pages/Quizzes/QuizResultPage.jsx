@@ -228,6 +228,14 @@ const QuizResultPage = () => {
                     <div className="">
                       <BookOpen className='' strokeWidth={2}/>
                     </div>
+                    <div className="">
+                      <p className=''>
+                        Explanation
+                      </p>
+                      <p className=''>
+                        {result.explanation}
+                      </p>
+                    </div>
                   </div>
                 </div>
               )}
