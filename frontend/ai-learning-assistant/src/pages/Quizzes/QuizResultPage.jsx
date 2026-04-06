@@ -5,6 +5,7 @@ import PageHeader from '../../components/common/PageHeader';
 import Spinner from '../../components/common/Spinner';
 import toast from 'react-hot-toast';
 import { ArrowLeft, CheckCircle2, XCircle, Trophy, Target, BookOpen } from 'lucide-react';
+import Document from '../../../../../backend/models/Document';
 
 
 
@@ -32,7 +33,7 @@ const QuizResultPage = () => {
 
   if (loading) {
     return (
-      <div className="">
+      <div className="flex items-center justify-center min-h-[60vh]">
         <Spinner/>
       </div>
     );
@@ -40,9 +41,9 @@ const QuizResultPage = () => {
 
   if (!results || !results.data) {
     return (
-      <div className="">
-        <div className="">
-          <p className=''>Quiz results not found.</p>
+      <div className="flex items-center justify-center min-h-[60vh]">
+        <div className="text-center">
+          <p className='text-slate-600 text-lg'>Quiz results not found.</p>
         </div>
       </div>
     )
@@ -70,7 +71,18 @@ const QuizResultPage = () => {
   };
 
   return (
-    <div>QuizResultPage</div>
+    <div className="">
+      {/* Back Button */}
+      <div className="">
+        <Link
+          to={`/documents/${quiz.document._id}`}
+          className=''
+        >
+          <ArrowLeft className='' strokeWidth={2}/>
+          Back to Document
+        </Link>
+      </div>
+    </div>
   )
 }
 
