@@ -189,7 +189,7 @@ const QuizResultPage = () => {
                         : "bg-slate-50 border-slate-200"
                       }`}
                     >
-                      <div className="">
+                      <div className="flex items-center justify-between gap-3">
                         <span className={`text-sm font-medium ${
                           isCorrectOption
                             ? "text-emerald-900"
@@ -199,10 +199,10 @@ const QuizResultPage = () => {
                           }`}>
                           {option}
                         </span>
-                        <div className="">
+                        <div className="flex items-center gap-2">
                           {isCorrectOption && (
-                            <span className=''>
-                              <CheckCircle2 className='' strokeWidth={2.5}/>
+                            <span className='inline-flex items-center gap-1 px-2 py-1 bg-emerald-100 border border-emerald-300 rounded-lg text-xs font-semibold text-emerald-700'>
+                              <CheckCircle2 className='w-3 h-3' strokeWidth={2.5}/>
                               Correct
                             </span>
                           )}
