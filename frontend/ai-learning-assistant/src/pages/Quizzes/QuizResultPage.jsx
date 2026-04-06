@@ -82,6 +82,31 @@ const QuizResultPage = () => {
           Back to Document
         </Link>
       </div>
+
+      <PageHeader title={`${quiz.title || 'Quiz'} Results`}/>
+
+      {/* Score Card */}
+      <div className="">
+        <div className="">
+          <div className="">
+            <Trophy className='' strokeWidth={2}/>
+          </div>
+
+          <div>
+            <p className=''>
+              Your Score
+            </p>
+            <div className={`inline-block text-5xl font-bold bg-linear-to-r ${getScoreColor(color)} bg-clip-text text-transparent mb-2`}>
+              {score}%
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+
+
     </div>
   )
 }
