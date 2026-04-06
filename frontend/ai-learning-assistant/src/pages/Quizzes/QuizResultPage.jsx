@@ -215,9 +215,22 @@ const QuizResultPage = () => {
                         </div>
                       </div>
                     </div>
-                  )
+                  );
                 })}
               </div>
+
+
+
+              {/* Explanation */}
+              {result.explanation && (
+                <div className="">
+                  <div className="">
+                    <div className="">
+                      <BookOpen className='' strokeWidth={2}/>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           )
         })}
