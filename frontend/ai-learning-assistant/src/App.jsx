@@ -12,6 +12,7 @@ import DocumentDetailPage from './pages/Documents/DocumentDetailPage';
 import DocumentListPage from './pages/Documents/DocumentListPage';
 import ProfilePage from './pages/Profile/ProfilePage';
 import QuizResultPage from './pages/Quizzes/QuizResultPage';
+import PricingPage from './pages/Pricing/PricingPage';
 import { useAuth } from './context/AuthContext';
 
 const App = () => {
@@ -47,6 +48,7 @@ const App = () => {
             <Route path='quizzes/:quizId' element={<QuizTakePage/>} />
             <Route path='/quizzes/:quizId/results' element={<QuizResultPage/>} />
             <Route path="/profile" element={<ProfilePage/>} />
+            <Route path="/pricing" element={<PricingPage />} />
         </Route>
 
         <Route path="*" element={<NotFoundPage/>}/>

@@ -35,7 +35,7 @@ const DashboardPage = () => {
       <div className="min-h-screen bg-linear-to-br from-slate-50 via-white to-slate-50 flex items-center justify-center">
         <div className="text-center">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-slate-100 mb-4">
-            <TrendingUp className="w-8 h-8 text-slate-400" />
+            <TrendingUp className="w-8 h-8 te" />
           </div>
           <p className="text-slate-600 text-sm">
             No dashboard data available
