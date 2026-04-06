@@ -171,6 +171,41 @@ const QuizResultPage = () => {
                     )}
                 </div>
               </div>
+
+              <div className="">
+                {result.options.map((option, optIndex) => {
+                  const isCorrectOption = optIndex === correctAnswerIndex;
+                  const isUserAnswer = optIndex === userAnswerIndex;
+                  const isWrongAnswer = isUserAnswer && !isCorrect;
+
+                  return (
+                    <div 
+                    key={optIndex}
+                    className={`relative px-4 py-3 rounded-lg border-2 transition-all duration-200 ${
+                      isCorrectOption
+                        ? "bg-emerald-50 border-emerald-200 shadow-lg shadow-emerald-500/10"
+                        : isWrongAnswer
+                        ? "bg-rose-50 border-rose-300"
+                        : "bg-slate-50 border-slate-200"
+                      }`}
+                    >
+                      <div className="">
+                        <span className={`text-sm font-medium ${
+                          isCorrectOption
+                            ? "text-emerald-900"
+                            : isWrongAnswer
+                            ? "text-rose-900"
+                            : "text-slate-700"
+                          }`}>
+                          {option}
+                        </span>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+
+
             </div>
           )
         })}
