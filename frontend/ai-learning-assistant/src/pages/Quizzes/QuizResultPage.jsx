@@ -86,7 +86,7 @@ const QuizResultPage = () => {
       <PageHeader title={`${quiz.title || 'Quiz'} Results`}/>
 
       {/* Score Card */}
-      <div className="">
+      <div className="bg-white/80 backdrop-blur-xl border-2 border-slate-200 rounded-2xl shadow-xl shadow-slate-200/50 p-8 mb-8">
         <div className="">
           <div className="">
             <Trophy className='' strokeWidth={2}/>
