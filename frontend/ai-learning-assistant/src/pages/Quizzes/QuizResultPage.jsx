@@ -112,8 +112,8 @@ const QuizResultPage = () => {
                 {totalQuestions} Total
               </span>
             </div>
-            <div className="">
-              <CheckCircle2 className='' strokeWidth={2} />
+            <div className="flex items-center gap-2 px-4 py-2 bg-emerald-50 border border-emerald-200 rounded-xl">
+              <CheckCircle2 className='w-4 h-4 text-emerald-600' strokeWidth={2} />
               <span className=''>
                 {correctAnswers} Correct
               </span>
