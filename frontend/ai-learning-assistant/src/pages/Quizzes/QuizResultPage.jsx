@@ -107,15 +107,26 @@ const QuizResultPage = () => {
           {/* Stats */}
           <div className="">
             <div className="">
-              <Target className='' strokeWidth={2}/>
+              <Target className='' strokeWidth={2} />
+              <span className=''>
+                {totalQuestions} Total
+              </span>
+            </div>
+            <div className="">
+              <CheckCircle2 className='' strokeWidth={2} />
+              <span className=''>
+                {correctAnswers} Correct
+              </span>
+            </div>
+            <div className="">
+              <XCircle className='' strokeWidth={2} />
+              <span className=''>
+                {incorrectAnswers} Incorrect
+              </span>
             </div>
           </div>
-
-
         </div>
       </div>
-
-
     </div>
   )
 }
