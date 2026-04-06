@@ -78,7 +78,7 @@ const QuizResultPage = () => {
           to={`/documents/${quiz.document._id}`}
           className='group inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors duration-200'
         >
-          <ArrowLeft className='' strokeWidth={2}/>
+          <ArrowLeft className='w-4 h-4 group-hover:-translate-x-1 transition-transform duration-200' strokeWidth={2}/>
           Back to Document
         </Link>
       </div>
