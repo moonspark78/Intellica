@@ -199,13 +199,25 @@ const QuizResultPage = () => {
                           }`}>
                           {option}
                         </span>
+                        <div className="">
+                          {isCorrectOption && (
+                            <span className=''>
+                              <CheckCircle2 className='' strokeWidth={2.5}/>
+                              Correct
+                            </span>
+                          )}
+                          {isWrongAnswer && (
+                            <span className=''>
+                              <XCircle className='' strokeWidth={2.5}/>
+                              Your Answer
+                            </span>
+                          )}
+                        </div>
                       </div>
                     </div>
                   )
                 })}
               </div>
-
-
             </div>
           )
         })}
