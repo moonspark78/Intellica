@@ -87,8 +87,8 @@ const QuizResultPage = () => {
 
       {/* Score Card */}
       <div className="bg-white/80 backdrop-blur-xl border-2 border-slate-200 rounded-2xl shadow-xl shadow-slate-200/50 p-8 mb-8">
-        <div className="">
-          <div className="">
+        <div className="text-center space-y-6">
+          <div className="inline-flex items-center justify-center w-15 h-15 rounded-2xl bg-linear-to-br from-emerald-100 to-teal-100 shadow-lg shadow-emerald-500/25">
             <Trophy className='' strokeWidth={2}/>
           </div>
 
