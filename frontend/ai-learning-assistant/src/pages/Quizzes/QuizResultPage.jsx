@@ -105,10 +105,10 @@ const QuizResultPage = () => {
           </div>
 
           {/* Stats */}
-          <div className="">
-            <div className="">
-              <Target className='' strokeWidth={2} />
-              <span className=''>
+          <div className="flex items-center justify-center gap-4 pt-4">
+            <div className="flex items-center gap-2 px-4 py-2 bg-slate-50 border border-slate-200 rounded-xl">
+              <Target className='w-4 h-4 text-slate-600' strokeWidth={2} />
+              <span className='text-sm font-semibold text-slate-700'>
                 {totalQuestions} Total
               </span>
             </div>
