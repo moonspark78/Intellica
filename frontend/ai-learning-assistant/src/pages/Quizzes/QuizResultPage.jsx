@@ -135,6 +135,24 @@ const QuizResultPage = () => {
           <BookOpen className='' strokeWidth={2}/>
           <h3 className=''>Detailed Review</h3>
         </div>
+
+        {detailedResults.map((result, index) => {
+          const userAnswerIndex = result.options.findIndex(opt => opt === result.selectedAnswer);
+          const correctAnswerIndex = result.correctAnswer.startsWith('O')
+            ? parseInt(result.correctAnswer.substring(1)) - 1
+            : result.options.findIndex(opt => opt === result.correctAnswer);
+
+          const isCorrect = result.isCorrect;
+
+          return(
+            <div 
+              className=""
+              key={index}
+            >
+            
+            </div>
+          )
+        })}
       </div>
     </div>
   )
