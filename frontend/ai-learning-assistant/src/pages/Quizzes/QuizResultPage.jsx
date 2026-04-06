@@ -114,17 +114,26 @@ const QuizResultPage = () => {
             </div>
             <div className="flex items-center gap-2 px-4 py-2 bg-emerald-50 border border-emerald-200 rounded-xl">
               <CheckCircle2 className='w-4 h-4 text-emerald-600' strokeWidth={2} />
-              <span className=''>
+              <span className='text-sm font-semibold text-emerald-700'>
                 {correctAnswers} Correct
               </span>
             </div>
-            <div className="">
-              <XCircle className='' strokeWidth={2} />
-              <span className=''>
+            <div className="flex items-center gap-2 px-4 py-2 bg-rose-50 border border-rose-200 rounded-xl">
+              <XCircle className='w-4 h-4 text-rose-600' strokeWidth={2} />
+              <span className='text-sm font-semibold text-rose-700'>
                 {incorrectAnswers} Incorrect
               </span>
             </div>
           </div>
+        </div>
+      </div>
+
+
+      {/* Questions Review */}
+      <div className="">
+        <div className="">
+          <BookOpen className='' strokeWidth={2}/>
+          <h3 className=''>Detailed Review</h3>
         </div>
       </div>
     </div>
