@@ -5,7 +5,6 @@ import PageHeader from '../../components/common/PageHeader';
 import Spinner from '../../components/common/Spinner';
 import toast from 'react-hot-toast';
 import { ArrowLeft, CheckCircle2, XCircle, Trophy, Target, BookOpen } from 'lucide-react';
-import Document from '../../../../../backend/models/Document';
 
 
 
@@ -96,7 +95,7 @@ const QuizResultPage = () => {
             <p className='text-sm font-semibold text-slate-600 uppercase tracking-wide mb-2'>
               Your Score
             </p>
-            <div className={`inline-block text-5xl font-bold bg-linear-to-r ${getScoreColor(color)} bg-clip-text text-transparent mb-2`}>
+            <div className={`inline-block text-5xl font-bold bg-linear-to-r ${getScoreColor(score)} bg-clip-text text-transparent mb-2`}>
               {score}%
             </div>
             <p className='text-lg font-medium text-slate-700'>
@@ -223,16 +222,16 @@ const QuizResultPage = () => {
 
               {/* Explanation */}
               {result.explanation && (
-                <div className="">
-                  <div className="">
-                    <div className="">
-                      <BookOpen className='' strokeWidth={2}/>
+                <div className="p-4 bg-linear-to-br from-slate-50 to-slate-100/50 border border-slate-200 rounded-xl">
+                  <div className="flex items-start gap-3">
+                    <div className="shrink-0 w-8 h-8 rounded-lg bg-slate-200 flex items-center justify-center mt-0.5">
+                      <BookOpen className='w-4 h-4 text-slate-600' strokeWidth={2}/>
                     </div>
-                    <div className="">
-                      <p className=''>
+                    <div className="flex-1">
+                      <p className='text-xs font-semibold text-slate-600 uppercase tracking-wide mb-1'>
                         Explanation
                       </p>
-                      <p className=''>
+                      <p className='text-sm text-slate-700 leading-relaxed'>
                         {result.explanation}
                       </p>
                     </div>
