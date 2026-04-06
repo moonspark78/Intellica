@@ -207,8 +207,8 @@ const QuizResultPage = () => {
                             </span>
                           )}
                           {isWrongAnswer && (
-                            <span className=''>
-                              <XCircle className='' strokeWidth={2.5}/>
+                            <span className='inline-flex items-center gap-1 px-2 py-1 bg-rose-100 border border-rose-300 rounded-lg text-xs font-semibold text-rose-700'>
+                              <XCircle className='w-3 h-3' strokeWidth={2.5}/>
                               Your Answer
                             </span>
                           )}
