@@ -130,10 +130,10 @@ const QuizResultPage = () => {
 
 
       {/* Questions Review */}
-      <div className="">
-        <div className="">
-          <BookOpen className='' strokeWidth={2}/>
-          <h3 className=''>Detailed Review</h3>
+      <div className="space-y-6">
+        <div className="flex items-center gap-3 mb-2">
+          <BookOpen className='w-5 h-5 text-slate-600' strokeWidth={2}/>
+          <h3 className='text-lg font-semibold text-slate-900'>Detailed Review</h3>
         </div>
 
         {detailedResults.map((result, index) => {
@@ -145,17 +145,17 @@ const QuizResultPage = () => {
 
           return(
             <div 
-              className=""
+              className="bg-white/80 backdrop-blur-xl border-2 border-slate-200 rounded-2xl p-6 shadow-lg shadow-slate-200/50"
               key={index}
             >
-              <div className="">
-                <div className="">
-                  <div className="">
-                    <span className=''>
+              <div className="flex items-start justify-between gap-4 mb-3">
+                <div className="flex-1">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-slate-50 border border-slate-200 rounded-lg mb-3">
+                    <span className='text-xs font-semibold text-slate-600'>
                       Question {index + 1}
                     </span>
                   </div>
-                  <h4 className=''>
+                  <h4 className='text-base font-semibold text-slate-900 leading-relaxed'>
                     {result.question}
                   </h4>
                 </div>
@@ -165,14 +165,14 @@ const QuizResultPage = () => {
                     : "bg-rose-50 border-2 border-rose-200"
                   }`}>
                     {isCorrect ? (
-                      <CheckCircle2 className='' strokeWidth={2.5} />
+                      <CheckCircle2 className='w-5 h-5 text-emerald-600' strokeWidth={2.5} />
                     ) : (
-                      <XCircle className='' strokeWidth={2.5} />
+                      <XCircle className='w-5 h-5 text-rose-600' strokeWidth={2.5} />
                     )}
                 </div>
               </div>
 
-              <div className="">
+              <div className="space-y-3 mb-4">
                 {result.options.map((option, optIndex) => {
                   const isCorrectOption = optIndex === correctAnswerIndex;
                   const isUserAnswer = optIndex === userAnswerIndex;
