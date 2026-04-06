@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import { Check, X, Zap, Crown, Sparkles, ArrowRight } from 'lucide-react';
-import { loadStripe } from '@stripe/stripe-js';
 import axios from 'axios';
-
-// Initialise Stripe.js avec ta clé publique
-const stripePromise = loadStripe('pk_test_TA_CLE_PUBLIQUE'); // <--- remplace par ta clé Stripe publique
 
 const plans = [
   {
@@ -82,21 +78,33 @@ const plans = [
 
 const PricingPage = () => {
   const [billing, setBilling] = useState('monthly');
+  const [loading, setLoading] = useState(false);
 
-  // 🌟 Fonction pour rediriger vers Stripe Checkout
+  // Fonction pour rediriger vers Stripe Checkout
   const handleCheckout = async (planId) => {
+    if (planId === 'free') return;
+    
+    setLoading(true);
+    
     try {
       // Appel au backend pour créer une session Stripe
       const response = await axios.post(
-        'http://localhost:5000/api/create-checkout-session',
-        { plan: planId, billing } // envoyer le plan et type de facturation
+        'http://localhost:8000/api/stripe/checkout',
+        { plan: planId, billing }
       );
 
-      const stripe = await stripePromise;
-      await stripe.redirectToCheckout({ sessionId: response.data.id });
+      // ✅ Redirection directe vers Stripe (méthode supportée)
+      window.location.href = response.data.url;
+      
     } catch (error) {
       console.error('Stripe checkout error:', error);
-      alert('Erreur lors de la redirection vers le paiement');
+      let errorMessage = 'Erreur lors de la redirection vers le paiement';
+      if (error.response?.data?.error) {
+        errorMessage += `: ${error.response.data.error}`;
+      }
+      alert(errorMessage);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -128,15 +136,16 @@ const PricingPage = () => {
             </button>
             <button
               onClick={() => setBilling('yearly')}
+              disabled={true}
               className={`px-5 py-2 text-sm font-semibold rounded-lg transition-all duration-200 flex items-center gap-2 ${
                 billing === 'yearly'
                   ? 'bg-white text-slate-900 shadow-sm'
-                  : 'text-slate-500 hover:text-slate-700'
+                  : 'text-slate-400 cursor-not-allowed'
               }`}
             >
               Yearly
               <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-md">
-                -20%
+                Soon
               </span>
             </button>
           </div>
@@ -203,11 +212,11 @@ const PricingPage = () => {
                 <button
                   className={`w-full flex items-center justify-center gap-2 py-3 px-5 rounded-xl text-sm font-bold
                     transition-all duration-200 mb-6 ${plan.buttonStyle}`}
-                  disabled={plan.id === 'free'}
+                  disabled={plan.id === 'free' || loading}
                   onClick={() => handleCheckout(plan.id)}
                 >
-                  {plan.buttonText}
-                  {plan.id !== 'free' && <ArrowRight size={16} strokeWidth={2.5} />}
+                  {loading ? 'Chargement...' : plan.buttonText}
+                  {plan.id !== 'free' && !loading && <ArrowRight size={16} strokeWidth={2.5} />}
                 </button>
 
                 {/* Divider */}
