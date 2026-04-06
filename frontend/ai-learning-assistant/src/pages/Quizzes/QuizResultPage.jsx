@@ -71,12 +71,12 @@ const QuizResultPage = () => {
   };
 
   return (
-    <div className="">
+    <div className="max-w-5xl mx-auto">
       {/* Back Button */}
-      <div className="">
+      <div className="mb-6">
         <Link
           to={`/documents/${quiz.document._id}`}
-          className=''
+          className='group inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors duration-200'
         >
           <ArrowLeft className='' strokeWidth={2}/>
           Back to Document
