@@ -64,7 +64,7 @@ const FlashcardSetCard = ({ flashcardSet }) => {
               {reviewedCount} / {totalCount} Reviewed
             </span>
           </div>
-          <div className="">
+          <div className="relative h-2 bg-slate-100 rounded-full overflow-hidden">
             <div
               className=""
               style={{ width: `${progressPercent}%` }}
