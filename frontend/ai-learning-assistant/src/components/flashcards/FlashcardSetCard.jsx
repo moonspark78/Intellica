@@ -57,10 +57,10 @@ const FlashcardSetCard = ({ flashcardSet }) => {
       {totalCount > 0 && (
         <div className="space-y-2">
           <div className="flex items-center justify-between">
-            <span className=''>
+            <span className='text-xs font-medium text-slate-600'>
               Progress
             </span>
-            <span className=''>
+            <span className='text-xs font-medium text-slate-700'>
               {reviewedCount} / {totalCount} Reviewed
             </span>
           </div>
