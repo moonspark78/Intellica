@@ -55,8 +55,8 @@ const FlashcardSetCard = ({ flashcardSet }) => {
 
       {/* Progress Bar */}
       {totalCount > 0 && (
-        <div className="">
-          <div className="">
+        <div className="space-y-2">
+          <div className="flex items-center justify-between">
             <span className=''>
               Progress
             </span>
