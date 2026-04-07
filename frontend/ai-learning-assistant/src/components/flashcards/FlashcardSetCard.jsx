@@ -23,14 +23,14 @@ const FlashcardSetCard = ({ flashcardSet }) => {
     <div className="space-y-4">
       {/* Icon and Title */}
       <div className="flex items-start gap-4">
-        <div className="shrink-0 w-12 h-12 rounded-xl bg-linear-to-br from-emerald-100">
-          <BookOpen className='' size={24} />
+        <div className="shrink-0 w-12 h-12 rounded-xl bg-linear-to-br from-emerald-100 to-teal-100 flex items-center justify-center">
+          <BookOpen className='w-6 h-6 text-emerald-600' size={24} />
         </div>
-        <div className="">
-          <h3 className="" title={flashcardSet?.documentId?.title}>
+        <div className="flex-1 min-w-0">
+          <h3 className="text-base font-semibold text-slate-900 line-clamp-2 mb-1" title={flashcardSet?.documentId?.title}>
             {flashcardSet?.documentId?.title}
           </h3>
-          <p className=''> 
+          <p className='text-xs font-medium text-slate-500 uppercase tracking-wide'> 
             Created {moment(flashcardSet.createdAt).fromNow()} 
           </p>
         </div>
