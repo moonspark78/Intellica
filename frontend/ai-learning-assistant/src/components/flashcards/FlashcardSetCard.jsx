@@ -45,8 +45,8 @@ const FlashcardSetCard = ({ flashcardSet }) => {
         </div>
         {reviewedCount > 0 && (
           <div className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 border border-emerald-200 rounded-lg">
-            <TrendingUp className='' strokeWidth={2.5}/>
-            <span className=''>
+            <TrendingUp className='w-3.5 h-3.5 text-emerald-600' strokeWidth={2.5}/>
+            <span className='text-sm font-semibold text-emerald-700'>
               {progressPercent}% 
             </span>
           </div>
