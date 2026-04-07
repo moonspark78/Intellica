@@ -37,14 +37,14 @@ const FlashcardSetCard = ({ flashcardSet }) => {
       </div>
 
       {/* Stats */}
-      <div className="">
-        <div className="">
-          <span className=''>
+      <div className="flex items-center gap-3 pt-2">
+        <div className="px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg">
+          <span className='text-sm font-semibold text-slate-700'>
             {totalCount} {totalCount === 1 ? 'Card' : 'Cards'}
           </span>
         </div>
         {reviewedCount > 0 && (
-          <div className="">
+          <div className="flex ">
             <TrendingUp className='' strokeWidth={2.5}/>
             <span className=''>
               {progressPercent}% 
