@@ -75,7 +75,7 @@ const FlashcardSetCard = ({ flashcardSet }) => {
     </div>
 
     {/* Study Button */}
-    <div className="">
+    <div className="mt-6 pt-4 border-t border-slate-100">
       <button
         onClick={(e) => {
           e.stopPropagation();
