@@ -17,13 +17,13 @@ const FlashcardSetCard = ({ flashcardSet }) => {
   const progressPercent = totalCount > 0 ? Math.round((reviewedCount / totalCount) * 100) : 0;
 
   return <div
-    className=''
+    className='group relative bg-white/80 backdrop-blur-xl border-2 border-slate-200 hover:border-emerald-300 rounded-2xl p-6 cursor-pointer transition-all duration-200 hover:shadow-lg hover:shadow-emerald-500/10 flex flex-col justify-between'
     onClick={handleStudyNow}
   >
-    <div className="">
+    <div className="space-y-4">
       {/* Icon and Title */}
-      <div className="">
-        <div className="">
+      <div className="flex items-start gap-4">
+        <div className="shrink-0 w-12 h-12 rounded-xl bg-linear-to-br from-emerald-100">
           <BookOpen className='' size={24} />
         </div>
         <div className="">
