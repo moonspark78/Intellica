@@ -66,7 +66,7 @@ const FlashcardSetCard = ({ flashcardSet }) => {
           </div>
           <div className="relative h-2 bg-slate-100 rounded-full overflow-hidden">
             <div
-              className=""
+              className="absolute inset-y-0 left-0 bg-linear-to-r from-emerald-500 to-teal-500 rounded-full transition-all duration-500 ease-out"
               style={{ width: `${progressPercent}%` }}
             />
           </div>
