@@ -94,7 +94,7 @@ const FlashcardSetCard = ({ flashcardSet }) => {
 
     {/* test */}
     <div className="">
-      <div className="relative"></div>
+      <span className='text-sm font-medium text-slate-500 uppercase tracking-wide'>
     </div>
   </div>
 }
