@@ -94,12 +94,7 @@ const FlashcardSetCard = ({ flashcardSet }) => {
 
     {/* test */}
     <div className="">
-      <span className='text-sm font-medium text-slate-500 uppercase tracking-wide'>
-        Last Reviewed: {flashcardSet.cards.length > 0 ? moment(flashcardSet.cards.reduce((latest, card) => {
-          const reviewedDate = card.lastReviewed ? new Date(card.lastReviewed) : null;
-          return reviewedDate && (!latest || reviewedDate > latest) ? reviewedDate : latest;
-        }, null)).fromNow() : 'Never'}
-      </span>
+     
     </div>
   </div>
 }
