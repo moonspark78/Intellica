@@ -97,9 +97,15 @@ const FlashcardSetCard = ({ flashcardSet }) => {
     {/* Avatar */}
     <div className="">
       <div className="">
-        <span></span>
+        <span className='relative inline-flex items-center justify-center w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 font-semibold'>
+          {flashcardSet?.documentId?.title?.charAt(0) || 'U'}
+        </span>
       </div>
     </div>
+
+
+
+    
   </div>
 }
 
