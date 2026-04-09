@@ -102,7 +102,7 @@ const FlashcardSetCard = ({ flashcardSet }) => {
         </span>
       </div>
       <div className="">
-        <div className=""></div>
+        <h3 className=''></h3>
       </div>
     </div>
 
