@@ -90,6 +90,14 @@ const FlashcardSetCard = ({ flashcardSet }) => {
         <div className=''/>
       </button>
     </div>
+
+
+
+
+    {/* Avatar */}
+    <div className="">
+      <div className=""></div>
+    </div>
   </div>
 }
 
