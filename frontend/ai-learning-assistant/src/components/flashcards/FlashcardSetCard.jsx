@@ -98,6 +98,7 @@ const FlashcardSetCard = ({ flashcardSet }) => {
     <div className="">
       <h1>{flashcardSet?.documentId?.title?.charAt(0) || 'U'}</h1>
       <h2>{flashcardSet?.documentId?.title?.slice(1) || 'Untitled'}</h2>
+      <h3 className=''>ee </h3>
     </div>
 
 
