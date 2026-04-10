@@ -96,10 +96,7 @@ const FlashcardSetCard = ({ flashcardSet }) => {
     {/* avatet */}
     <div className="">
       <div className="">
-        <img src='' className=''/>
-        <div className="">
-          
-        </div>
+        <img src='' className='w-10 h-10 rounded-full'/>
       </div>
     </div>
   </div>
