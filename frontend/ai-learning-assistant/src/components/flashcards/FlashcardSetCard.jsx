@@ -98,9 +98,7 @@ const FlashcardSetCard = ({ flashcardSet }) => {
       <div className="">
         <img src='' className=''/>
         <div className="">
-          <div className="">
-            <div className=""></div>
-          </div>
+          
         </div>
       </div>
     </div>
