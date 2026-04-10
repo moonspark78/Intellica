@@ -97,7 +97,7 @@ const FlashcardSetCard = ({ flashcardSet }) => {
     <div className="">
       <div className="">
         <span className=''>
-          <h1 className=''>tee</h1>
+          
         </span>
       </div>
     </div>
