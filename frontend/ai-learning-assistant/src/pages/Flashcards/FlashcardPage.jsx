@@ -30,6 +30,21 @@ const FlashcardPage = () => {
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [deleting,setDeleting] = useState(false);
 
+  const fetchFlashcards =async () => {
+    setLoading(true);
+    try {
+      const response = await flashcardService.getFlashcardsForDocument(documentId);
+      setFlashcardSets(response.data[0]);
+      setFlashcards(response.data[0]?.cards || []);
+    } catch (error) {
+      toast.error('Failed to load flashcards');
+      console.error(error);
+      
+    } finally{
+      setLoading(false);
+    }
+  };
+
   return (
     <div>FlashcardPage</div>
   ) 
