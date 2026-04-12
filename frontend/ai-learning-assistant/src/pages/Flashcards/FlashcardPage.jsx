@@ -49,6 +49,24 @@ const FlashcardPage = () => {
     fetchFlashcards();
   }, [documentId]);
 
+  const handleGenerateFlashcards = async () => {
+    setGenerating(true);
+    try {
+      await aiService.generateFlashcards(documentId);
+      toast.success('Flashcards generated successfully');
+      fetchFlashcards();
+    } catch (error) {
+      toast.error(error.message || 'Failed to generate flashcards');
+    } finally {
+      setGenerating(false);
+    }
+  };
+
+  const handleNextCard = () => {
+    handleReview(currentCardIndex);
+    setCurrentCardIndex((prevIndex) => (prevIndex + 1) % flashcards.length);
+  };
+
   return (
     <div>FlashcardPage</div>
   ) 
