@@ -45,6 +45,10 @@ const FlashcardPage = () => {
     }
   };
 
+  useEffect(() => {
+    fetchFlashcards();
+  }, [documentId]);
+
   return (
     <div>FlashcardPage</div>
   ) 
