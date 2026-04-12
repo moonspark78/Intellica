@@ -67,6 +67,23 @@ const FlashcardPage = () => {
     setCurrentCardIndex((prevIndex) => (prevIndex + 1) % flashcards.length);
   };
 
+  const handlePrevCard = () => {
+    handleReview(currentCardIndex);
+    setCurrentCardIndex((prevIndex) => (prevIndex - 1 + flashcards.length) % flashcards.length);
+  };
+
+  const handleReview = async (index) => {
+    const currentCard = flashcards[currentCardIndex];
+    if (!currentCard) return;
+
+    try {
+      await flashcardService.reviewFlashcard(currentCard._id, index);
+      toast.success('Review status updated');
+    } catch (error) {
+      toast.error('Failed to review status');
+    }
+  };
+
   return (
     <div>FlashcardPage</div>
   ) 
