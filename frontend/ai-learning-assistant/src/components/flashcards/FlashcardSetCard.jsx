@@ -87,7 +87,7 @@ const FlashcardSetCard = ({ flashcardSet }) => {
           <Sparkles className='w-4 h-4' strokeWidth={2.5}/>
           Study Now
         </span>
-        <div className='absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover/btn:translate-x-full'/>
+        <div className='absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700'/>
       </button>
     </div> 
   </div>
