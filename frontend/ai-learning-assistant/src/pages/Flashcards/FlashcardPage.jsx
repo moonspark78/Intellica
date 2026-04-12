@@ -20,9 +20,19 @@ import Flashcard from '../../components/flashcards/Flashcard';
 
 
 const FlashcardPage = () => {
+
+  const { id: documentId } = useParams();
+  const [flashcardSets, setFlashcardSets] = useState([]);
+  const [flashcards, setFlashcards] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [generating, setGenerating] = useState(false);
+  const [currentCardIndex, setCurrentCardIndex] = useState(0);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [deleting,setDeleting] = useState(false);
+
   return (
     <div>FlashcardPage</div>
-  )
+  ) 
 }
 
 export default FlashcardPage
