@@ -81,7 +81,7 @@ const FlashcardSetCard = ({ flashcardSet }) => {
           e.stopPropagation();
           handleStudyNow();
         }}
-        className='group/btn relative w-full h-11 bg-linear-to-r from-emerald-50 '
+        className='group/btn relative w-full h-11 bg-linear-to-r from-emerald-50 to-teal-100 hover:from-emerald-600 text-emerald-700 hover:text-white font-semibold text-sm rounded-xl transition-all duration-200 active:scale-95 overflow-hidden'
       >
         <span className=''>
           <Sparkles className='' strokeWidth={2.5}/>
