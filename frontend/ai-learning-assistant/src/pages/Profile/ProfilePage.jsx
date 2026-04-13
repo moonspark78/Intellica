@@ -17,7 +17,13 @@ const ProfilePage = () => {
 
 
   return (
-    <div>ProfilePage</div>
+    <div>
+      <PageHeader title="Profile Settings" />
+
+      <div className="">
+        
+      </div>
+    </div>
   )
 }
 
