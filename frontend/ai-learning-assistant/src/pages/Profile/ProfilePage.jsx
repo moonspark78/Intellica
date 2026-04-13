@@ -21,7 +21,12 @@ const ProfilePage = () => {
       <PageHeader title="Profile Settings" />
 
       <div className="">
-        
+        {/* User Information Display */}
+        <div className="">
+          <h3 className=''>
+            User Information
+          </h3>
+        </div>
       </div>
     </div>
   )
