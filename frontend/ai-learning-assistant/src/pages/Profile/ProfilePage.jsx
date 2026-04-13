@@ -26,6 +26,13 @@ const ProfilePage = () => {
           <h3 className=''>
             User Information
           </h3>
+          <div className="">
+            <div>
+              <label className="">
+                Username
+              </label>
+            </div>
+          </div>
         </div>
       </div>
     </div>
