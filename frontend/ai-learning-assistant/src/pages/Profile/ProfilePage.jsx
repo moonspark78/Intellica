@@ -106,7 +106,19 @@ const ProfilePage = () => {
                 <div className="">
                   <Lock className='h-4 w-4 text-neutral-400' />
                 </div>
+                <input
+                  type="password"
+                  value={confirmNewPassword}
+                  onChange={(e) => setConfirmNewPassword(e.target.value)}
+                  required
+                  className=""
+                />
               </div>
+            </div>
+            <div className="">
+              <Button type="submit" disabled={passwordLoading}>
+                {passwordLoading ? "Changing..." : "Change Password"}
+              </Button>
             </div>
           </form>
         </div>
