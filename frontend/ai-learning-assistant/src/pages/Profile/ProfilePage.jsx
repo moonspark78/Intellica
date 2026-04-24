@@ -44,6 +44,14 @@ const ProfilePage = () => {
               <label className="">
                 Email Adress
               </label>
+              <div className="">
+                <div className="">
+                  <Mail className="" />
+                </div>
+                <p className="">
+                  {email}
+                </p>
+              </div>
             </div>
           </div>
         </div>
