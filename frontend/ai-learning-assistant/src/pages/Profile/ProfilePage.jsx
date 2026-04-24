@@ -41,7 +41,7 @@ const ProfilePage = () => {
               </div>
             </div>
             <div>
-              <label className="">
+              <label className="block text-xs font-medium text-neutral-700 mb-1.5">
                 Email Adress
               </label>
               <div className="">
