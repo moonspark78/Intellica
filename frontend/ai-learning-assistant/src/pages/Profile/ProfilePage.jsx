@@ -1,6 +1,11 @@
 import { useAuth } from '../../context/AuthContext';
 import toast from 'react-hot-toast';
 import { User, Mail, Lock } from 'lucide-react';
+import Spinner from '../../components/common/Spinner';
+import {useEffect, useState } from 'react';
+import authService from '../../services/authService';
+import Button from '../../components/common/Button';
+import PageHeader from '../../components/common/PageHeader';
 
 
 
@@ -30,6 +35,34 @@ const ProfilePage = () => {
     };
     fetchProfile();
   }, [])
+
+  const handleChangePassword = async (e) => {
+    e.preventDefault();
+    if (newPassword !== confirmNewPassword) {
+      toast.error("New password and confirmation do not match.");
+      return;
+    }
+    if (newPassword.length < 6) {
+      toast.error("New password must be at least 6 characters long.");
+      return;
+    }
+    setPasswordLoading(true);
+    try {
+      await authService.changePassword({ currentPassword, newPassword });
+      toast.success("Password changed successfully.");
+      setCurrentPassword("");
+      setNewPassword("");
+      setConfirmNewPassword("");
+    } catch (error) {
+      toast.error(error.message || "Failed to change password.");
+    } finally {
+      setPasswordLoading(false);
+    }
+  };
+
+  if (loading) {
+    return <Spinner />;
+  }
 
 
   return (

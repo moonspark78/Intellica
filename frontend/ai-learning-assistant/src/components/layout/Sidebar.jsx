@@ -1,6 +1,8 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import useCookieConsent from "../../hooks/useCookieConsent";
+
 import {
   LayoutDashboard,
   FileText,
@@ -14,6 +16,7 @@ import {
 
 const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
   const { logout } = useAuth();
+  const { resetConsent } = useCookieConsent();
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -30,24 +33,23 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
 
   return (
     <>
+      {/* Overlay mobile */}
       <div
         className={`fixed inset-0 bg-black/30 z-40 md:hidden transition-opacity duration-300
-      ${isSidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+        ${isSidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`}
         onClick={toggleSidebar}
         aria-hidden="true"
       ></div>
+
       <aside
         className={`fixed top-0 left-0 h-full w-64 bg-white/90 backdrop-blur-lg border-r border-slate-200/60 z-50
         md:relative md:w-64 md:shrink-0 md:flex md:flex-col md:translate-x-0 transition-transform duration-300 ease-in-out
         ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
-        {/* Logo and Close button for mobile */}
+        {/* HEADER */}
         <div className="flex items-center justify-between h-16 px-5 border-b border-slate-200/60">
           <div className="flex items-center gap-3">
-            <div
-              className="flex items-center justify-center w-9 h-9 rounded-xl bg-linear-to-br from-emerald-400
-          to-teal-500 shadow-md shadow-emerald-500/20"
-            >
+            <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-linear-to-br from-emerald-400 to-teal-500 shadow-md shadow-emerald-500/20">
               <BrainCircuit
                 className="text-white"
                 size={20}
@@ -58,6 +60,7 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
               AI Intellica
             </h1>
           </div>
+
           <button
             onClick={toggleSidebar}
             className="md:hidden text-slate-500 hover:text-slate-800"
@@ -66,28 +69,30 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
           </button>
         </div>
 
-        {/* Navigation */}
+        {/* NAVIGATION */}
         <nav className="flex-1 px-3 py-6 space-y-1.5">
           {navLinks.map((link) => (
             <NavLink
               key={link.to}
               to={link.to}
               onClick={toggleSidebar}
-              className={({
-                isActive,
-              }) => `group flex items-center gap-3 px-4 py-2.5 text-sm font-semibold rounded-xl transition-all duration-200
-            ${
-              isActive
-                ? "bg-linear-to-r from-emerald-500 to-teal-500 text-white shadow-lg shadow-emerald-500/25"
-                : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
-            }`}
+              className={({ isActive }) =>
+                `group flex items-center gap-3 px-4 py-2.5 text-sm font-semibold rounded-xl transition-all duration-200
+                ${
+                  isActive
+                    ? "bg-linear-to-r from-emerald-500 to-teal-500 text-white shadow-lg shadow-emerald-500/25"
+                    : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+                }`
+              }
             >
               {({ isActive }) => (
                 <>
                   <link.icon
                     size={18}
                     strokeWidth={2.5}
-                    className={`transition-transform duration-200 ${isActive ? "" : "group-hover:scale-110"}`}
+                    className={`transition-transform duration-200 ${
+                      isActive ? "" : "group-hover:scale-110"
+                    }`}
                   />
                   {link.text}
                 </>
@@ -96,26 +101,28 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
           ))}
         </nav>
 
-        {/* Pricing Section */}
+        {/* PRICING */}
         <div className="px-3 py-2">
           <NavLink
             to="/pricing"
             onClick={toggleSidebar}
-            className={({
-              isActive,
-            }) => `group flex items-center gap-3 px-4 py-2.5 text-sm font-semibold rounded-xl transition-all duration-200
-    ${
-      isActive
-        ? "bg-linear-to-r from-emerald-500 to-teal-500 text-white shadow-lg shadow-emerald-500/25"
-        : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
-    }`}
+            className={({ isActive }) =>
+              `group flex items-center gap-3 px-4 py-2.5 text-sm font-semibold rounded-xl transition-all duration-200
+              ${
+                isActive
+                  ? "bg-linear-to-r from-emerald-500 to-teal-500 text-white shadow-lg shadow-emerald-500/25"
+                  : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+              }`
+            }
           >
             {({ isActive }) => (
               <>
                 <CircleDollarSign
                   size={18}
                   strokeWidth={2.5}
-                  className={`transition-transform duration-200 ${isActive ? "" : "group-hover:scale-110"}`}
+                  className={`transition-transform duration-200 ${
+                    isActive ? "" : "group-hover:scale-110"
+                  }`}
                 />
                 Plans
               </>
@@ -123,12 +130,12 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
           </NavLink>
         </div>
 
-        {/* Logout Section */}
+        {/* LOGOUT */}
         <div className="px-3 py-4 border-t border-slate-200/60">
           <button
             onClick={handleLogout}
             className="group flex items-center gap-3 w-full px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-red-50
-          hover:text-red-600 rounded-xl transition-all duration-200"
+            hover:text-red-600 rounded-xl transition-all duration-200"
           >
             <LogOut
               size={18}
@@ -137,6 +144,25 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
             />
             Logout
           </button>
+        </div>
+
+        {/* ✅ FOOTER RGPD (AJOUT ICI) */}
+        <div className="mt-auto px-4 py-4 border-t border-slate-200/60">
+          <div className="flex flex-col gap-2">
+            <Link
+              to="/privacy-policy"
+              className="text-xs text-slate-500 hover:text-emerald-500 transition-colors"
+            >
+              Politique de confidentialité
+            </Link>
+
+            <button
+              onClick={resetConsent}
+              className="text-xs text-slate-500 hover:text-emerald-500 transition-colors text-left"
+            >
+              Gestion des cookies
+            </button>
+          </div>
         </div>
       </aside>
     </>
