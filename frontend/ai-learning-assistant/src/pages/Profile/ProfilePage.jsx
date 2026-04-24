@@ -20,10 +20,10 @@ const ProfilePage = () => {
     <div>
       <PageHeader title="Profile Settings" />
 
-      <div className="">
+      <div className="space-y-8">
         {/* User Information Display */}
-        <div className="">
-          <h3 className=''>
+        <div className="bg-white border border-neutral-200 rounded-2xl p-6">
+          <h3 className='text-lg font-semibold text-neutral-900 mb-4'>
             User Information
           </h3>
           <div className="">
