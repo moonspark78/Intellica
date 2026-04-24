@@ -44,9 +44,9 @@ const ProfilePage = () => {
               <label className="block text-xs font-medium text-neutral-700 mb-1.5">
                 Email Adress
               </label>
-              <div className="">
-                <div className="">
-                  <Mail className="" />
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <Mail className='h-4 w-4 text-neutral-400' />
                 </div>
                 <p className="">
                   {email}
