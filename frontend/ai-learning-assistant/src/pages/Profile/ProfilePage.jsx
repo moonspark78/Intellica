@@ -48,13 +48,47 @@ const ProfilePage = () => {
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <Mail className='h-4 w-4 text-neutral-400' />
                 </div>
-                <p className="w-full h-9 pl-9 pr-3 pt-2 border border-neutral-200 rounded-lg bg-neutral-50">
+                <p className="w-full h-9 pl-9 pr-3 pt-2 border border-neutral-200 rounded-lg bg-neutral-50 text-sm text-neutral-900">
                   {email}
                 </p>
               </div>
             </div>
           </div>
         </div>
+
+
+
+        {/* Change Password  */}
+        <div className="">
+          <h3 className="">
+              Change Password
+          </h3>
+          <form onSubmit={handleChangePassword} className="space-y-4">
+            <div>
+              <label className=''>
+                Current Password
+              </label>
+              <div className="">
+                <div className="">
+                  <Lock className='h-4 w-4 text-neutral-400' />
+                </div>
+                <input
+                  type="password"
+                  value={currentPassword}
+                  onChange={(e) => setCurrentPassword(e.target.value)}
+                  required
+                  className=""
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+
+
+
+
+
+
       </div>
     </div>
   )
