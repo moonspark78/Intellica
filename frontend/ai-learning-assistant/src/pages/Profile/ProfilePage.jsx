@@ -81,6 +81,23 @@ const ProfilePage = () => {
                 />
               </div>
             </div>
+            <div className="">
+              <label className=''>
+                New Password
+              </label>
+              <div className="">
+                <div className="">
+                  <Lock className='h-4 w-4 text-neutral-400' />
+                </div>
+                <input
+                  type="password"
+                  value={newPassword}
+                  onChange={(e) => setNewPassword(e.target.value)}
+                  required
+                  className=""
+                />
+              </div>
+            </div>
           </form>
         </div>
 
