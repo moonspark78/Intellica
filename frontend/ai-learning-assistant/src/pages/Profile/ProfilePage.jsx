@@ -59,17 +59,17 @@ const ProfilePage = () => {
 
 
         {/* Change Password  */}
-        <div className="">
-          <h3 className="">
+        <div className="bg-white border border-neutral-200 rounded-lg p-6">
+          <h3 className="text-lg font-semibold text-neutral-900 mb-4">
               Change Password
           </h3>
           <form onSubmit={handleChangePassword} className="space-y-4">
             <div>
-              <label className=''>
+              <label className='block text-xs font-medium text-neutral-700 mb-1.5'>
                 Current Password
               </label>
-              <div className="">
-                <div className="">
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <Lock className='h-4 w-4 text-neutral-400' />
                 </div>
                 <input
@@ -77,16 +77,16 @@ const ProfilePage = () => {
                   value={currentPassword}
                   onChange={(e) => setCurrentPassword(e.target.value)}
                   required
-                  className=""
+                  className="w-full h-9 pl-9 pr-3 border border-neutral-200 rounded-lg bg-white text-sm text-neutral-900 placeholder-neutral-400 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-[#00d492] focus:border-transparent"
                 />
               </div>
             </div>
-            <div className="">
-              <label className=''>
+            <div>
+              <label className='block text-xs font-medium text-neutral-700 mb-1.5'>
                 New Password
               </label>
-              <div className="">
-                <div className="">
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <Lock className='h-4 w-4 text-neutral-400' />
                 </div>
                 <input
@@ -94,16 +94,16 @@ const ProfilePage = () => {
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
                   required
-                  className=""
+                  className="w-full h-9 pl-9 pr-3 border border-neutral-200 rounded-lg bg-white text-sm text-neutral-900 placeholder-neutral-400 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-[#00d492] focus:border-transparent"
                 />
               </div>
             </div>
             <div>
-              <label className=''>
+              <label className='block text-xs font-medium text-neutral-700 mb-1.5'>
                 Confirm New Password
               </label>
-              <div className="">
-                <div className="">
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <Lock className='h-4 w-4 text-neutral-400' />
                 </div>
                 <input
@@ -111,23 +111,17 @@ const ProfilePage = () => {
                   value={confirmNewPassword}
                   onChange={(e) => setConfirmNewPassword(e.target.value)}
                   required
-                  className=""
+                  className="w-full h-9 pl-9 pr-3 border border-neutral-200 rounded-lg bg-white text-sm text-neutral-900 placeholder-neutral-400 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-[#00d492] focus:border-transparent"
                 />
               </div>
             </div>
-            <div className="">
+            <div className="flex justify-end">
               <Button type="submit" disabled={passwordLoading}>
                 {passwordLoading ? "Changing..." : "Change Password"}
               </Button>
             </div>
           </form>
         </div>
-
-
-
-
-
-
       </div>
     </div>
   )
