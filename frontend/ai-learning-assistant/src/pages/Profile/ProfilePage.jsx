@@ -26,16 +26,16 @@ const ProfilePage = () => {
           <h3 className='text-lg font-semibold text-neutral-900 mb-4'>
             User Information
           </h3>
-          <div className="">
+          <div className="space-y-4">
             <div>
-              <label className="">
+              <label className="block text-xs font-medium text-neutral-700 mb-1.5">
                 Username
               </label>
-              <div className="">
-                <div className="">
-                  <User className='' />
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <User className='h-4 w-4 text-neutral-400' />
                 </div>
-                <p className="">
+                <p className="w-full h-9 pl-9 pr-3 pt-2 border border-neutral-200 rounded-lg bg-neutral-50 text-sm text-neutral-900">
                   {username}
                 </p>
               </div>
