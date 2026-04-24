@@ -15,6 +15,22 @@ const ProfilePage = () => {
   const [newPassword, setNewPassword] = useState("");
   const [confirmNewPassword, setConfirmNewPassword] = useState("");
 
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const { data } = await authService.getProfile();
+        setUsername(data.username);
+        setEmail(data.email);
+      } catch (error) {
+        toast.error("Failed to load profile information.");
+        console.error("Error fetching profile:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProfile();
+  }, [])
+
 
   return (
     <div>
