@@ -40,6 +40,11 @@ const ProfilePage = () => {
                 </p>
               </div>
             </div>
+            <div>
+              <label className="">
+                Email Adress
+              </label>
+            </div>
           </div>
         </div>
       </div>
