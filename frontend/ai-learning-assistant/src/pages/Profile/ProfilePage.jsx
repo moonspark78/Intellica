@@ -31,6 +31,14 @@ const ProfilePage = () => {
               <label className="">
                 Username
               </label>
+              <div className="">
+                <div className="">
+                  <User className='' />
+                </div>
+                <p className="">
+                  {username}
+                </p>
+              </div>
             </div>
           </div>
         </div>
