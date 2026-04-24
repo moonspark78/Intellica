@@ -98,6 +98,16 @@ const ProfilePage = () => {
                 />
               </div>
             </div>
+            <div>
+              <label className=''>
+                Confirm New Password
+              </label>
+              <div className="">
+                <div className="">
+                  <Lock className='h-4 w-4 text-neutral-400' />
+                </div>
+              </div>
+            </div>
           </form>
         </div>
 
