@@ -259,6 +259,19 @@ const PricingPage = () => {
         <p className="text-center text-xs text-slate-400 mt-8">
           No credit card required for the free plan · Cancel anytime · Secure payment
         </p>
+
+         {/* External GDPR link */}
+        <p className="text-center text-xs text-slate-400 mt-3">
+          <a
+            href="https://gdpr.eu"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-slate-600 transition-colors"
+          >
+            Learn more about data protection (GDPR)
+          </a>
+        </p>
+
       </div>
     </div>
   );

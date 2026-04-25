@@ -1,5 +1,4 @@
 User-agent: *
-Allow: /
 Disallow: /dashboard
 Disallow: /profile
 Disallow: /documents
