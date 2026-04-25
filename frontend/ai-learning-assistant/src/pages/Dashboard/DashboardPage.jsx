@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { Helmet } from 'react-helmet-async'
 import Spinner from "../../components/common/Spinner"
 import progressService from '../../services/progressService';
 import toast from "react-hot-toast";
@@ -72,6 +73,12 @@ const DashboardPage = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Dashboard — Intellica</title>
+        <meta name="description" content="Suivez votre progression sur Intellica. Accédez à vos documents PDF, flashcards et quiz générés par IA." />
+        <meta name="keywords" content="dashboard, apprentissage IA, documents PDF, flashcards, quiz, Intellica" />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
       <div className="absolute inset-0 bg-[radical-gradient(#e5e7eb_1px,transparent_1px)] bg-size-[16px_16px] opacity-30
       pointer-events-none"/>
 

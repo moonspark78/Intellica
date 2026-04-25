@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import useCookieConsent from '../hooks/useCookieConsent';
 
@@ -7,6 +8,12 @@ const PrivacyPolicy = () => {
 
   return (
     <div className="min-h-screen bg-slate-950 py-8 px-4 sm:py-12 sm:px-6 lg:py-16">
+      <Helmet>
+        <title>Politique de confidentialité — Intellica</title>
+        <meta name="description" content="Consultez la politique de confidentialité d'Intellica. Découvrez comment nous protégeons vos données personnelles conformément au RGPD." />
+        <meta name="keywords" content="politique de confidentialité, RGPD, protection des données, cookies, Intellica" />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
       <div className="max-w-3xl mx-auto bg-slate-900 rounded-2xl p-6 sm:p-8 lg:p-12 text-slate-300">
         
         {/* Header */}

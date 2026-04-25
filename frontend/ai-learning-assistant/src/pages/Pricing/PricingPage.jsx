@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Check, X, Zap, Crown, Sparkles, ArrowRight } from 'lucide-react';
 import axios from 'axios';
 
@@ -110,6 +111,13 @@ const PricingPage = () => {
 
   return (
     <div className="min-h-screen relative">
+      <Helmet>
+        <title>Tarifs — Intellica</title>
+        <meta name="description" content="Découvrez les offres Intellica : plan gratuit, Pro et Premium. Générez des résumés, flashcards et quiz à partir de vos PDF grâce à l'IA." />
+        <meta name="keywords" content="tarifs, prix, plan pro, apprentissage IA, résumé PDF, flashcards, quiz, Intellica" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://intellica.app/pricing" />
+      </Helmet>
       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-[size:16px_16px] opacity-30 pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto">
