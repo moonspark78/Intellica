@@ -1,0 +1,28 @@
+name: Project Info
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  project-info:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Afficher les informations
+        run: |
+          echo "Projet : Intellica"
+          echo "CI/CD GitHub Actions actif"
+          echo "Commit : $GITHUB_SHA"
+          echo "Branche : $GITHUB_REF_NAME"
+
+      - name: Vérification terminée
+        run: echo "Workflow terminé avec succès"
