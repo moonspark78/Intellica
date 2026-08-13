@@ -2,7 +2,6 @@ import { jest } from '@jest/globals';
 import express from 'express';
 import request from 'supertest';
 import mongoose from 'mongoose';
-import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -29,11 +28,6 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 
 const testUserId = new mongoose.Types.ObjectId();
-let token = jwt.sign(
-  { id: testUserId.toString(), email: 'testuser@example.com' },
-  process.env.JWT_SECRET,
-  { expiresIn: '1h' }
-);
 
 describe('Auth Routes', () => {
   beforeEach(() => {
@@ -61,6 +55,5 @@ describe('Auth Routes', () => {
 
     expect(res.statusCode).toBe(201);
     expect(res.body.data).toHaveProperty('token');
-    token = res.body.data.token;
   });
 });

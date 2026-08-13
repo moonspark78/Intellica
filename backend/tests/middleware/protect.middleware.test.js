@@ -1,7 +1,6 @@
 import request from "supertest";
 import express from "express";
 import protect from "../../middleware/auth.js";
-import jwt from "jsonwebtoken";
 
 const app = express();
 

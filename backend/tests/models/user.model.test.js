@@ -1,8 +1,6 @@
-// tests/models/user.model.test.js
 import mongoose from 'mongoose';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import User from '../../models/User.js';
-import bcrypt from 'bcryptjs';
 
 let mongoServer;
 

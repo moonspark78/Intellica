@@ -8,7 +8,7 @@ jest.unstable_mockModule("../../models/Quiz.js", () => ({
     }
 }))
 
-const { getQuizById, deleteQuiz } = await import("../../controllers/quizController.js")
+const { getQuizById } = await import("../../controllers/quizController.js")
 
 describe("Quiz Controller", () => {
 
