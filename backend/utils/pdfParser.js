@@ -21,6 +21,6 @@ export const extractTextFromPDF = async (filePath) => {
             };
     } catch (error) {
         console.error('Error parsing text from PDF:', error);
-        throw new Error('Failed to extract text from PDF');
+        throw new Error('Failed to extract text from PDF', { cause: error });
     }
 };
