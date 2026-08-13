@@ -1,0 +1,27 @@
+name: Code Quality
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-files:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Vérifier les fichiers du projet
+        run: |
+          test -f .gitignore
+          test -f backend/package.json
+          test -f backend/package-lock.json
+
+      - name: Vérification terminée
+        run: echo "Structure du projet vérifiée avec succès"
